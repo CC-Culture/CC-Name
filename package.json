@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "dev": "cd cc-name && npm run dev",
+    "build": "cd cc-name && npm run build",
+    "start": "cd cc-name && npm run start"
+  },
+  "dependencies": {
+    "@types/react-datepicker": "^6.2.0",
+    "framer-motion": "^12.6.2",
+    "openai": "^4.91.0",
+    "react-datepicker": "^8.2.1"
+  }
+}

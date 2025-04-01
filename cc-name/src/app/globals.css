@@ -1,0 +1,364 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --ink-black: #000000;
+  --ink-gray: #333333;
+  --ink-light: #f5f5f5;
+  --red-cinnabar: #e34234;
+  --blue-porcelain: #1a5599;
+  --gold-accent: #d4af37;
+  --silver-gray: #c0c0c0;
+  --paper-texture: #f9f6f0;
+  --xuan-paper: #f5e6ca;
+
+  /* 节气颜色 */
+  --spring-green: #7bc86c;
+  --summer-red: #e25b45;
+  --autumn-gold: #e6a23c;
+  --winter-blue: #5e81ac;
+
+  /* 卷轴效果 */
+  --scroll-shadow: rgba(0, 0, 0, 0.1);
+  --scroll-border: #d3b17d;
+  --scroll-handle: #8b4513;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --ink-black: #ffffff;
+    --ink-gray: #cccccc;
+    --ink-light: #333333;
+    --paper-texture: #111111;
+    --scroll-shadow: rgba(255, 255, 255, 0.05);
+    --scroll-border: #5a4a2d;
+    --scroll-handle: #614b32;
+  }
+}
+
+@keyframes inkSpread {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes paperRipple {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes scrollUnroll {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    height: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes scrollRoll {
+  0% {
+    transform: translateY(-20px) rotateX(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.xuan-paper-bg {
+  background-color: var(--xuan-paper);
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeBlend mode='screen'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-blend-mode: multiply;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes bambooSlide {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cabinetRotate {
+  0% {
+    transform: perspective(1000px) rotateY(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(1000px) rotateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes brushStroke {
+  0% {
+    stroke-dashoffset: 1000;
+    fill-opacity: 0;
+  }
+  80% {
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23000000' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+  transition: background-color 1s ease;
+}
+
+/* 节气时序感知系统 - 根据当前季节自动调整背景色 */
+.spring-theme {
+  background-color: rgba(123, 200, 108, 0.05);
+}
+
+.summer-theme {
+  background-color: rgba(226, 91, 69, 0.05);
+}
+
+.autumn-theme {
+  background-color: rgba(230, 162, 60, 0.05);
+}
+
+.winter-theme {
+  background-color: rgba(94, 129, 172, 0.05);
+}
+
+/* 中文字体样式 */
+.chinese-font {
+  font-family: "SimSun", "STSong", "FangSong", serif;
+  letter-spacing: 1px;
+}
+
+.ink-animation {
+  animation: inkSpread 1.5s ease-out;
+}
+
+/* 卷轴式纸张背景 */
+.paper-background {
+  background-color: var(--paper-texture);
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23000000' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+  animation: paperRipple 30s infinite alternate;
+  position: relative;
+  border: 1px solid var(--scroll-border);
+  box-shadow: 0 5px 15px var(--scroll-shadow);
+}
+
+/* 卷轴顶部和底部装饰 */
+.paper-background::before,
+.paper-background::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background-color: var(--scroll-border);
+  opacity: 0.7;
+}
+
+.paper-background::before {
+  top: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 20%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.2) 60%,
+    transparent 80%
+  );
+}
+
+.paper-background::after {
+  bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(
+    90deg,
+    transparent 10%,
+    rgba(255, 255, 255, 0.2) 30%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 70%,
+    transparent 90%
+  );
+}
+
+/* 卷轴展开动画 */
+.scroll-reveal {
+  overflow: hidden;
+  animation: scrollUnroll 1.2s ease-out forwards;
+}
+
+/* 竹简效果 */
+.bamboo-slip {
+  background-color: var(--paper-texture);
+  border-top: 2px solid var(--scroll-handle);
+  border-bottom: 2px solid var(--scroll-handle);
+  padding: 1rem 0;
+  position: relative;
+  animation: bambooSlide 0.8s ease-out forwards;
+}
+
+/* 多宝阁展示效果 */
+.cabinet-display {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  animation: cabinetRotate 1s ease-out forwards;
+}
+
+/* 墨水按钮效果 */
+.ink-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-image: linear-gradient(
+    to right,
+    var(--ink-black),
+    var(--ink-gray)
+  );
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: "SimSun", "STSong", serif;
+  letter-spacing: 2px;
+}
+
+.ink-button:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s ease-out;
+}
+
+.ink-button:hover:before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* 书法笔势识别 - 输入框效果 */
+.calligraphy-input {
+  position: relative;
+  font-family: "KaiTi", "STKaiti", serif;
+  transition: all 0.3s ease;
+}
+
+.calligraphy-input:focus {
+  border-color: var(--ink-black);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 拓片效果 */
+.rubbing-effect {
+  background-color: #f5f5f5;
+  color: #333;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+  border: 1px solid #ddd;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  font-family: "FangSong", "STFangsong", serif;
+  letter-spacing: 2px;
+  line-height: 1.8;
+}
+
+/* 五行元素样式 */
+.element-container {
+  position: relative;
+  border-radius: 8px;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.element-container:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.element-description {
+  font-family: "KaiTi", "STKaiti", serif;
+  color: var(--ink-gray);
+}
+
+.element-value {
+  font-family: "SimSun", "STSong", serif;
+}
+
+.element-gold {
+  color: var(--gold-accent);
+}
+
+.element-wood {
+  color: #2e8b57; /* Sea Green */
+}
+
+.element-water {
+  color: var(--blue-porcelain);
+}
+
+.element-fire {
+  color: var(--red-cinnabar);
+}
+
+.element-earth {
+  color: #8b4513; /* Saddle Brown */
+}
+
+.circle-progress {
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+/* 五行元素横向排列容器 */
+.elements-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .elements-row {
+    flex-wrap: nowrap;
+  }
+}

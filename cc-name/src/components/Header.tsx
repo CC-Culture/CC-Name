@@ -31,25 +31,13 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2">
           <div className="relative w-10 h-10 overflow-hidden">
-            <svg
-              viewBox="0 0 100 100"
-              className="absolute inset-0 w-full h-full"
-            >
-              <circle
-                cx="50"
-                cy="50"
-                r="45"
-                fill="none"
-                stroke="#000"
-                strokeWidth="2"
-              />
-              <path
-                d="M30,50 Q50,20 70,50 Q50,80 30,50"
-                fill="none"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
+            <Image
+              src="/yi-seal.svg"
+              alt="易字印章"
+              width={60}
+              height={60}
+              className="mr-4"
+            />
           </div>
           <span className="text-xl font-bold tracking-wider">CC Name</span>
         </Link>

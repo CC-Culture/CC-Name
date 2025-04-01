@@ -1,28 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --ink-black: #000000;
-  --ink-gray: #333333;
-  --ink-light: #f5f5f5;
+  --background: #f7f4f1cc;
+  --foreground: #2c1810;
+  --ink-black: #2c1810;
+  --ink-gray: #594a42;
+  --ink-light: #e8e6e4;
   --red-cinnabar: #e34234;
   --blue-porcelain: #1a5599;
   --gold-accent: #d4af37;
   --silver-gray: #c0c0c0;
-  --paper-texture: #f9f6f0;
-  --xuan-paper: #f5e6ca;
-
-  /* 节气颜色 */
-  --spring-green: #7bc86c;
-  --summer-red: #e25b45;
-  --autumn-gold: #e6a23c;
-  --winter-blue: #5e81ac;
+  --paper-texture: #f7f4f1;
+  --xuan-paper: #f4f1ee;
 
   /* 卷轴效果 */
-  --scroll-shadow: rgba(0, 0, 0, 0.1);
-  --scroll-border: #d3b17d;
-  --scroll-handle: #8b4513;
+  --scroll-shadow: rgba(89, 74, 66, 0.08);
+  --scroll-border: #e8e6e4;
+  --scroll-handle: #594a42;
+
+  --dunhuang-primary: #594a42;
+  --dunhuang-secondary: #8c7b73;
+  --dunhuang-accent: #e8e6e4;
 }
 
 @theme inline {
@@ -94,10 +92,27 @@
 
 .xuan-paper-bg {
   background-color: var(--xuan-paper);
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeBlend mode='screen'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeBlend mode='soft-light'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-blend-mode: soft-light;
   position: relative;
   overflow: hidden;
+}
+
+.xuan-paper-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(89, 74, 66, 0.03) 0px,
+    rgba(89, 74, 66, 0.03) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
 }
 
 @keyframes bambooSlide {
@@ -140,7 +155,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23000000' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeBlend mode='soft-light'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-blend-mode: soft-light;
   transition: background-color 1s ease;
 }
 
@@ -212,34 +228,47 @@ body {
   background-image: linear-gradient(
     90deg,
     transparent 10%,
-    rgba(255, 255, 255, 0.2) 30%,
+    rgba(255, 255, 255, 0 . 2) 30%,
     transparent 50%,
-    rgba(255, 255, 255, 0.2) 70%,
-    transparent 90%
+    rgba(2 55, 255, 255, 0.2) 70%,
+    transpar ent 90%
   );
-}
-
-/* 卷轴展开动画 */
-.scroll-reveal {
-  overflow: hidden;
-  animation: scrollUnroll 1.2s ease-out forwards;
 }
 
 /* 竹简效果 */
 .bamboo-slip {
-  background-color: var(--paper-texture);
-  border-top: 2px solid var(--scroll-handle);
-  border-bottom: 2px solid var(--scroll-handle);
-  padding: 1rem 0;
   position: relative;
-  animation: bambooSlide 0.8s ease-out forwards;
+  overflow: hidden;
+}
+
+.bamboo-slip::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.05) 0px,
+      rgba(0, 0, 0, 0.05) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+  pointer-events: none;
 }
 
 /* 多宝阁展示效果 */
 .cabinet-display {
   perspective: 1000px;
   transform-style: preserve-3d;
-  animation: cabinetRotate 1s ease-out forwards;
+  animation: cabinetRotate 1s ease-out for wards;
 }
 
 /* 墨水按钮效果 */
@@ -247,60 +276,68 @@ body {
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
-  background-image: linear-gradient(
-    to right,
-    var(--ink-black),
-    var(--ink-gray)
-  );
-  border: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  font-family: "SimSun", "STSong", serif;
-  letter-spacing: 2px;
 }
 
-.ink-button:before {
+.ink-button::after {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 300%;
-  height: 300%;
+  width: 0;
+  height: 0;
   background: radial-gradient(
     circle,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0) 70%
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 70%
   );
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.6s ease-out;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
 }
 
-.ink-button:hover:before {
-  transform: translate(-50%, -50%) scale(1);
+.ink-button:hover::after {
+  width: 300px;
+  height: 300px;
 }
 
 /* 书法笔势识别 - 输入框效果 */
 .calligraphy-input {
-  position: relative;
-  font-family: "KaiTi", "STKaiti", serif;
-  transition: all 0.3s ease;
+  font-family: "Noto Serif SC", serif;
+  letter-spacing: 0.05em;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .calligraphy-input:focus {
-  border-color: var(--ink-black);
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* 拓片效果 */
 .rubbing-effect {
-  background-color: #f5f5f5;
-  color: #333;
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid #ddd;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  font-family: "FangSong", "STFangsong", serif;
-  letter-spacing: 2px;
-  line-height: 1.8;
+  position: relative;
+  overflow: hidden;
+}
+
+.rubbing-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 10px 10px;
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 /* 五行元素样式 */
@@ -361,4 +398,75 @@ body {
   .elements-row {
     flex-wrap: nowrap;
   }
+}
+
+/* 日期选择器样式 */
+.react-datepicker {
+  font-family: "Noto Serif SC", serif;
+  border: 1px solid var(--dunhuang-accent);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px var(--scroll-shadow);
+  background-color: var(--xuan-paper);
+}
+
+.react-datepicker__header {
+  background-color: var(--xuan-paper);
+  border-bottom: 1px solid var(--dunhuang-accent);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.react-datepicker__current-month {
+  color: var(--ink-black);
+  font-weight: 600;
+}
+
+.react-datepicker__day-name {
+  color: var(--ink-black);
+  font-weight: 500;
+}
+
+.react-datepicker__day {
+  color: var(--ink-gray);
+  transition: all 0.2s;
+}
+
+.react-datepicker__day:hover {
+  background-color: var(--dunhuang-accent);
+  color: var(--ink-black);
+}
+
+.react-datepicker__day--selected {
+  background-color: var(--dunhuang-primary) !important;
+  color: var(--xuan-paper) !important;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: var(--dunhuang-accent);
+  color: var(--ink-black);
+}
+
+.react-datepicker__navigation {
+  top: 0.5rem;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: var(--ink-black);
+}
+
+.react-datepicker__year-read-view--down-arrow,
+.react-datepicker__month-read-view--down-arrow {
+  border-color: var(--ink-black);
+}
+
+.react-datepicker__year-option:hover,
+.react-datepicker__month-option:hover {
+  background-color: var(--dunhuang-accent);
+}
+
+.react-datepicker__year-option--selected,
+.react-datepicker__month-option--selected {
+  background-color: var(--dunhuang-primary);
+  color: var(--xuan-paper);
 }

@@ -105,13 +105,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: repeating-linear-gradient(
-    -45deg,
-    rgba(89, 74, 66, 0.03) 0px,
-    rgba(89, 74, 66, 0.03) 1px,
-    transparent 1px,
-    transparent 2px
-  );
+  background-image: url("https://www.zhonghuashici.com/skin/default/images/body.gif");
   pointer-events: none;
 }
 
@@ -155,26 +149,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeBlend mode='soft-light'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-blend-mode: soft-light;
   transition: background-color 1s ease;
-}
-
-/* 节气时序感知系统 - 根据当前季节自动调整背景色 */
-.spring-theme {
-  background-color: rgba(123, 200, 108, 0.05);
-}
-
-.summer-theme {
-  background-color: rgba(226, 91, 69, 0.05);
-}
-
-.autumn-theme {
-  background-color: rgba(230, 162, 60, 0.05);
-}
-
-.winter-theme {
-  background-color: rgba(94, 129, 172, 0.05);
+  cursor: url("/ink-cursor.svg") 16 16, auto;
 }
 
 /* 中文字体样式 */
@@ -191,7 +168,7 @@ body {
 .paper-background {
   background-color: var(--paper-texture);
   background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23000000' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-  animation: paperRipple 30s infinite alternate;
+  animation: paperRipple 200s infinite alternate;
   position: relative;
   border: 1px solid var(--scroll-border);
   box-shadow: 0 5px 15px var(--scroll-shadow);
@@ -469,4 +446,58 @@ body {
 .react-datepicker__month-option--selected {
   background-color: var(--dunhuang-primary);
   color: var(--xuan-paper);
+}
+
+/* 宣纸纹理背景 */
+.header-paper-bg {
+  position: relative;
+  background-color: var(--xuan-paper);
+  overflow: hidden;
+}
+
+.header-paper-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/header-bg.svg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header-paper-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 墨迹动画效果 */
+.ink-trail {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform-origin: center;
+  animation: inkStroke 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  mix-blend-mode: multiply;
+  filter: blur(0.3px);
+  will-change: transform, opacity;
+}
+
+@keyframes inkStroke {
+  0% {
+    opacity: var(--opacity, 0.8);
+    transform: scale(var(--scale, 0.5)) rotate(var(--rotation, -15deg));
+  }
+  30% {
+    opacity: var(--opacity, 0.6);
+    transform: scale(var(--scale, 1.2)) rotate(var(--rotation, -5deg));
+  }
+  100% {
+    opacity: 0;
+    transform: scale(var(--scale, 1)) rotate(var(--rotation, 0deg));
+  }
 }

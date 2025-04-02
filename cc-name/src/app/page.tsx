@@ -1,10 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Header from "@/components/home/Header";
 import Introduction from "@/components/home/Introduction";
 import BirthdateForm from "@/components/home/BirthdateForm";
-
 export default function Home() {
   return (
     <div className="min-h-screen xuan-paper-bg">
@@ -17,7 +15,6 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Header />
           <Introduction />
         </motion.div>
 

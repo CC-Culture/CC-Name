@@ -1,8 +1,18 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Introduction() {
   return (
     <div className="prose max-w-none mb-8">
+      <div className="flex justify-center mb-8">
+        <Image
+          src="/scholar.png"
+          alt="Ancient Chinese Scholar"
+          width={400}
+          height={400}
+          className="object-contain"
+        />
+      </div>
       <motion.p
         className="text-lg mb-6 chinese-font leading-relaxed"
         initial={{ opacity: 0, y: 20 }}

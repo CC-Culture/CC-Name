@@ -35,17 +35,10 @@ const Footer = () => {
               >
                 关于我们
               </Link>
-              <Link
-                href="/contact"
-                className="text-sm text-gray-600 hover:text-gray-900 transition-colors duration-300"
-              >
-                联系我们
-              </Link>
             </div>
           </div>
 
           <div className="flex flex-col space-y-4">
-            <h3 className="text-lg font-semibold">联系我们</h3>
             <p className="text-sm text-gray-600">邮箱: contact@ccname.com</p>
           </div>
         </div>

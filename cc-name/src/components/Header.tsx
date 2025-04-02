@@ -50,16 +50,16 @@ const Header = () => {
             首页
           </Link>
           <Link
+            href="/surname-culture"
+            className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
+          >
+            百家姓文化
+          </Link>
+          <Link
             href="/about"
             className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
           >
             关于我们
-          </Link>
-          <Link
-            href="/contact"
-            className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
-          >
-            联系我们
           </Link>
           <Link
             href="/login"

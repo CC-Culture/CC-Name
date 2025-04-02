@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 
 interface InkDrop {
@@ -10,59 +10,113 @@ interface InkDrop {
   rotation: number;
   scale: number;
   opacity: number;
+  initialOpacity: number;
+  timestamp: number;
 }
 
 export default function InkTrail() {
   const [inkDrops, setInkDrops] = useState<InkDrop[]>([]);
-  const [lastPosition, setLastPosition] = useState({ x: 0, y: 0 });
-  const [speed, setSpeed] = useState(0);
+  const [lastPosition, setLastPosition] = useState({ x: 0, y: 0, time: 0 });
+  const [isDrawing, setIsDrawing] = useState(false);
+
+  const calculateSpeed = useCallback(
+    (dx: number, dy: number, timeDiff: number) => {
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      return distance / Math.max(timeDiff, 1);
+    },
+    []
+  );
+
+  const createInkDrop = useCallback(
+    (x: number, y: number, speed: number, angle: number) => {
+      const currentTime = Date.now();
+      const baseScale = 0.6;
+      const speedFactor = Math.min(speed / 10, 1);
+      const scale = baseScale + speedFactor * 0.4;
+      const baseOpacity = 0.3;
+      const opacity = Math.min(baseOpacity + speedFactor * 0.4, 0.7);
+
+      return {
+        id: currentTime,
+        x,
+        y,
+        rotation: angle,
+        scale,
+        opacity,
+        initialOpacity: opacity,
+        timestamp: currentTime,
+      };
+    },
+    []
+  );
 
   useEffect(() => {
-    let lastTime = 0;
-    const minTimeBetweenDrops = 16; // 提高频率到约60fps
+    const minTimeBetweenDrops = 12;
+    let animationFrameId: number;
+    let lastDropTime = 0;
 
     const handleMouseMove = (e: MouseEvent) => {
-      const currentTime = Date.now();
+      if (!isDrawing) return;
 
-      if (currentTime - lastTime > minTimeBetweenDrops) {
-        // 计算移动速度和方向
+      const currentTime = Date.now();
+      const timeDiff = currentTime - lastPosition.time;
+
+      if (timeDiff >= minTimeBetweenDrops) {
         const dx = e.clientX - lastPosition.x;
         const dy = e.clientY - lastPosition.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        const currentSpeed = distance / (currentTime - lastTime);
-        setSpeed(currentSpeed);
+        const speed = calculateSpeed(dx, dy, timeDiff);
+        const angle = Math.atan2(dy, dx) * (180 / Math.PI);
 
-        // 计算旋转角度
-        const rotation = Math.atan2(dy, dx) * (180 / Math.PI);
-
-        // 根据速度调整大小和透明度
-        const scale = Math.min(0.8 + currentSpeed / 15, 1.5); // 减小基础大小和最大大小
-        const opacity = Math.min(0.5, 0.2 + currentSpeed / 15); // 降低基础透明度和最大透明度
-
-        const newDrop = {
-          id: currentTime,
-          x: e.clientX,
-          y: e.clientY,
-          rotation,
-          scale,
-          opacity,
-        };
-
+        const newDrop = createInkDrop(e.clientX, e.clientY, speed, angle);
         setInkDrops((prev) => [...prev, newDrop]);
-        setLastPosition({ x: e.clientX, y: e.clientY });
-        lastTime = currentTime;
-
-        // 根据速度调整消失时间
-        const duration = Math.max(300, 600 - currentSpeed * 200); // 缩短持续时间
-        setTimeout(() => {
-          setInkDrops((prev) => prev.filter((drop) => drop.id !== newDrop.id));
-        }, duration);
+        setLastPosition({ x: e.clientX, y: e.clientY, time: currentTime });
+        lastDropTime = currentTime;
       }
     };
 
+    const handleMouseDown = () => setIsDrawing(true);
+    const handleMouseUp = () => setIsDrawing(false);
+
+    const animate = () => {
+      setInkDrops((prev) =>
+        prev
+          .filter((drop) => {
+            const age = Date.now() - drop.timestamp;
+            const maxAge = 800;
+            return age < maxAge;
+          })
+          .map((drop) => {
+            const age = Date.now() - drop.timestamp;
+            const maxAge = 800;
+            const fadeOutStart = maxAge * 0.6;
+
+            if (age > fadeOutStart) {
+              const fadeProgress =
+                (age - fadeOutStart) / (maxAge - fadeOutStart);
+              return {
+                ...drop,
+                opacity: drop.initialOpacity * (1 - fadeProgress),
+              };
+            }
+            return drop;
+          })
+      );
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animate();
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [lastPosition, speed]);
+    window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [lastPosition, isDrawing, calculateSpeed, createInkDrop]);
 
   return (
     <>
@@ -71,18 +125,22 @@ export default function InkTrail() {
           key={drop.id}
           className="ink-trail"
           style={{
-            left: drop.x - 12, // 减小偏移量
-            top: drop.y - 12, // 减小偏移量
+            position: "fixed",
+            left: drop.x - 12,
+            top: drop.y - 12,
             transform: `rotate(${drop.rotation}deg) scale(${drop.scale})`,
             opacity: drop.opacity,
+            transition: "opacity 0.1s ease-out",
+            pointerEvents: "none",
           }}
         >
           <Image
             src="/ink-drop.svg"
             alt=""
-            width={24} // 减小图片大小
-            height={24} // 减小图片大小
+            width={24}
+            height={24}
             priority
+            style={{ filter: "blur(0.5px)" }}
           />
         </div>
       ))}

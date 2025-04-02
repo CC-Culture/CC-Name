@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import InkTrail from "@/components/InkTrail";
+import SessionProvider from "@/components/providers/SessionProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,11 +33,13 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col relative`}
       >
-        <InkTrail />
-        <Header />
-        <main className="flex-grow pt-20">{children}</main>
-        <Footer />
-        <div id="date-picker-portal" className="relative z-50" />
+        <SessionProvider>
+          <InkTrail />
+          <Header />
+          <main className="flex-grow pt-20">{children}</main>
+          <Footer />
+          <div id="date-picker-portal" className="relative z-50" />
+        </SessionProvider>
       </body>
     </html>
   );

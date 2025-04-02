@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { generateName } from "@/services/api";
 
 export default function BirthdateForm() {
-  const [birthdate, setBirthdate] = useState<Date | null>(null);
+  const [birthdate, setBirthdate] = useState<Date | null>(new Date(2000, 0, 1));
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
@@ -76,6 +76,7 @@ export default function BirthdateForm() {
               maxDate={new Date()}
               minDate={new Date(1900, 0, 1)}
               portalId="date-picker-portal"
+              allowKeyboardControl={true}
             />
             <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
               <svg
@@ -107,10 +108,13 @@ export default function BirthdateForm() {
         </motion.div>
       )}
 
-      <div className="flex justify-center">
+      <div
+        className="flex flex-col items-center space-y-6"
+        style={{ width: "300px", margin: "0 auto" }}
+      >
         <motion.button
           type="submit"
-          className="px-12 py-4 bg-gradient-to-r from-[#8B4513] to-[#A0522D] text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed chinese-font text-lg relative overflow-hidden group"
+          className="w-full px-12 py-4 bg-gradient-to-r from-[#8B4513] to-[#A0522D] text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed chinese-font text-lg relative overflow-hidden group"
           disabled={isLoading}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}

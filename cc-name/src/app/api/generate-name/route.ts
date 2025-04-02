@@ -24,17 +24,27 @@ export async function POST(request: Request) {
     "firstName": "名",
     "lastName": "姓",
     "meaning": "名字含义",
-    "elements": ["五行属性"],
+    "reasoning": "取名理由和五行分析",
+    "poetryReference": "诗经或古籍中的相关引用",
     "numerology": {
       "number": 数字,
       "meaning": "数字含义"
     }
   },
+  "elements": {
+    "金": 五行金的百分比,
+    "木": 五行木的百分比,
+    "水": 五行水的百分比,
+    "火": 五行火的百分比,
+    "土": 五行土的百分比
+  },
   "analysis": {
     "personality": ["性格特点"],
     "destiny": "命运分析",
     "career": ["适合职业"],
-    "relationships": ["人际关系建议"]
+    "relationships": ["人际关系建议"],
+    "iChing": "易经解读",
+    "numerologyAnalysis": "梅花易数分析"
   },
   "poetry": {
     "title": "相关诗句标题",

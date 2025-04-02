@@ -335,6 +335,10 @@ body {
   color: var(--ink-gray);
 }
 
+.font-xingshu {
+  font-family: "STXingkai", "XingKai", "行楷", "DFXingKai", "华文行楷", cursive;
+}
+
 .element-value {
   font-family: "SimSun", "STSong", serif;
 }

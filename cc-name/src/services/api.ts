@@ -9,12 +9,23 @@ export interface NameGenerationResponse {
       number: number;
       meaning: string;
     };
+    reasoning: string;
+    poetryReference: string;
   };
   analysis: {
     personality: string[];
     destiny: string;
     career: string[];
     relationships: string[];
+    iChing: string;
+    numerologyAnalysis: string;
+  };
+  elements: {
+    金: number;
+    木: number;
+    水: number;
+    火: number;
+    土: number;
   };
   poetry: {
     title: string;

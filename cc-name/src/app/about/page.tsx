@@ -63,7 +63,7 @@ export default function About() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div className="p-6 rounded-lg bg-white/30 backdrop-blur-sm">
                   <h3 className="text-xl font-semibold mb-3">电子邮件</h3>
-                  <p>contact@ccname.com</p>
+                  <p>comochris_2020@163.com</p>
                 </div>
 
                 <div className="p-6 rounded-lg bg-white/30 backdrop-blur-sm">
@@ -71,7 +71,7 @@ export default function About() {
                   <p>CCName命名</p>
                 </div>
               </div>
-
+              {/* 
               <form className="space-y-6">
                 <div>
                   <label
@@ -126,7 +126,7 @@ export default function About() {
                     发送留言
                   </button>
                 </div>
-              </form>
+              </form> */}
             </div>
           </div>
         </motion.div>

@@ -2,7 +2,6 @@
 
 import type { NameGenerationResponse } from "@/services/api";
 import ElementSection from "./ElementSection";
-import AnalysisSection from "./AnalysisSection";
 import NameSection from "./NameSection";
 
 interface ResultContentProps {
@@ -11,14 +10,15 @@ interface ResultContentProps {
 
 export default function ResultContent({ result }: ResultContentProps) {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 space-y-12">
-      <ElementSection
-        elements={result.elements}
-        reasoning={result.name.reasoning}
-        reasoningElements={result.name.elements}
-      />
-      <AnalysisSection analysis={result.analysis} />
-      <NameSection name={result.name} poetry={result.poetry} />
+    <div className="max-w-4xl mx-auto bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-6 md:p-8">
+      <div className="grid gap-6 md:gap-10">
+        <ElementSection
+          elements={result.elements}
+          reasoning={result.name.reasoning}
+          reasoningElements={result.name.elements}
+        />
+        <NameSection name={result.name} poetry={result.poetry} />
+      </div>
     </div>
   );
 }

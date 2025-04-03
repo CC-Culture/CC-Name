@@ -54,8 +54,7 @@ export default function ResultPage() {
             reasoning={data.name.reasoning}
             reasoningElements={data.name.elements}
           />
-          <NameSection name={data.name} />
-          <AnalysisSection analysis={data.analysis} />
+          <NameSection name={data.name} poetry={data.poetry} />
         </motion.div>
       </div>
     </div>

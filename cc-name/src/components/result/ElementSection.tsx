@@ -2,30 +2,38 @@
 
 interface ElementSectionProps {
   elements: {
-    金: number;
-    木: number;
-    水: number;
-    火: number;
-    土: number;
+    metal: number;
+    wood: number;
+    water: number;
+    fire: number;
+    earth: number;
   };
   reasoning?: string;
   reasoningElements?: string[];
 }
 
+const elementChar = {
+  metal: "金",
+  wood: "木",
+  water: "水",
+  fire: "火",
+  earth: "土",
+};
+
 const elementDescriptions = {
-  金: "Metal",
-  木: "Wood",
-  水: "Water",
-  火: "Fire",
-  土: "Earth",
+  metal: "Metal",
+  wood: "Wood",
+  water: "Water",
+  fire: "Fire",
+  earth: "Earth",
 };
 
 const elementColors = {
-  金: "stroke-amber-500",
-  木: "stroke-green-500",
-  水: "stroke-blue-500",
-  火: "stroke-red-500",
-  土: "stroke-yellow-700",
+  metal: "stroke-amber-500",
+  wood: "stroke-green-500",
+  water: "stroke-blue-500",
+  fire: "stroke-red-500",
+  earth: "stroke-yellow-700",
 };
 
 const ElementCircle = ({
@@ -37,7 +45,7 @@ const ElementCircle = ({
 }) => {
   const radius = 40;
   const circumference = 2 * Math.PI * radius;
-  const progress = (value / 100) * circumference;
+  const progress = (1.0 - value / 100) * circumference;
   const dashOffset = circumference - progress;
 
   return (
@@ -58,14 +66,14 @@ const ElementCircle = ({
             className={`fill-none ${
               elementColors[element as keyof typeof elementColors]
             } transition-all duration-1000 ease-in-out`}
-            strokeWidth="4"
+            strokeWidth="8"
             strokeDasharray={circumference}
             strokeDashoffset={dashOffset}
             strokeLinecap="round"
           />
         </svg>
         <span className="absolute text-3xl font-bold font-xingshu">
-          {element}
+          {elementChar[element as keyof typeof elementChar]}
         </span>
       </div>
       <span className="text-gray-600">
@@ -81,7 +89,7 @@ export default function ElementSection({
   reasoningElements,
 }: ElementSectionProps) {
   return (
-    <section className="mb-12 bg-white/80 backdrop-blur-sm rounded-lg p-8 shadow-lg">
+    <section>
       <h2 className="text-2xl font-bold mb-8 text-center">五行分析</h2>
       <div className="flex justify-center items-center flex-wrap gap-8 mb-8">
         {Object.entries(elements).map(([element, value]) => (

@@ -1,31 +1,18 @@
 export interface NameGenerationResponse {
   name: {
-    fullName: string;
     firstName: string;
     lastName: string;
     meaning: string;
     elements: string[];
-    numerology: {
-      number: number;
-      meaning: string;
-    };
     reasoning: string;
     poetryReference: string;
   };
-  analysis: {
-    personality: string[];
-    destiny: string;
-    career: string[];
-    relationships: string[];
-    iChing: string;
-    numerologyAnalysis: string;
-  };
   elements: {
-    金: number;
-    木: number;
-    水: number;
-    火: number;
-    土: number;
+    metal: number;
+    wood: number;
+    water: number;
+    fire: number;
+    earth: number;
   };
   poetry: {
     title: string;
@@ -34,8 +21,12 @@ export interface NameGenerationResponse {
   };
 }
 
+export type Gender = "male" | "female" | "neutral";
+
 export async function generateName(
-  birthdate: string
+  birthdate: string,
+  gender: Gender,
+  surname?: string
 ): Promise<NameGenerationResponse> {
   try {
     const response = await fetch("/api/generate-name", {
@@ -43,7 +34,7 @@ export async function generateName(
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ birthdate }),
+      body: JSON.stringify({ birthdate, surname, gender }),
     });
 
     const data = await response.text();
@@ -53,6 +44,11 @@ export async function generateName(
 
       if (!response.ok) {
         throw new Error(jsonData.error || "生成名字时发生错误，请稍后重试");
+      }
+
+      // 如果传入了surname，替换返回数据中的lastName
+      if (surname) {
+        jsonData.name.lastName = surname;
       }
 
       return jsonData;

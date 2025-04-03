@@ -8,71 +8,63 @@ const openai = new OpenAI({
 
 export async function POST(request: Request) {
   try {
-    const { birthdate } = await request.json();
+    const { birthdate, gender, surnamae } = await request.json();
 
     if (!birthdate) {
       return NextResponse.json({ error: "请提供生日" }, { status: 400 });
     }
 
-    const prompt = `请根据以下生日生成一个中文名字及其详细分析：
-生日：${birthdate}
-
-请按照以下JSON格式返回：
-{
-  "name": {
-    "fullName": "完整姓名",
-    "firstName": "名",
-    "lastName": "姓",
-    "meaning": "名字含义",
-    "reasoning": "取名理由和五行分析",
-    "poetryReference": "诗经或古籍中的相关引用",
-    "numerology": {
-      "number": 数字,
-      "meaning": "数字含义"
+    if (!gender) {
+      return NextResponse.json({ error: "请提供性别" }, { status: 400 });
     }
-  },
-  "elements": {
-    "金": 五行金的百分比,
-    "木": 五行木的百分比,
-    "水": 五行水的百分比,
-    "火": 五行火的百分比,
-    "土": 五行土的百分比
-  },
-  "analysis": {
-    "personality": ["性格特点"],
-    "destiny": "命运分析",
-    "career": ["适合职业"],
-    "relationships": ["人际关系建议"],
-    "iChing": "易经解读",
-    "numerologyAnalysis": "梅花易数分析"
-  },
-  "poetry": {
-    "title": "相关诗句标题",
-    "content": "诗句内容",
-    "meaning": "诗句含义"
-  }
-}`;
 
     const completion = await openai.chat.completions.create({
       model: "qwen-plus",
       messages: [
         {
           role: "system",
-          content:
-            "你是一个专业的中国传统文化专家，精通姓名学、五行、诗词等领域。",
+          content: `You are a Chinese name generator that combines traditional Chinese culture with modern technology.
+      Based on the birthday and gender provided from poetry, generate:
+      
+      Format the response as a JSON object with the following structure:
+      {
+      "name": {
+        "firstName": "名",
+        "lastName": "姓",
+        "meaning": "名字含义",
+        "reasoning": "详细取名理由和五行和命理分析"
+      },
+      "elements": {
+          "metal": number (0-100),
+          "wood": number (0-100),
+          "water": number (0-100),
+          "fire": number (0-100),
+          "earth": number (0-100)
+      },
+     "poetry": {
+        "title": "生成名字引用的诗句标题",
+        "content": "诗句内容",
+        "meaning": "诗句含义"
+        }
+      }`,
         },
         {
           role: "user",
-          content: prompt,
+          content: `birthdate:${birthdate}
+                    gender:${gender}
+                    surnamae:${surnamae ? surnamae : ""}`,
         },
       ],
+      response_format: {
+        type: "json_object",
+      },
     });
 
     const response = completion.choices[0].message.content;
     if (!response) {
       throw new Error("No response from API");
     }
-
+    console.log("aaa" + response);
     return NextResponse.json(JSON.parse(response));
   } catch (error) {
     console.error("Error generating name:", error);

@@ -53,7 +53,7 @@ const Header = () => {
             href="/surname-culture"
             className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
           >
-            百家姓文化
+            姓氏文化
           </Link>
           <Link
             href="/about"
@@ -61,12 +61,12 @@ const Header = () => {
           >
             关于我们
           </Link>
-          <Link
+          {/* <Link
             href="/login"
             className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
           >
             登录
-          </Link>
+          </Link> */}
         </nav>
 
         <div className="md:hidden">

@@ -13,7 +13,7 @@ export const ELEMENT_NAMES: Record<ElementType, string> = {
 };
 
 export const ELEMENT_COLORS: Record<ElementType, string> = {
-  金: "#FFD700",
+  金: "#FFDF00",
   木: "#228B22",
   水: "#1E90FF",
   火: "#FF4500",

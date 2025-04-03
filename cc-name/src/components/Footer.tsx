@@ -39,7 +39,9 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col space-y-4">
-            <p className="text-sm text-gray-600">邮箱: contact@ccname.com</p>
+            <p className="text-sm text-gray-600">
+              邮箱: comochris_2020@163.com
+            </p>
           </div>
         </div>
 

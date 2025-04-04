@@ -94,8 +94,8 @@ export default function BirthdateForm() {
               minDate={new Date(1900, 0, 1)}
               portalId="date-picker-portal"
               strictParsing
-              onChangeRaw={(e: React.ChangeEvent<HTMLInputElement>) => {
-                const value = e.target.value;
+              onChangeRaw={(e: React.ChangeEvent<HTMLInputElement> | any) => {
+                const value = (e as React.ChangeEvent<HTMLInputElement>).target.value;
                 if (value && !/^\d{4}年\d{2}月\d{2}日$/.test(value)) {
                   setError("请使用正确的日期格式：yyyy年MM月dd日");
                 } else {

@@ -7,7 +7,6 @@ import type { NameGenerationResponse } from "@/services/api";
 import LoadingState from "@/components/result/LoadingState";
 import ErrorState from "@/components/result/ErrorState";
 import NameSection from "@/components/result/NameSection";
-import AnalysisSection from "@/components/result/AnalysisSection";
 import ElementSection from "@/components/result/ElementSection";
 
 export default function ResultPage() {

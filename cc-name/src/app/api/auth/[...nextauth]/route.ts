@@ -17,10 +17,10 @@ const handler = NextAuth({
     signIn: "/login",
   },
   callbacks: {
-    async session({ session }) { // eslint-disable-line @typescript-eslint/no-unused-vars
+    async session({ session }) {
       return session;
     },
-    async jwt({ token }) { // eslint-disable-line @typescript-eslint/no-unused-vars
+    async jwt({ token }) {
       return token;
     },
   },

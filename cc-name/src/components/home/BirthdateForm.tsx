@@ -94,12 +94,18 @@ export default function BirthdateForm() {
               minDate={new Date(1900, 0, 1)}
               portalId="date-picker-portal"
               strictParsing
-              onChangeRaw={(e: React.ChangeEvent<HTMLInputElement> | any) => {
-                const value = (e as React.ChangeEvent<HTMLInputElement>).target.value;
-                if (value && !/^\d{4}年\d{2}月\d{2}日$/.test(value)) {
-                  setError("请使用正确的日期格式：yyyy年MM月dd日");
-                } else {
-                  setError("");
+              onChangeRaw={(e: React.MouseEvent<HTMLElement, MouseEvent> | React.KeyboardEvent<HTMLElement> | undefined) => {
+              // 在TypeScript中，不能使用 `instanceof` 来检查泛型类型的实例。
+              // 可以直接检查 `e` 是否有 `target` 属性来确保它是一个有效的事件对象。
+              if (e && 'target' in e) {
+                  // 为了修复类型错误，需要将 e.target 断言为 HTMLInputElement 类型，因为只有 HTMLInputElement 才有 value 属性
+                  const inputElement = e.target as HTMLInputElement;
+                  const value = inputElement.value;
+                  if (value && !/^\d{4}年\d{2}月\d{2}日$/.test(value)) {
+                    setError("请使用正确的日期格式：yyyy年MM月dd日");
+                  } else {
+                    setError("");
+                  }
                 }
               }}
             />

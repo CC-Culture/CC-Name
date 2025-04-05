@@ -9,8 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/react-datepicker": "^6.2.0",
+    "framer-motion": "^12.6.2",
     "next": "15.2.4",
+    "next-auth": "^4.24.11",
+    "openai": "^4.91.0",
     "react": "^19.0.0",
+    "react-datepicker": "^8.2.1",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {

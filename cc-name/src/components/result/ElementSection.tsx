@@ -45,7 +45,7 @@ const ElementCircle = ({
 }) => {
   const radius = 40;
   const circumference = 2 * Math.PI * radius;
-  const progress = (1.0 - value / 100) * circumference;
+  const progress = value * circumference;
   const dashOffset = circumference - progress;
 
   return (
@@ -86,7 +86,6 @@ const ElementCircle = ({
 export default function ElementSection({
   elements,
   reasoning,
-  reasoningElements,
 }: ElementSectionProps) {
   return (
     <section>
@@ -101,18 +100,6 @@ export default function ElementSection({
           <h4 className="text-xl font-semibold mb-2">五行推理</h4>
           <div className="space-y-2">
             <p className="text-gray-700">{reasoning}</p>
-            {reasoningElements && reasoningElements.length > 0 && (
-              <div className="flex flex-wrap gap-2 mt-2">
-                {reasoningElements.map((element, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 bg-black/5 rounded-full text-sm"
-                  >
-                    {element}
-                  </span>
-                ))}
-              </div>
-            )}
           </div>
         </div>
       )}

@@ -1,12 +1,11 @@
 export interface NameGenerationResponse {
-  name: {
+  names: Array<{
     firstName: string;
     lastName: string;
     meaning: string;
-    elements: string[];
     reasoning: string;
-    poetryReference: string;
-  };
+    style: string;
+  }>;
   elements: {
     metal: number;
     wood: number;
@@ -14,10 +13,16 @@ export interface NameGenerationResponse {
     fire: number;
     earth: number;
   };
-  poetry: {
+  literary_references: Array<{
+    type: string;
     title: string;
     content: string;
-    meaning: string;
+    analysis: string;
+  }>;
+  cultural_elements: {
+    five_elements_analysis: string;
+    naming_principles: string;
+    modern_relevance: string;
   };
 }
 
@@ -26,7 +31,8 @@ export type Gender = "male" | "female" | "neutral";
 export async function generateName(
   birthdate: string,
   gender: Gender,
-  surname?: string
+  surname?: string,
+  timeRange?: string
 ): Promise<NameGenerationResponse> {
   try {
     const response = await fetch("/api/generate-name", {
@@ -34,7 +40,7 @@ export async function generateName(
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ birthdate, surname, gender }),
+      body: JSON.stringify({ birthdate, surname, gender, timeRange }),
     });
 
     const data = await response.text();

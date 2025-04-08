@@ -7,7 +7,6 @@ import type { NameGenerationResponse } from "@/services/api";
 import LoadingState from "@/components/result/LoadingState";
 import ErrorState from "@/components/result/ErrorState";
 import NameSection from "@/components/result/NameSection";
-import AnalysisSection from "@/components/result/AnalysisSection";
 import ElementSection from "@/components/result/ElementSection";
 
 export default function ResultPage() {
@@ -18,14 +17,28 @@ export default function ResultPage() {
   useEffect(() => {
     try {
       const encodedData = searchParams.get("data");
-      if (encodedData) {
-        const decodedData = JSON.parse(decodeURIComponent(encodedData));
-        setData(decodedData);
-      } else {
-        setError("未找到数据");
+      if (!encodedData) {
+        setError("未找到数据参数");
+        return;
       }
-    } catch {
-      setError("数据解析错误");
+
+      let decodedString;
+      try {
+        decodedString = decodeURIComponent(encodedData);
+      } catch {
+        setError("URL解码失败：数据格式不正确");
+        return;
+      }
+
+      try {
+        const decodedData = JSON.parse(decodedString);
+        setData(decodedData);
+      } catch (e) {
+        setError("JSON解析失败：数据格式不正确");
+      }
+    } catch (e) {
+      setError("数据处理过程中发生错误");
+      console.error("数据处理错误:", e);
     }
   }, [searchParams]);
 
@@ -52,7 +65,6 @@ export default function ResultPage() {
           <ElementSection
             elements={data.elements}
             reasoning={data.name.reasoning}
-            reasoningElements={data.name.elements}
           />
           <NameSection name={data.name} poetry={data.poetry} />
         </motion.div>

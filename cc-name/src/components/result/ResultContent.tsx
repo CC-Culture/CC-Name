@@ -15,7 +15,6 @@ export default function ResultContent({ result }: ResultContentProps) {
         <ElementSection
           elements={result.elements}
           reasoning={result.name.reasoning}
-          reasoningElements={result.name.elements}
         />
         <NameSection name={result.name} poetry={result.poetry} />
       </div>

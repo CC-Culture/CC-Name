@@ -1,11 +1,11 @@
 export interface NameGenerationResponse {
-  names: Array<{
+  name: {
     firstName: string;
     lastName: string;
     meaning: string;
     reasoning: string;
     style: string;
-  }>;
+  };
   elements: {
     metal: number;
     wood: number;
@@ -13,16 +13,11 @@ export interface NameGenerationResponse {
     fire: number;
     earth: number;
   };
-  literary_references: Array<{
+  poetry: {
     type: string;
     title: string;
     content: string;
-    analysis: string;
-  }>;
-  cultural_elements: {
-    five_elements_analysis: string;
-    naming_principles: string;
-    modern_relevance: string;
+    meaning: string;
   };
 }
 

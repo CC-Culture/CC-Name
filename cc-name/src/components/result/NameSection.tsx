@@ -39,7 +39,6 @@ export default function NameSection({ name, poetry }: NameSectionProps) {
           <div className="border-l-4 border-black pl-4">
             <h4 className="text-lg font-semibold mb-2">关联诗词</h4>
             <div className="bg-black/5 p-2 rounded-lg">
-              <h5 className="text-lg font-medium mb-2">《{poetry.title}》</h5>
               <p className="text-gray-700 whitespace-pre-line mb-4">
                 {poetry.content}
               </p>

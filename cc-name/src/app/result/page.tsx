@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import type { NameGenerationResponse } from "@/services/api";
@@ -9,7 +9,7 @@ import ErrorState from "@/components/result/ErrorState";
 import NameSection from "@/components/result/NameSection";
 import ElementSection from "@/components/result/ElementSection";
 
-export default function ResultPage() {
+function ResultContent() {
   const searchParams = useSearchParams();
   const [data, setData] = useState<NameGenerationResponse | null>(null);
   const [error, setError] = useState("");
@@ -70,5 +70,13 @@ export default function ResultPage() {
         </motion.div>
       </div>
     </div>
+  );
+}
+
+export default function ResultPage() {
+  return (
+    <Suspense fallback={<LoadingState />}>
+      <ResultContent />
+    </Suspense>
   );
 }

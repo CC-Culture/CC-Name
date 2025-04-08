@@ -51,7 +51,6 @@ export default function ResultContent() {
           <ElementSection
             elements={data.elements}
             reasoning={data.name.reasoning}
-            reasoningElements={data.name.elements}
           />
           <NameSection name={data.name} poetry={data.poetry} />
         </motion.div>

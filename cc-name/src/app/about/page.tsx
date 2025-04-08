@@ -24,7 +24,7 @@ export default function About() {
 
           <div className="space-y-6 text-[#8B4513] chinese-font">
             <p className="text-lg leading-relaxed">
-              我们是一个致力于传承中国传统文化的团队，专注于为新生儿提供富有文化底蕴的姓名推荐服务。
+              我们是一个致力于传承中国传统文化的团队，专注于提供富有文化底蕴的姓名推荐服务。
             </p>
 
             <p className="text-lg leading-relaxed">

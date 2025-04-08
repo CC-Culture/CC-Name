@@ -1,8 +1,8 @@
 export type ElementType = "金" | "木" | "水" | "火" | "土";
 
-export interface ElementAnalysis {
+export type ElementAnalysis = {
   [key in ElementType]: number;
-}
+};
 
 export const ELEMENT_NAMES: Record<ElementType, string> = {
   金: "Metal",

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import FeedbackForm from "@/components/feedback/FeedbackForm";
 
 export default function About() {
   return (
@@ -60,73 +61,13 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="mb-8">
                 <div className="p-6 rounded-lg bg-white/30 backdrop-blur-sm">
                   <h3 className="text-xl font-semibold mb-3">电子邮件</h3>
                   <p>comochris_2020@163.com</p>
                 </div>
-
-                <div className="p-6 rounded-lg bg-white/30 backdrop-blur-sm">
-                  <h3 className="text-xl font-semibold mb-3">微信公众号</h3>
-                  <p>CCName命名</p>
-                </div>
               </div>
-              {/* 
-              <form className="space-y-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-lg font-medium mb-2"
-                  >
-                    您的姓名
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="w-full p-3 rounded-lg bg-white/50 backdrop-blur-sm border border-[#8B4513]/20 focus:outline-none focus:border-[#8B4513]"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-lg font-medium mb-2"
-                  >
-                    电子邮件
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full p-3 rounded-lg bg-white/50 backdrop-blur-sm border border-[#8B4513]/20 focus:outline-none focus:border-[#8B4513]"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-lg font-medium mb-2"
-                  >
-                    留言内容
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    className="w-full p-3 rounded-lg bg-white/50 backdrop-blur-sm border border-[#8B4513]/20 focus:outline-none focus:border-[#8B4513]"
-                  />
-                </div>
-
-                <div className="text-center">
-                  <button
-                    type="submit"
-                    className="px-8 py-3 bg-gradient-to-r from-[var(--dunhuang-primary)] to-[var(--dunhuang-secondary)] text-white rounded-lg hover:opacity-90 transition-opacity"
-                  >
-                    发送留言
-                  </button>
-                </div>
-              </form> */}
+              <FeedbackForm />
             </div>
           </div>
         </motion.div>

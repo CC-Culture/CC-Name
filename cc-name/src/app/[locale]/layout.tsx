@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Image from "next/image";
 import "../globals.css";
+import "../backgrounds.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SessionProvider from "@/components/providers/SessionProvider";
@@ -22,10 +23,13 @@ const geistMono = Geist_Mono({
 
 // Next.js 15中动态路由参数可能是Promise
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: { locale: string | Promise<string> };
 }): Promise<Metadata> {
+  // 等待并解析locale
+  const locale = await Promise.resolve(params.locale);
+
   // 验证语言
   if (!locales.includes(locale as Locale)) {
     notFound();
@@ -42,11 +46,14 @@ export async function generateMetadata({
 // Next.js 15中动态路由参数可能是Promise
 export default async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: { locale: string | Promise<string> };
 }) {
+  // 等待并解析locale
+  const locale = await Promise.resolve(params.locale);
+
   // 验证语言
   if (!locales.includes(locale as Locale)) {
     notFound();
@@ -70,19 +77,10 @@ export default async function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col relative`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col relative kraft-background`}
       >
         <SessionProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <div className="absolute inset-0 z-0 overflow-hidden">
-              <Image
-                src="/scholar.png"
-                alt="Ancient Chinese Scholar"
-                fill
-                className="object-cover opacity-10"
-                priority
-              />
-            </div>
             <Header />
             <main className="flex-grow pt-20 z-10 relative">{children}</main>
             <Footer />

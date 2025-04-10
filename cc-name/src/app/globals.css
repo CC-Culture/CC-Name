@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f4f1cc;
+  --background: #f7f4f133;
   --foreground: #2c1810;
   --ink-black: #2c1810;
   --ink-gray: #594a42;
@@ -9,7 +9,6 @@
   --red-cinnabar: #e34234;
   --blue-porcelain: #1a5599;
   --gold-accent: #d4af37;
-  --silver-gray: #c0c0c0;
   --paper-texture: #f7f4f1;
   --xuan-paper: #f4f1ee;
 
@@ -269,11 +268,23 @@ body::after {
   pointer-events: none;
 }
 
+/* 光斑效果 */
+.light-spot {
+  background: linear-gradient(
+    45deg,
+    transparent 10%,
+    rgba(255, 255, 255, 0.2) 30%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 70%,
+    transparent 90%
+  );
+}
+
 /* 多宝阁展示效果 */
 .cabinet-display {
   perspective: 1000px;
   transform-style: preserve-3d;
-  animation: cabinetRotate 1s ease-out for wards;
+  animation: cabinetRotate 1s ease-out forwards;
 }
 
 /* 墨水按钮效果 */

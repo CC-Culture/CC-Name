@@ -1,0 +1,73 @@
+{
+  "common": {
+    "language": "Português",
+    "title": "CC Name - Sistema de Recomendação de Nomes Baseado na Cultura Chinesa",
+    "description": "Um sistema de recomendação de nomes baseado na poesia chinesa antiga, clássicos e nos princípios de Wu Xing e Yi Jing"
+  },
+  "header": {
+    "home": "Início",
+    "surnameculture": "Cultura de Sobrenomes",
+    "about": "Sobre Nós",
+    "login": "Entrar"
+  },
+  "home": {
+    "slogan": "Sabedoria Tradicional · Nomes Modernos",
+    "description": "Combinando a essência da cultura tradicional do 'Shijing' e dos 'Quatro Livros e Cinco Clássicos' com a profunda sabedoria do Wu Xing e Yi Jing para criar um cartão de identidade pessoal único para você.",
+    "wuxing": "Cinco Elementos",
+    "wuxing_desc": "Com base na sua data e hora de nascimento, combinando precisamente os atributos dos Cinco Elementos para garantir que seu nome harmonize com seu destino",
+    "shijing": "Referências Poéticas",
+    "shijing_desc": "Inspirando-se no Livro das Canções, incorporando a cultura clássica para infundir seu nome com profundo significado cultural",
+    "wuxing_tooltip": "Os Cinco Elementos (Metal, Madeira, Água, Fogo, Terra) são uma teoria importante na filosofia chinesa antiga que explica a composição do mundo natural e suas leis de movimento e mudança. Esta teoria sustenta que tudo no mundo é composto pelos Cinco Elementos, que se promovem e restringem mutuamente: a Madeira promove o Fogo, o Fogo promove a Terra, a Terra promove o Metal, o Metal promove a Água, e a Água promove a Madeira. Na nomeação, o princípio de promoção e restrição mútua dos Cinco Elementos pode ajudar a equilibrar o destino de alguém e trazer boa sorte, evitando o infortúnio.",
+    "shijing_tooltip": "O 'Shijing' (Livro das Canções) é a coleção mais antiga de poesia na China, contendo 311 poemas do início da Dinastia Zhou Ocidental até o meio do Período de Primavera e Outono (séculos 11 a 6 a.C.). Contém ricas conotações culturais, belas imagens e profundo espírito humano. Ao nomear, inspirar-se nas alusões e imagens do 'Shijing' não só confere aos nomes uma ampla base cultural, mas também transmite a essência da cultura chinesa."
+  },
+  "form": {
+    "title": "Encontre Seu Nome Destinado",
+    "birthdate": "Data de Nascimento",
+    "birthtime": "Hora de Nascimento",
+    "gender": "Gênero",
+    "male": "Masculino",
+    "female": "Feminino",
+    "neutral": "Neutro",
+    "surname": "Sobrenome",
+    "surname_placeholder": "Digite seu sobrenome (opcional)",
+    "surname_error": "Por favor, insira 1-2 caracteres chineses",
+    "date_error": "Por favor, use o formato de data correto: aaaa/MM/dd",
+    "submit": "Gerar Recomendações de Nome",
+    "loading": "Gerando...",
+    "timezones": {
+      "zi": "Hora Zi (0:00-2:00)",
+      "chou": "Hora Chou (2:00-4:00)",
+      "yin": "Hora Yin (4:00-6:00)",
+      "mao": "Hora Mao (6:00-8:00)",
+      "chen": "Hora Chen (8:00-10:00)",
+      "si": "Hora Si (10:00-12:00)",
+      "wu": "Hora Wu (12:00-14:00)",
+      "wei": "Hora Wei (14:00-16:00)",
+      "shen": "Hora Shen (16:00-18:00)",
+      "you": "Hora You (18:00-20:00)",
+      "xu": "Hora Xu (20:00-22:00)",
+      "hai": "Hora Hai (22:00-24:00)"
+    }
+  },
+  "result": {
+    "title": "Análise do Seu Nome",
+    "introduction": "Com base nas informações do seu nascimento, geramos as seguintes recomendações de nome para você:",
+    "name_recommendation": "Nomes Recomendados",
+    "five_elements": "Análise dos Cinco Elementos",
+    "poetic_reference": "Referência Poética",
+    "name_meaning": "Significado do Nome",
+    "name_score": "Pontuação do Nome",
+    "compatibility": "Compatibilidade com o Mapa de Nascimento",
+    "cultural_depth": "Profundidade Cultural",
+    "uniqueness": "Singularidade",
+    "pronunciation": "Estética Fonética",
+    "try_again": "Gerar Novamente",
+    "back_to_home": "Voltar para o Início"
+  },
+  "footer": {
+    "copyright": "© 2025 CC Name. Todos os direitos reservados.",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Uso",
+    "contact": "Contate-nos"
+  }
+}

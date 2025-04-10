@@ -8,29 +8,24 @@ import { motion } from "framer-motion";
 import { generateName, Gender } from "@/services/api";
 import { useTranslations, useLocale } from "next-intl";
 import { format, isValid, parse } from "date-fns";
-import { enUS, fr, es, ja, ar, zhCN } from "date-fns/locale";
-import Image from "next/image";
-
-// 日期格式映射
-const dateFormatMap: Record<string, string> = {
-  zh: "yyyy/MM/dd",
-  en: "MM/dd/yyyy",
-  fr: "dd/MM/yyyy",
-  es: "dd/MM/yyyy",
-  ja: "yyyy/MM/dd",
-  ar: "yyyy/MM/dd",
-};
+import { enUS, fr, es, ja, zhCN, ar } from "date-fns/locale";
 
 // 日期库映射
 import type { Locale as DateFnsLocale } from "date-fns";
 
+// For the languages where we don't have locale support in date-fns,
+// fall back to English or another close language
 const localeMap: Record<string, DateFnsLocale> = {
   zh: zhCN,
   en: enUS,
   fr: fr,
   es: es,
   ja: ja,
-  ar: ar,
+  ar: ar, // Use Arabic locale
+  ur: ar, // Use Arabic locale for Urdu
+  ru: enUS, // Fallback to English for Russian
+  pt: es, // Portuguese is similar to Spanish for date format
+  bn: enUS, // Fallback to English for Bengali
 };
 
 // Get date format based on locale
@@ -40,12 +35,17 @@ const getDateFormat = (currentLocale: string) => {
       return "MM/dd/yyyy";
     case "fr":
     case "es":
+    case "pt":
+    case "bn":
       return "dd/MM/yyyy";
     case "ja":
     case "zh":
       return "yyyy/MM/dd";
     case "ar":
+    case "ur":
       return "dd/MM/yyyy";
+    case "ru":
+      return "dd.MM.yyyy";
     default:
       return "MM/dd/yyyy";
   }
@@ -56,12 +56,19 @@ export default function BirthdateForm() {
   const t = useTranslations("form");
   const router = useRouter();
 
-  const [birthdate, setBirthdate] = useState<Date | null>(null);
-  const [dateString, setDateString] = useState("");
+  // Add RTL detection
+  const isRtl = locale === "ar" || locale === "ur";
+
+  // Initialize birthdate to January 1, 2000
+  const defaultDate = new Date(2000, 0, 1);
+  const [birthdate, setBirthdate] = useState<Date | null>(defaultDate);
+  const [dateString, setDateString] = useState(
+    format(defaultDate, getDateFormat(locale))
+  );
   const [birthdateError, setBirthdateError] = useState("");
   const [surname, setSurname] = useState<string>("");
   const [gender, setGender] = useState<Gender>("male");
-  const [timeRange, setTimeRange] = useState<string>("morning");
+  const [timeRange, setTimeRange] = useState<string>("zi"); // Default to 子时 (Zi hour)
   const [error, setError] = useState("");
   const [surnameError, setSurnameError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -69,13 +76,79 @@ export default function BirthdateForm() {
   // Use the date format from the helper function
   const dateFormat = getDateFormat(locale);
 
-  // Set time range options
-  const timeRangeOptions = [
-    { value: "morning", label: t("time_range_morning") },
-    { value: "afternoon", label: t("time_range_afternoon") },
-    { value: "evening", label: t("time_range_evening") },
-    { value: "night", label: t("time_range_night") },
+  // Traditional Chinese time periods (12 divisions of a day)
+  const chineseTimeRanges = [
+    { value: "zi", key: "timezones.zi" }, // 子时 (23:00-1:00)
+    { value: "chou", key: "timezones.chou" }, // 丑时 (1:00-3:00)
+    { value: "yin", key: "timezones.yin" }, // 寅时 (3:00-5:00)
+    { value: "mao", key: "timezones.mao" }, // 卯时 (5:00-7:00)
+    { value: "chen", key: "timezones.chen" }, // 辰时 (7:00-9:00)
+    { value: "si", key: "timezones.si" }, // 巳时 (9:00-11:00)
+    { value: "wu", key: "timezones.wu" }, // 午时 (11:00-13:00)
+    { value: "wei", key: "timezones.wei" }, // 未时 (13:00-15:00)
+    { value: "shen", key: "timezones.shen" }, // 申时 (15:00-17:00)
+    { value: "you", key: "timezones.you" }, // 酉时 (17:00-19:00)
+    { value: "xu", key: "timezones.xu" }, // 戌时 (19:00-21:00)
+    { value: "hai", key: "timezones.hai" }, // 亥时 (21:00-23:00)
   ];
+
+  // Add custom CSS for RTL datepicker fixes
+  useEffect(() => {
+    if (isRtl) {
+      const style = document.createElement("style");
+      style.id = "rtl-datepicker-fixes";
+      style.innerHTML = `
+        /* RTL DatePicker Fixes */
+        .react-datepicker__close-icon {
+          position: absolute !important;
+          right: auto !important;
+          left: 10px !important;
+          padding: 0 !important;
+          width: 24px !important;
+          height: 24px !important;
+          top: calc(50% - 12px) !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          z-index: 10 !important;
+        }
+        .react-datepicker__close-icon::after {
+          font-size: 16px !important;
+          height: 18px !important;
+          width: 18px !important;
+          line-height: 16px !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          margin: 0 !important;
+          background-color: #8B4513 !important;
+          color: white !important;
+          border-radius: 50% !important;
+        }
+        .react-datepicker-wrapper {
+          width: 100% !important;
+        }
+        .react-datepicker-popper {
+          z-index: 9999 !important;
+        }
+        /* 确保RTL模式下的日期文本正确显示 */
+        .rtl-datepicker .react-datepicker__input-container input {
+          padding-right: 12px !important;
+          padding-left: 36px !important;
+          text-align: right !important;
+          direction: rtl !important;
+        }
+      `;
+      document.head.appendChild(style);
+
+      return () => {
+        const styleElement = document.getElementById("rtl-datepicker-fixes");
+        if (styleElement) {
+          document.head.removeChild(styleElement);
+        }
+      };
+    }
+  }, [isRtl]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -88,7 +161,7 @@ export default function BirthdateForm() {
       return;
     }
     if (surname && !/^[\u4e00-\u9fa5]{1,2}$/.test(surname)) {
-      setSurnameError(t("surname_invalid"));
+      setSurnameError(t("surname_error"));
       return;
     }
     setError("");
@@ -139,6 +212,11 @@ export default function BirthdateForm() {
     }
   };
 
+  // Set initial dateString on component mount
+  useEffect(() => {
+    setDateString(format(defaultDate, dateFormat));
+  }, [locale, dateFormat]);
+
   return (
     <motion.form
       className="paper-background rounded-2xl p-8 md:p-10 w-full max-w-4xl shadow-xl xuan-paper-bg relative overflow-hidden backdrop-blur-sm"
@@ -167,16 +245,18 @@ export default function BirthdateForm() {
           >
             {t("birthdate")}
           </label>
-          <div className="relative">
+          <div className={`relative ${isRtl ? "rtl-datepicker" : ""}`}>
             <DatePicker
               selected={birthdate}
               onChange={handleDateChange}
               dateFormat={dateFormat}
               locale={localeMap[locale]}
-              className="w-full px-4 py-3 border-2 border-[#D4B08C] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B4513] focus:border-transparent calligraphy-input bg-white/90 text-base transition-all duration-300"
+              className={`w-full ${
+                isRtl ? "pr-4 pl-10 text-right" : "pr-10 pl-4"
+              } py-3 border-2 border-[#D4B08C] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B4513] focus:border-transparent calligraphy-input bg-white/90 text-base transition-all duration-300`}
               placeholderText={t("birthdate_placeholder")}
               popperClassName="react-datepicker-popper z-50"
-              popperPlacement="bottom-start"
+              popperPlacement={isRtl ? "bottom-end" : "bottom-start"}
               fixedHeight
               showYearDropdown
               scrollableYearDropdown
@@ -204,6 +284,9 @@ export default function BirthdateForm() {
                 }
               }}
             />
+            {birthdateError && (
+              <p className="text-red-500 text-sm mt-1">{birthdateError}</p>
+            )}
           </div>
         </div>
 
@@ -212,25 +295,32 @@ export default function BirthdateForm() {
           <label className="block text-lg font-medium chinese-font text-[#8B4513] mb-2">
             {t("birthtime")}
           </label>
-          <div className="relative">
+          <div className={`relative ${isRtl ? "rtl-select-wrapper" : ""}`}>
             <select
               value={timeRange}
               onChange={(e) => setTimeRange(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-[#D4B08C] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B4513] focus:border-transparent calligraphy-input bg-white/90 text-base transition-all duration-300 appearance-none"
+              className={`w-full ${
+                isRtl ? "pr-10 pl-4 text-right" : "pr-10 pl-4"
+              } py-3 border-2 border-[#D4B08C] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B4513] focus:border-transparent calligraphy-input bg-white/90 text-base transition-all duration-300 appearance-none`}
             >
-              {timeRangeOptions.map((option) => (
+              {chineseTimeRanges.map((option) => (
                 <option key={option.value} value={option.value}>
-                  {option.label}
+                  {t(option.key)}
                 </option>
               ))}
             </select>
-            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#8B4513]">
+            <div
+              className={`absolute ${
+                isRtl ? "right-3" : "right-3"
+              } top-1/2 transform -translate-y-1/2 pointer-events-none text-[#8B4513] select-icon`}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
                 fill="currentColor"
                 viewBox="0 0 16 16"
+                className="no-flip"
               >
                 <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
               </svg>
@@ -289,7 +379,9 @@ export default function BirthdateForm() {
               }
             }}
             placeholder={t("surname_placeholder")}
-            className="w-full px-4 py-3 border-2 border-[#D4B08C] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B4513] focus:border-transparent calligraphy-input bg-white/90 text-base transition-all duration-300"
+            className={`w-full px-4 py-3 border-2 border-[#D4B08C] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B4513] focus:border-transparent calligraphy-input bg-white/90 text-base transition-all duration-300 ${
+              isRtl ? "text-right" : ""
+            }`}
           />
           {surnameError && (
             <p className="text-red-500 text-sm mt-1">{surnameError}</p>

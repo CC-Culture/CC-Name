@@ -11,7 +11,7 @@ const Header = () => {
   const [scrollY, setScrollY] = useState(0);
   const t = useTranslations("header");
   const locale = useLocale();
-  const isRtl = locale === "ar";
+  const isRtl = locale === "ar" || locale === "ur";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,21 +34,34 @@ const Header = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="flex items-center space-x-2">
+        <Link
+          href="/"
+          className={`flex items-center ${
+            isRtl ? "space-x-reverse" : "space-x-2"
+          }`}
+        >
           <div className="relative w-10 h-10 overflow-hidden">
             <Image
               src="/yi-seal.svg"
               alt="易字印章"
               width={60}
               height={60}
-              className="mr-4"
+              className={isRtl ? "ml-4" : "mr-4"}
             />
           </div>
           <span className="text-xl font-bold tracking-wider">CC Name</span>
         </Link>
 
-        <div className="flex items-center space-x-4">
-          <nav className="hidden md:flex space-x-8">
+        <div
+          className={`flex items-center ${
+            isRtl ? "space-x-reverse" : "space-x-4"
+          }`}
+        >
+          <nav
+            className={`hidden md:flex ${
+              isRtl ? "space-x-reverse" : "space-x-8"
+            }`}
+          >
             <Link
               href="/"
               className="text-gray-800 hover:text-gray-600 transition-colors duration-300"

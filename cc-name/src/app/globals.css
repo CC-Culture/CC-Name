@@ -574,3 +574,15 @@ html.rtl .absolute.right-0 {
   right: auto !important;
   left: 0 !important;
 }
+
+/* 新增语言支持 */
+
+/* 孟加拉语支持 */
+html.bengali {
+  font-family: "Noto Sans Bengali", sans-serif;
+}
+
+/* 俄语支持 */
+html.russian {
+  font-family: "Roboto", sans-serif;
+}

@@ -17,22 +17,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// 根布局函数
+// 根布局函数 - 直接返回子组件，让locale布局处理HTML标签
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="zh">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col relative kraft-background`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+  // 直接返回子组件，避免HTML标签嵌套
+  return children;
 }

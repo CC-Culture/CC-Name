@@ -76,7 +76,16 @@
     "uniqueness": "独自性",
     "pronunciation": "音韻の美しさ",
     "try_again": "再生成",
-    "back_to_home": "ホームに戻る"
+    "back_to_home": "ホームに戻る",
+    "name_analysis": "五行推論",
+    "language_notice": "このページでは言語切り替え機能が無効になっています。言語を変更するには、ホームページに戻ってください。",
+    "elements": {
+      "metal": "金",
+      "wood": "木",
+      "water": "水",
+      "fire": "火",
+      "earth": "土"
+    }
   },
   "footer": {
     "copyright": "© 2025 CC Name. 全著作権所有。",
@@ -249,7 +258,7 @@
         "zhouGongDan": "周公旦",
         "zhouDunYi": "周敦頤",
         "zhouEnLai": "周恩来",
-        "zhouShuRen": "周樹人"
+        "zhouXingChi": "周星馳"
       }
     },
     "wu": {

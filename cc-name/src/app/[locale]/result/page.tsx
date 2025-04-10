@@ -67,7 +67,7 @@ function ResultContent() {
           </h1>
           <ElementSection
             elements={data.elements}
-            reasoning={data.name.reasoning}
+            reasoning={data.meaning.reasoning}
           />
           <NameSection name={data.name} poetry={data.poetry} />
 

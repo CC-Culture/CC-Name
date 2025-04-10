@@ -174,7 +174,8 @@ export default function BirthdateForm() {
         formattedDate,
         gender,
         surname,
-        timeRange
+        timeRange,
+        locale
       );
       const encodedData = encodeURIComponent(JSON.stringify(response));
       router.push(`/${locale}/result?data=${encodedData}`);

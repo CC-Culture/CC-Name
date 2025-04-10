@@ -4,10 +4,10 @@ import type { NameGenerationResponse } from "@/services/api";
 import { useTranslations } from "next-intl";
 
 interface NameSectionProps {
-  name: NameGenerationResponse["name"] & {
+  name: NameGenerationResponse["translated"]["name"] & {
     elements?: string[];
   };
-  poetry?: NameGenerationResponse["poetry"];
+  poetry?: NameGenerationResponse["translated"]["poetry"];
 }
 
 export default function NameSection({ name, poetry }: NameSectionProps) {

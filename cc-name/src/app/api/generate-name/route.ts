@@ -7,9 +7,27 @@ const openai = new OpenAI({
   baseURL: "https://dashscope.aliyuncs.com/compatible-mode/v1",
 });
 
+const example1Response = JSON.stringify({
+  name: { firstName: "瑞安", lastName: "刘" },
+  meaning: {
+    meaning:
+      "Brilliant peace, representing the brilliance of water and earth elements in his birth chart balanced by a tranquil heart.",
+    reasoning:
+      "The name 'Rui'an' combines the Chinese characters 瑞 (brilliant, auspicious) and 安 (peace, tranquility). The character 瑞 is associated with the water element which dominates his birth chart, symbolizing success and prosperity. 安 represents earth, balancing the overall composition and bringing harmony. These elements reflect his strong water and earth elements while incorporating metal through the sound resonance.",
+    style: "Elegant and harmonious",
+  },
+  poetry: {
+    type: "Song Ci (宋词)",
+    title: "《青玉案·元夕》",
+    content: "东风夜放花千树，更吹落，星如雨。",
+    meaning:
+      "This line from Song Ci reflects a vibrant yet serene atmosphere, akin to the balance of elements in his chart. The brilliance of flowers and stars mirrors the brilliance of water and earth, while the peaceful night sky evokes the tranquil heart represented by 安.",
+  },
+});
+
 export async function POST(request: Request) {
   try {
-    const { birthdate, gender, timeRange } = await request.json();
+    const { birthdate, gender, timeRange, language } = await request.json();
 
     if (!birthdate) {
       return NextResponse.json({ error: "请提供生日" }, { status: 400 });
@@ -26,7 +44,12 @@ export async function POST(request: Request) {
     // 计算五行数据
     const elements = calculateElements(birthdate + " " + timeRange);
 
-    console.log("Request elements:", elements);
+    console.log(
+      "Request:",
+      `生日:${birthdate}，性别:${gender}，五行数据:${JSON.stringify(
+        elements
+      )},国家代码:${language}`
+    );
 
     // 调用大模型生成名字和诗句
     const completion = await openai.chat.completions.create({
@@ -34,38 +57,25 @@ export async function POST(request: Request) {
       messages: [
         {
           role: "system",
-          content: `您是一位融合中国传统文化精髓与现代审美的命名大师。您深谙诗经、楚辞、唐诗宋词、四书五经等典籍，也精通易经五行、天干地支的奥秘。请根据用户提供的生日、性别和五行数据，发挥创意，生成独特而富有诗意的名字建议。
-
+          content: `您是一位融合中国传统文化精髓、多国语言与现代审美的命名大师。您深谙诗经、楚辞、唐诗宋词、四书五经等典籍，也精通易经五行、天干地支的奥秘。请根据用户提供的生日、性别和五行数据，发挥创意，生成独特而富有诗意的名字建议。
 在创作时请注意：
 1. 结合不同时代、流派的文学作品，可以从诗经、楚辞到唐诗宋词，甚至现代诗词中汲取灵感
 2. 考虑名字的音律与节奏感，追求谐音美感
 3. 融入五行相生相克的智慧，但不必过分拘泥于传统规则
 4. 可以从自然景物、人文典故、美好寓意等多个维度选字
 5. 重视名字的现代感，避免过于生僻难认的字
-
-请按照以下json格式返回您的创意建议：
-{
-	"name": {
-		"firstName": "名",
-		"lastName": "姓",
-		"meaning": "名字含义",
-		"reasoning": "详细的取名理由，包括字义分析、文化内涵、五行关系等",
-		"style": "名字的风格特点，如典雅古风、自然清新等"
-	},
-	"poetry": {
-		"type": "主要参考的文学作品类型，如诗经、楚辞、唐诗等",
-		"title": "生成名字引用的诗句标题",
-		"content": "相关诗句或文段",
-		"meaning": "此处文学典故与名字的呼应关系"
-	}
-}
+6. 结果除了姓名外其他结果按照国家代码翻译
+输出包含name层和meaning层和poetry的JSON。
+示例：
+          Q:生日:2000-01-01，性别:male，五行数据:{"metal":0,"wood":0.105,"water":0.35,"fire":0.245,"earth":0.301},国家代码:en
+          A:${example1Response}
       `,
         },
         {
           role: "user",
-          content: `生日:${birthdate}
-                    性别:${gender}
-                    五行数据:${JSON.stringify(elements)},`,
+          content: `生日:${birthdate}，性别:${gender}，五行数据:${JSON.stringify(
+            elements
+          )},国家代码:${language}`,
         },
       ],
       response_format: {
@@ -78,14 +88,12 @@ export async function POST(request: Request) {
       throw new Error("No response from API");
     }
     const modelResponse = JSON.parse(response);
-
+    console.log("Model response:", modelResponse);
     // 合并本地计算的五行数据和模型生成的结果
     const finalResponse = {
       ...modelResponse,
       elements,
     };
-    console.log("Request finalResponse:", finalResponse);
-
     return NextResponse.json(finalResponse);
   } catch (error) {
     console.error("Error generating name:", error);

@@ -151,5 +151,67 @@
       "distribution": "Distribution Régionale",
       "culture": "Culture des Noms"
     }
+  },
+  "surnames": {
+    "li": {
+      "origin": "Le nom de famille Li provient principalement de l'empereur Li (嬴), fils de l'empereur Zhuanxu. Il est également associé au nom de famille Ying (嬴) de l'État de Qin.",
+      "history": "Li est l'un des noms de famille les plus communs en Chine. Pendant la dynastie Tang, la famille impériale Li a grandement contribué à sa popularité.",
+      "distribution": "Largement répandu dans toute la Chine, avec une concentration particulière dans les provinces du Henan, Shandong et Shaanxi.",
+      "famous_people": "Li Bai (grand poète de la dynastie Tang), Li Shimin (Empereur Taizong des Tang), Li Yuan (fondateur de la dynastie Tang)"
+    },
+    "wang": {
+      "origin": "Le nom Wang provient du titre de noblesse 'wang' (roi). Il était initialement accordé aux descendants de la famille royale de la période des Zhou.",
+      "history": "Wang est devenu l'un des noms de famille les plus répandus en Chine, particulièrement après la période des Printemps et Automnes.",
+      "distribution": "Très commun dans le nord de la Chine, notamment dans les provinces du Shandong, Henan et Hebei.",
+      "famous_people": "Wang Xizhi (célèbre calligraphe), Wang Wei (poète et peintre de la dynastie Tang), Wang Yangming (philosophe de la dynastie Ming)"
+    },
+    "zhang": {
+      "origin": "Le nom Zhang est dérivé du nom de fief Zhang (漳), situé dans l'actuelle province du Henan.",
+      "history": "L'un des plus anciens noms de famille chinois, remontant à la période des Printemps et Automnes.",
+      "distribution": "Particulièrement répandu dans les provinces du nord et du centre de la Chine.",
+      "famous_people": "Zhang Qian (diplomate de la dynastie Han), Zhang Heng (astronome et inventeur), Zhang Yimou (réalisateur contemporain)"
+    },
+    "liu": {
+      "origin": "Le nom Liu provient du nom de fief Liu (劉), situé dans l'actuelle province du Henan.",
+      "history": "La famille impériale de la dynastie Han portait ce nom, contribuant grandement à sa popularité.",
+      "distribution": "Largement répandu dans toute la Chine, avec une forte présence dans les provinces du Shandong et du Henan.",
+      "famous_people": "Liu Bang (fondateur de la dynastie Han), Liu Bei (fondateur du royaume de Shu), Liu Cixin (écrivain de science-fiction)"
+    },
+    "chen": {
+      "origin": "Le nom Chen provient de l'État de Chen de la période des Printemps et Automnes, initialement issu du nom de famille Gui.",
+      "history": "L'État de Chen a joué un rôle important dans l'histoire chinoise ancienne, contribuant à la propagation de ce nom.",
+      "distribution": "Particulièrement commun dans les provinces du sud-est de la Chine, notamment le Fujian, le Guangdong et le Zhejiang.",
+      "famous_people": "Chen Sheng (leader de la première révolte paysanne), Chen Shou (historien de la période des Trois Royaumes)"
+    },
+    "yang": {
+      "origin": "Le nom Yang est lié au territoire de Yang pendant la période des Zhou de l'Ouest.",
+      "history": "Ce nom a gagné en importance pendant la dynastie Sui, dont le fondateur était Yang Jian.",
+      "distribution": "Largement répandu dans les provinces du Shaanxi, Shanxi et Sichuan.",
+      "famous_people": "Yang Guifei (concubine impériale des Tang), Yang Yan Zhao (général de la dynastie Song)"
+    },
+    "zhao": {
+      "origin": "Le nom Zhao provient de l'État de Zhao pendant la période des Royaumes Combattants.",
+      "history": "L'État de Zhao était l'un des sept royaumes majeurs de la période des Royaumes Combattants.",
+      "distribution": "Particulièrement commun dans le nord de la Chine, notamment dans les provinces du Hebei et du Shanxi.",
+      "famous_people": "Zhao Kuangyin (fondateur de la dynastie Song), Zhao Yun (général de la période des Trois Royaumes)"
+    },
+    "sun": {
+      "origin": "Le nom Sun est lié à la descendance de Huangdi et au territoire de Sun.",
+      "history": "Ce nom a gagné en importance pendant la période des Trois Royaumes avec Sun Quan.",
+      "distribution": "Particulièrement répandu dans les provinces du Shandong et du Jiangsu.",
+      "famous_people": "Sun Wu (Sun Tzu, auteur de L'Art de la Guerre), Sun Yat-sen (père fondateur de la Chine moderne)"
+    },
+    "zhou": {
+      "origin": "Le nom Zhou est lié à la dynastie Zhou et au territoire de Zhou.",
+      "history": "L'un des plus anciens noms de famille chinois, étroitement lié à la dynastie Zhou.",
+      "distribution": "Largement répandu dans toute la Chine, avec une concentration particulière dans les provinces centrales.",
+      "famous_people": "Zhou Gong Dan (duc de Zhou), Zhou Enlai (premier Premier ministre de la République populaire de Chine)"
+    },
+    "wu": {
+      "origin": "Le nom Wu est issu du clan Ji, descendant selon la légende du roi Wu de Zhou (Ji Fa). Il tire son nom du fief de Wu (actuellement Suzhou dans la province du Jiangsu).",
+      "history": "Le nom Wu était déjà courant pendant la période des Printemps et Automnes. Historiquement, il y a eu des états comme l'État de Wu.",
+      "distribution": "Largement répandu dans toute la Chine, avec une concentration particulière dans les provinces du Jiangsu et du Zhejiang.",
+      "famous_people": "Wu Qi (stratège militaire), Wu Daozi (peintre célèbre de la dynastie Tang), Wu Cheng'en (auteur du 'Voyage en Occident'), Wu Jingzi (écrivain de la dynastie Qing)"
+    }
   }
 }

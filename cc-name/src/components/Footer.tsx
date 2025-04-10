@@ -25,27 +25,6 @@ export default function Footer() {
           <div className="mb-4 md:mb-0">
             <p className="text-[var(--ink-gray)] text-sm">{t("copyright")}</p>
           </div>
-
-          <div className="flex space-x-6">
-            <Link
-              href="/privacy"
-              className="text-[var(--ink-gray)] text-sm hover:text-[var(--dunhuang-primary)] transition-colors duration-300"
-            >
-              {t("privacy")}
-            </Link>
-            <Link
-              href="/terms"
-              className="text-[var(--ink-gray)] text-sm hover:text-[var(--dunhuang-primary)] transition-colors duration-300"
-            >
-              {t("terms")}
-            </Link>
-            <Link
-              href="/contact"
-              className="text-[var(--ink-gray)] text-sm hover:text-[var(--dunhuang-primary)] transition-colors duration-300"
-            >
-              {t("contact")}
-            </Link>
-          </div>
         </div>
       </div>
     </motion.footer>

@@ -151,5 +151,67 @@
       "distribution": "Distribución Regional",
       "culture": "Cultura de Apellidos"
     }
+  },
+  "surnames": {
+    "li": {
+      "origin": "El apellido Li se originó del apellido ancestral Ying, que se remonta al emperador Zhuanxu de la antigüedad. El primer antepasado fue Li Lizhen, un ministro de la dinastía Shang.",
+      "history": "El apellido Li es uno de los apellidos más antiguos de China, con una historia de más de 3,000 años. Durante la dinastía Tang, el apellido Li se convirtió en el apellido real, lo que llevó a su gran desarrollo.",
+      "distribution": "El apellido Li está ampliamente distribuido en todo el país, con una concentración particularmente alta en las provincias de Henan, Shandong, Sichuan y Guangdong.",
+      "famous_people": "Li Bai (poeta de la dinastía Tang), Li Shimin (emperador Taizong de Tang), Li Shizhen (médico de la dinastía Ming)"
+    },
+    "wang": {
+      "origin": "El apellido Wang se originó del apellido ancestral Ji, que se remonta al rey Wen de Zhou. El primer antepasado fue Wang Jian, un ministro de la dinastía Zhou.",
+      "history": "El apellido Wang es uno de los apellidos más grandes de China, con una historia de más de 2,800 años. Durante las dinastías Han y Tang, el apellido Wang produjo muchas figuras prominentes.",
+      "distribution": "El apellido Wang está ampliamente distribuido en todo el país, con una concentración particularmente alta en las provincias de Shandong, Henan, Hebei y Jiangsu.",
+      "famous_people": "Wang Xizhi (calígrafo de la dinastía Jin), Wang Anshi (estadista de la dinastía Song), Wang Yangming (filósofo de la dinastía Ming)"
+    },
+    "zhang": {
+      "origin": "El apellido Zhang se originó del apellido ancestral Ji, que se remonta al rey Wen de Zhou. El primer antepasado fue Zhang Hui, un ministro de la dinastía Zhou.",
+      "history": "El apellido Zhang es uno de los apellidos más grandes de China, con una historia de más de 2,800 años. Durante las dinastías Han y Tang, el apellido Zhang produjo muchas figuras prominentes.",
+      "distribution": "El apellido Zhang está ampliamente distribuido en todo el país, con una concentración particularmente alta en las provincias de Henan, Shandong, Hebei y Jiangsu.",
+      "famous_people": "Zhang Liang (estadista de la dinastía Han), Zhang Heng (científico de la dinastía Han), Zhang Zhongjing (médico de la dinastía Han)"
+    },
+    "liu": {
+      "origin": "El apellido Liu se originó del apellido ancestral Ji, que se remonta al rey Wen de Zhou. El primer antepasado fue Liu Bang, fundador de la dinastía Han.",
+      "history": "El apellido Liu es uno de los apellidos más grandes de China, con una historia de más de 2,200 años. Durante la dinastía Han, el apellido Liu se convirtió en el apellido real, lo que llevó a su gran desarrollo.",
+      "distribution": "El apellido Liu está ampliamente distribuido en todo el país, con una concentración particularmente alta en las provincias de Henan, Shandong, Hebei y Jiangsu.",
+      "famous_people": "Liu Bang (emperador Gaozu de Han), Liu Bei (emperador de Shu Han), Liu Zongyuan (escritor de la dinastía Tang)"
+    },
+    "chen": {
+      "origin": "El apellido Chen se originó del apellido ancestral Gui, que se remonta al emperador Shun de la antigüedad. El primer antepasado fue Chen Hu Gong, un ministro de la dinastía Zhou.",
+      "history": "El apellido Chen es uno de los apellidos más grandes de China, con una historia de más de 3,000 años. Durante las dinastías Han y Tang, el apellido Chen produjo muchas figuras prominentes.",
+      "distribution": "El apellido Chen está ampliamente distribuido en todo el país, con una concentración particularmente alta en las provincias de Guangdong, Fujian, Zhejiang y Jiangsu.",
+      "famous_people": "Chen Sheng (líder rebelde de la dinastía Qin), Chen Shou (historiador de la dinastía Jin), Chen Zi'ang (poeta de la dinastía Tang)"
+    },
+    "yang": {
+      "origin": "El apellido Yang se originó del apellido ancestral Ji, que se remonta al rey Wen de Zhou. El primer antepasado fue Yang Boqiao, un ministro de la dinastía Zhou.",
+      "history": "El apellido Yang es uno de los apellidos más grandes de China, con una historia de más de 2,800 años. Durante las dinastías Han y Tang, el apellido Yang produjo muchas figuras prominentes.",
+      "distribution": "El apellido Yang está ampliamente distribuido en todo el país, con una concentración particularmente alta en las provincias de Shaanxi, Shanxi, Henan y Hebei.",
+      "famous_people": "Yang Jian (emperador Wen de Sui), Yang Guifei (concubina de la dinastía Tang), Yang Xiong (filósofo de la dinastía Han)"
+    },
+    "zhao": {
+      "origin": "El apellido Zhao se originó del apellido ancestral Ying, que se remonta al emperador Zhuanxu de la antigüedad. El primer antepasado fue Zhao Fu, un ministro de la dinastía Zhou.",
+      "history": "El apellido Zhao es uno de los apellidos más grandes de China, con una historia de más de 2,800 años. Durante el Período de los Reinos Combatientes, el apellido Zhao se convirtió en el apellido real del estado de Zhao.",
+      "distribution": "El apellido Zhao está ampliamente distribuido en todo el país, con una concentración particularmente alta en las provincias de Hebei, Henan, Shandong y Shanxi.",
+      "famous_people": "Zhao Kuangyin (emperador Taizu de Song), Zhao Mengfu (pintor de la dinastía Yuan), Zhao Yiman (héroe revolucionario)"
+    },
+    "sun": {
+      "origin": "El apellido Sun se originó del apellido ancestral Ji, que se remonta al rey Wen de Zhou. El primer antepasado fue Sun Shu'ao, un ministro del estado de Chu durante el Período de Primavera y Otoño.",
+      "history": "El apellido Sun es uno de los apellidos más grandes de China, con una historia de más de 2,600 años. Durante el Período de los Tres Reinos, el apellido Sun se convirtió en el apellido real del estado de Wu.",
+      "distribution": "El apellido Sun está ampliamente distribuido en todo el país, con una concentración particularmente alta en las provincias de Shandong, Henan, Hebei y Jiangsu.",
+      "famous_people": "Sun Wu (estratega militar), Sun Quan (emperador de Wu), Sun Yat-sen (líder revolucionario)"
+    },
+    "zhou": {
+      "origin": "El apellido Zhou se originó del apellido ancestral Ji, que se remonta al rey Wen de Zhou. El primer antepasado fue Zhou Gong Dan, un ministro de la dinastía Zhou.",
+      "history": "El apellido Zhou es uno de los apellidos más grandes de China, con una historia de más de 3,000 años. Durante la dinastía Zhou, el apellido Zhou se convirtió en el apellido real, lo que llevó a su gran desarrollo.",
+      "distribution": "El apellido Zhou está ampliamente distribuido en todo el país, con una concentración particularmente alta en las provincias de Henan, Shandong, Hebei y Jiangsu.",
+      "famous_people": "Zhou Gong Dan (estadista de la dinastía Zhou), Zhou Yu (general de Wu), Zhou Enlai (primer ministro de la República Popular China)"
+    },
+    "wu": {
+      "origin": "El apellido Wu se originó del apellido ancestral Ji, que según la leyenda desciende del rey Wu de Zhou (Ji Fa). Recibió su nombre por el feudo de Wu (actual Suzhou en la provincia de Jiangsu).",
+      "history": "El apellido Wu ya era común durante el período de Primavera y Otoño. Históricamente, hubo estados como el Estado de Wu.",
+      "distribution": "El apellido Wu está ampliamente distribuido en todo el país, con una concentración particularmente alta en las provincias de Jiangsu y Zhejiang.",
+      "famous_people": "Wu Qi (estratega militar), Wu Daozi (famoso pintor de la dinastía Tang), Wu Cheng'en (autor de 'Viaje al Oeste'), Wu Jingzi (escritor de la dinastía Qing)"
+    }
   }
 }

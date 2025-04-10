@@ -31,7 +31,7 @@ export default function SurnameCulture() {
               探索五千年姓氏渊源，传承华夏文明印记
             </p>
             <motion.a
-              href="https://zh.wikipedia.org/wiki/百家姓"
+              href="https://en.wikipedia.org/wiki/百家姓"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center bg-white/20 hover:bg-white/30 text-white px-8 py-3 rounded-full backdrop-blur-sm transition-all duration-300 border border-white/30 relative"

@@ -151,5 +151,67 @@
       "distribution": "Regional Distribution",
       "culture": "Name Culture"
     }
+  },
+  "surnames": {
+    "li": {
+      "origin": "The Li surname originated from the ancestral surname Ying, tracing back to Emperor Zhuanxu of antiquity. The first ancestor was Li Lizhen, a minister of the Shang Dynasty.",
+      "history": "Li is the largest surname in China, with the most famous Li regime being the Tang Dynasty, established by Li Yuan. The Li surname was already common during the Spring and Autumn Period.",
+      "distribution": "Distributed throughout the country, with particularly high concentrations in Shaanxi and Gansu provinces",
+      "famous_people": "Li Bai (poet), Li Qingzhao (poet), Li Shangyin (poet), Li Shimin (Emperor Taizong of Tang)"
+    },
+    "wang": {
+      "origin": "Originated from ancient times, being one of the earliest surnames. Traditionally used by the descendants of Wang Hai.",
+      "history": "Wang is the second largest surname in China, already being a major surname during the Spring Period. Historically, it was said that 'Wang surnames in the world, 180,000 households.'",
+      "distribution": "Widely distributed throughout the country, with higher concentrations in Shandong and Hebei provinces",
+      "famous_people": "Wang Xizhi (calligrapher), Wang Wei (poet), Wang Anshi (statesman), Wang Yangming (philosopher)"
+    },
+    "zhang": {
+      "origin": "Originated from ancient times, traditionally descended from Zhang Hu, the inventor of bow and arrow during the Yellow Emperor's time.",
+      "history": "Zhang is the third largest surname in China, already prosperous during the Spring and Autumn Period. During the Han Dynasty, Zhang Liang helped Liu Bang establish the Han Dynasty, making the Zhang surname even more prominent.",
+      "distribution": "Widely distributed throughout the country, with higher concentrations in Henan and Shandong provinces",
+      "famous_people": "Zhang Liang (statesman), Zhang Fei (general), Zhang Zeduan (painter), Zhang Heng (scientist)"
+    },
+    "liu": {
+      "origin": "Originated from the Ji surname, traditionally descended from the Yellow Emperor. Liu Lei received the surname for his skill in training dragon horses.",
+      "history": "Liu is the fourth largest surname in China, with the most prominent Liu regime being the Han Dynasty, established by Liu Bang and lasting over 400 years.",
+      "distribution": "Widely distributed throughout the country, with higher concentrations in Henan, Shandong, and Anhui provinces",
+      "famous_people": "Liu Bang (Emperor Gaozu of Han), Liu Bei (Emperor of Shu Han), Liu Yuxi (writer), Liu Shaoqi (statesman)"
+    },
+    "chen": {
+      "origin": "Originated from the Gui surname, traditionally descended from Emperor Shun. Received the surname due to their fief in Chen (present-day Huaiyang, Henan).",
+      "history": "Chen is the fifth largest surname in China, establishing the state of Chen during the Spring Period. The Chen Dynasty also appeared during the Southern Dynasties period.",
+      "distribution": "Widely distributed throughout the country, with higher concentrations in Fujian, Guangdong, and Zhejiang provinces",
+      "famous_people": "Chen Sheng (rebel leader), Chen Shou (historian), Chen Zi'ang (poet), Chen Duxiu (educator)"
+    },
+    "yang": {
+      "origin": "Originated from the Ji surname, traditionally descended from Shu Liang He, the ninth son of King Wen of Zhou. Received the surname due to their fief in Yang city.",
+      "history": "Yang surname was already common during the Spring and Autumn Period, with Emperor Yang Jian, founder of the Sui Dynasty, making the Yang surname more prominent.",
+      "distribution": "Widely distributed throughout the country, with higher concentrations in Shaanxi and Sichuan provinces",
+      "famous_people": "Yang Jian (Emperor Wen of Sui), Yang Guifei (imperial consort), Yang Yanzhao (general), Yang Jiang (writer)"
+    },
+    "zhao": {
+      "origin": "Originated from the Ying surname, traditionally descended from Zhao Fu. Received the surname due to their fief in Zhao city (present-day Hongdong, Shanxi).",
+      "history": "Zhao is a historic surname in China, with the State of Zhao during the Warring States Period being established by the Zhao family.",
+      "distribution": "Widely distributed throughout the country, with higher concentrations in Shanxi and Hebei provinces",
+      "famous_people": "Zhao Wuling Wang (king), Zhao Kuangyin (Emperor Taizu of Song), Zhao Yun (general), Zhao Mengfu (painter)"
+    },
+    "sun": {
+      "origin": "Originated from the Ji surname, traditionally descended from Sun Shuduo, son of King Wen of Zhou.",
+      "history": "Sun surname was already common during the Spring and Autumn Period, with Sun Quan establishing the Wu regime during the Three Kingdoms period.",
+      "distribution": "Widely distributed throughout the country, with higher concentrations in Shandong and Jiangsu provinces",
+      "famous_people": "Sun Wu (military strategist), Sun Quan (Emperor of Wu), Sun Yat-sen (revolutionary leader), Sun Simiao (physician)"
+    },
+    "zhou": {
+      "origin": "Originated from the Ji surname, traditionally descended from Ji Chang (King Wen of Zhou).",
+      "history": "Zhou is one of the oldest surnames in China, with the rulers of the Zhou Dynasty bearing this surname.",
+      "distribution": "Widely distributed throughout the country, with higher concentrations in Hunan and Jiangxi provinces",
+      "famous_people": "Zhou Gong Dan (statesman), Zhou Dunyi (philosopher), Zhou Enlai (premier), Zhou Shuren (writer)"
+    },
+    "wu": {
+      "origin": "Originated from the Ji surname, traditionally descended from Ji Fa (King Wu of Zhou). Received the surname due to their fief in Wu (present-day Suzhou, Jiangsu).",
+      "history": "Wu surname was already common during the Spring Period, with various states including the State of Wu in history.",
+      "distribution": "Widely distributed throughout the country, with higher concentrations in Jiangsu and Zhejiang provinces",
+      "famous_people": "Wu Qi (general), Wu Daozi (painter), Wu Cheng'en (writer), Wu Jingzi (writer)"
+    }
   }
 }

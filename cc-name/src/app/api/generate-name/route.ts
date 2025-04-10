@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { calculateElements } from "@/utils/elements";
-import { time } from "console";
 
 const openai = new OpenAI({
   apiKey: process.env.DASHSCOPE_API_KEY,

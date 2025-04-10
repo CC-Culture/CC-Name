@@ -151,5 +151,117 @@
       "distribution": "Distribuição geográfica",
       "culture": "Cultura dos sobrenomes"
     }
+  },
+  "surnames": {
+    "li": {
+      "origin": "Originado dos descendentes de Bo Yi, inicialmente usando o sobrenome 'Li' do cargo oficial, que depois foi alterado para o atual caractere. Há também uma teoria que sugere origem do Imperador Yan (Shennong).",
+      "history": "Li é o sobrenome mais comum na China. A dinastia mais famosa com este sobrenome foi a Dinastia Tang, fundada por Li Yuan. O sobrenome Li já era comum durante o período das Primaveras e Outonos, atingindo seu auge durante a Dinastia Tang.",
+      "distribution": "Distribuído por todo o país, com concentração particular nas províncias de Shaanxi e Gansu",
+      "famousPeople": {
+        "liBai": "Li Bai",
+        "liQingZhao": "Li Qingzhao",
+        "liShangYin": "Li Shangyin",
+        "liShiMin": "Li Shimin"
+      }
+    },
+    "wang": {
+      "origin": "Originado na antiguidade, é um dos sobrenomes mais antigos. Segundo a lenda, foi usado pelos descendentes de Wang Hai.",
+      "history": "Wang é o segundo sobrenome mais comum na China. Já era um sobrenome importante durante o período das Primaveras e Outonos. Historicamente, dizia-se que havia '180.000 famílias Wang sob o céu'.",
+      "distribution": "Amplamente distribuído por todo o país, com concentração particular nas províncias de Shandong e Hebei",
+      "famousPeople": {
+        "wangXiZhi": "Wang Xizhi",
+        "wangWei": "Wang Wei",
+        "wangAnShi": "Wang Anshi",
+        "wangYangMing": "Wang Yangming"
+      }
+    },
+    "zhang": {
+      "origin": "Originado na antiguidade, segundo a lenda, descendente de Zhang Hu, o inventor do arco e flecha durante o período do Imperador Amarelo.",
+      "history": "Zhang é o terceiro sobrenome mais comum na China. Já era proeminente durante o período dos Estados Combatentes. Zhang Liang ajudou Liu Bang a estabelecer a Dinastia Han, aumentando ainda mais o prestígio do sobrenome.",
+      "distribution": "Amplamente distribuído por todo o país, com concentração particular nas províncias de Henan e Shandong",
+      "famousPeople": {
+        "zhangLiang": "Zhang Liang",
+        "zhangFei": "Zhang Fei",
+        "zhangZeDuan": "Zhang Zeduan",
+        "zhangHeng": "Zhang Heng"
+      }
+    },
+    "liu": {
+      "origin": "Originado do clã Ji, segundo a lenda, descendente do Imperador Amarelo. Liu Lei recebeu este sobrenome por sua habilidade em treinar cavalos-dragão.",
+      "history": "Liu é o quarto sobrenome mais comum na China. A dinastia mais ilustre com este sobrenome foi a Dinastia Han, fundada por Liu Bang, que durou mais de 400 anos.",
+      "distribution": "Amplamente distribuído por todo o país, com concentração particular nas províncias de Henan, Shandong e Anhui",
+      "famousPeople": {
+        "liuBang": "Liu Bang",
+        "liuBei": "Liu Bei",
+        "liuYuXi": "Liu Yuxi",
+        "liuShaoQi": "Liu Shaoqi"
+      }
+    },
+    "chen": {
+      "origin": "Originado do clã Gui, segundo a lenda, descendente do Imperador Shun. Recebeu o sobrenome devido ao feudo em Chen (atual Huaiyang, Henan).",
+      "history": "Chen é o quinto sobrenome mais comum na China. Durante o período das Primaveras e Outonos, estabeleceu o Estado de Chen. Durante as Dinastias do Sul, também surgiu a Dinastia Chen.",
+      "distribution": "Amplamente distribuído por todo o país, com concentração particular nas províncias de Fujian, Guangdong e Zhejiang",
+      "famousPeople": {
+        "chenSheng": "Chen Sheng",
+        "chenShou": "Chen Shou",
+        "chenZiAng": "Chen Ziang",
+        "chenDuXiu": "Chen Duxiu"
+      }
+    },
+    "yang": {
+      "origin": "Originado do clã Ji, segundo a lenda, descendente do nono filho do Rei Wen de Zhou, Shu Liang He. Recebeu o sobrenome devido ao feudo em Yang Yi.",
+      "history": "Yang já era comum durante o período dos Estados Combatentes. O imperador Yang Jian, fundador da Dinastia Sui, trouxe ainda mais prestígio ao sobrenome.",
+      "distribution": "Amplamente distribuído por todo o país, com concentração particular nas províncias de Shaanxi e Sichuan",
+      "famousPeople": {
+        "yangJian": "Yang Jian",
+        "yangGuiFei": "Yang Guifei",
+        "yangYanZhao": "Yang Yanzhao",
+        "yangJiang": "Yang Jiang"
+      }
+    },
+    "zhao": {
+      "origin": "Originado do clã Ying, segundo a lenda, descendente de Zaofu. Recebeu o sobrenome devido ao feudo em Zhao Cheng (atual Hongdong, Shanxi).",
+      "history": "Zhao é um sobrenome famoso na história chinesa. O Estado de Zhao durante o período dos Estados Combatentes foi estabelecido pelo clã Zhao.",
+      "distribution": "Amplamente distribuído por todo o país, com concentração particular nas províncias de Shanxi e Hebei",
+      "famousPeople": {
+        "zhaoWuLingWang": "Rei Zhao Wuling",
+        "zhaoKuangYin": "Zhao Kuangyin",
+        "zhaoYun": "Zhao Yun",
+        "zhaoMengFu": "Zhao Mengfu"
+      }
+    },
+    "sun": {
+      "origin": "Originado do clã Ji, segundo a lenda, descendente de Sun Shudu, filho do Rei Wen de Zhou.",
+      "history": "Sun já era comum durante o período das Primaveras e Outonos. Durante o período dos Três Reinos, Sun Quan estabeleceu o Estado de Wu.",
+      "distribution": "Amplamente distribuído por todo o país, com concentração particular nas províncias de Shandong e Jiangsu",
+      "famousPeople": {
+        "sunWu": "Sun Wu",
+        "sunQuan": "Sun Quan",
+        "sunYatSen": "Sun Yat-sen",
+        "sunSiMiao": "Sun Simiao"
+      }
+    },
+    "zhou": {
+      "origin": "Originado do clã Ji, segundo a lenda, descendente do Rei Wen de Zhou, Ji Chang.",
+      "history": "Zhou é um dos sobrenomes mais antigos da China. Os governantes da Dinastia Zhou eram do clã Zhou.",
+      "distribution": "Amplamente distribuído por todo o país, com concentração particular nas províncias de Hunan e Jiangxi",
+      "famousPeople": {
+        "zhouGongDan": "Zhou Gong Dan",
+        "zhouDunYi": "Zhou Dunyi",
+        "zhouEnLai": "Zhou Enlai",
+        "zhouShuRen": "Zhou Shuren"
+      }
+    },
+    "wu": {
+      "origin": "Originado do clã Ji, segundo a lenda, descendente do Rei Wu de Zhou, Ji Fa. Recebeu o sobrenome devido ao feudo em Wu (atual Suzhou, Jiangsu).",
+      "history": "Wu já era comum durante o período das Primaveras e Outonos. Historicamente, houve estados como o Estado de Wu.",
+      "distribution": "Amplamente distribuído por todo o país, com concentração particular nas províncias de Jiangsu e Zhejiang",
+      "famousPeople": {
+        "wuQi": "Wu Qi",
+        "wuDaoZi": "Wu Daozi",
+        "wuChengEn": "Wu Cheng'en",
+        "wuJingZi": "Wu Jingzi"
+      }
+    }
   }
 }

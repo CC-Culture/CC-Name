@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 
 export default function SurnameCulture() {
   const t = useTranslations("surname");
+  const st = useTranslations(); // For surname-specific translations
 
   return (
     <div className="min-h-screen xuan-paper-bg">
@@ -32,7 +33,7 @@ export default function SurnameCulture() {
             </h1>
             <p className="text-xl max-w-2xl mx-auto mb-8">{t("subtitle")}</p>
             <motion.a
-              href="https://zh.wikipedia.org/wiki/百家姓"
+              href="https://en.wikipedia.org/wiki/百家姓"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center bg-white/20 hover:bg-white/30 text-white px-8 py-3 rounded-full backdrop-blur-sm transition-all duration-300 border border-white/30 relative"
@@ -115,9 +116,11 @@ export default function SurnameCulture() {
                       {surname.surname}
                     </h3>
                     <p className="text-[#8B4513]/80 font-medium mb-2">
-                      {surname.origin}
+                      {st(surname.originKey)}
                     </p>
-                    <p className="text-[#8B4513]/70">{surname.history}</p>
+                    <p className="text-[#8B4513]/70">
+                      {st(surname.historyKey)}
+                    </p>
                   </motion.div>
                 ))}
               </div>

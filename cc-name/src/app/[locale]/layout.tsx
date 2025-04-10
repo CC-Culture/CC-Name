@@ -28,7 +28,7 @@ export async function generateMetadata({
   params: { locale: string | Promise<string> };
 }): Promise<Metadata> {
   // 等待并解析locale
-  const locale = await Promise.resolve(params.locale);
+  const { locale } = await params;
 
   // 验证语言
   if (!locales.includes(locale as Locale)) {
@@ -52,7 +52,7 @@ export default async function RootLayout({
   params: { locale: string | Promise<string> };
 }) {
   // 等待并解析locale
-  const locale = await Promise.resolve(params.locale);
+  const { locale } = await params;
 
   // 验证语言
   if (!locales.includes(locale as Locale)) {

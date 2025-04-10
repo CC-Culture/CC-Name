@@ -23,13 +23,10 @@ const geistMono = Geist_Mono({
 
 // Next.js 15中动态路由参数可能是Promise
 export async function generateMetadata({
-  params,
+  params: { locale },
 }: {
-  params: { locale: string | Promise<string> };
+  params: { locale: string };
 }): Promise<Metadata> {
-  // 等待并解析locale
-  const { locale } = await params;
-
   // 验证语言
   if (!locales.includes(locale as Locale)) {
     notFound();
@@ -46,14 +43,11 @@ export async function generateMetadata({
 // Next.js 15中动态路由参数可能是Promise
 export default async function RootLayout({
   children,
-  params,
+  params: { locale },
 }: {
   children: React.ReactNode;
-  params: { locale: string | Promise<string> };
+  params: { locale: string };
 }) {
-  // 等待并解析locale
-  const { locale } = await params;
-
   // 验证语言
   if (!locales.includes(locale as Locale)) {
     notFound();
@@ -71,9 +65,48 @@ export default async function RootLayout({
   const isRtl = locale === "ar";
 
   return (
-    <html lang={locale} dir={isRtl ? "rtl" : "ltr"}>
+    <html
+      lang={locale}
+      dir={isRtl ? "rtl" : "ltr"}
+      className={isRtl ? "rtl" : "ltr"}
+    >
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* RTL专用样式，确保布局一致性 */}
+        {isRtl && (
+          <style
+            dangerouslySetInnerHTML={{
+              __html: `
+              /* RTL布局修复 */
+              .rtl .space-x-2 > :not([hidden]) ~ :not([hidden]) {
+                --tw-space-x-reverse: 1;
+              }
+              .rtl .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+                --tw-space-x-reverse: 1;
+              }
+              .rtl .space-x-8 > :not([hidden]) ~ :not([hidden]) {
+                --tw-space-x-reverse: 1;
+              }
+              .rtl .ml-2 {
+                margin-right: 0.5rem;
+                margin-left: 0;
+              }
+              .rtl .mr-4 {
+                margin-left: 1rem;
+                margin-right: 0;
+              }
+              /* 语言选择器位置 */
+              .rtl .origin-top-right {
+                transform-origin: top left;
+              }
+              .rtl .right-0 {
+                right: auto;
+                left: 0;
+              }
+            `,
+            }}
+          />
+        )}
       </head>
       <body
         suppressHydrationWarning

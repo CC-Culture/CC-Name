@@ -4,12 +4,14 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const Header = () => {
   const [scrollY, setScrollY] = useState(0);
   const t = useTranslations("header");
+  const locale = useLocale();
+  const isRtl = locale === "ar";
 
   useEffect(() => {
     const handleScroll = () => {

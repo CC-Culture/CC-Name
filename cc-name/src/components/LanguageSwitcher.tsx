@@ -30,6 +30,7 @@ export function LanguageSwitcher() {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const isRtl = locale === "ar";
 
   const languages = [
     { code: "zh", name: "简体中文" },
@@ -91,7 +92,9 @@ export function LanguageSwitcher() {
               <button
                 key={language.code}
                 onClick={() => handleLanguageChange(language.code)}
-                className={`block w-full px-4 py-2 text-left text-sm ${
+                className={`block w-full px-4 py-2 text-${
+                  isRtl ? "right" : "left"
+                } text-sm ${
                   language.code === locale
                     ? "bg-gray-100 text-gray-900"
                     : "text-gray-700 hover:bg-gray-50"

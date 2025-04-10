@@ -1,0 +1,73 @@
+{
+  "common": {
+    "language": "Español",
+    "title": "CC Name - Sistema de recomendación de nombres basado en la cultura china",
+    "description": "Un sistema de recomendación de nombres basado en la poesía china antigua, los clásicos y los principios de Wu Xing y Yi Jing"
+  },
+  "header": {
+    "home": "Inicio",
+    "surnameculture": "Cultura de apellidos",
+    "about": "Acerca de",
+    "login": "Iniciar sesión"
+  },
+  "home": {
+    "slogan": "Sabiduría tradicional · Nombres modernos",
+    "description": "Combinando la esencia de la cultura tradicional del 'Shijing' y los 'Cuatro Libros y Cinco Clásicos' con la profunda sabiduría del Wu Xing y Yi Jing para crear una tarjeta de nombre personal única para ti.",
+    "wuxing": "Cinco Elementos",
+    "wuxing_desc": "Basado en tu fecha y hora de nacimiento, coincidiendo precisamente con los atributos de los Cinco Elementos para asegurar que tu nombre armonice con tu destino",
+    "shijing": "Referencias poéticas",
+    "shijing_desc": "Inspirándose en el Libro de las Odas, incorporando la cultura clásica para infundir a tu nombre un profundo significado cultural",
+    "wuxing_tooltip": "Los Cinco Elementos (Metal, Madera, Agua, Fuego, Tierra) son una teoría importante en la filosofía china antigua que explica la composición del mundo natural y sus leyes de movimiento y cambio. Esta teoría sostiene que todo en el mundo está compuesto por los Cinco Elementos, que se promueven y restringen mutuamente: la Madera promueve el Fuego, el Fuego promueve la Tierra, la Tierra promueve el Metal, el Metal promueve el Agua, y el Agua promueve la Madera. En la nominación, el principio de promoción y restricción mutua de los Cinco Elementos puede ayudar a equilibrar el destino de uno y traer buena fortuna mientras se evita la desgracia.",
+    "shijing_tooltip": "El 'Shijing' (Libro de las Odas) es la colección de poesía más antigua de China, que contiene 311 poemas desde principios de la dinastía Zhou occidental hasta mediados del período de Primavera y Otoño (siglos XI a VI a.C.). Contiene ricas connotaciones culturales, hermosas imágenes y un profundo espíritu humano. Al nombrar, inspirarse en las alusiones e imágenes del 'Shijing' no solo da a los nombres una base cultural de largo alcance, sino que también continúa la esencia de la cultura china."
+  },
+  "form": {
+    "title": "Encuentra tu nombre destinado",
+    "birthdate": "Fecha de nacimiento",
+    "birthtime": "Hora de nacimiento",
+    "gender": "Género",
+    "male": "Masculino",
+    "female": "Femenino",
+    "neutral": "Neutral",
+    "surname": "Apellido",
+    "surname_placeholder": "Ingresa tu apellido (opcional)",
+    "surname_error": "Por favor ingresa 1-2 caracteres chinos",
+    "date_error": "Por favor usa el formato de fecha correcto: yyyy/MM/dd",
+    "submit": "Generar recomendaciones de nombres",
+    "loading": "Generando...",
+    "timezones": {
+      "zi": "Hora Zi (0:00-2:00)",
+      "chou": "Hora Chou (2:00-4:00)",
+      "yin": "Hora Yin (4:00-6:00)",
+      "mao": "Hora Mao (6:00-8:00)",
+      "chen": "Hora Chen (8:00-10:00)",
+      "si": "Hora Si (10:00-12:00)",
+      "wu": "Hora Wu (12:00-14:00)",
+      "wei": "Hora Wei (14:00-16:00)",
+      "shen": "Hora Shen (16:00-18:00)",
+      "you": "Hora You (18:00-20:00)",
+      "xu": "Hora Xu (20:00-22:00)",
+      "hai": "Hora Hai (22:00-24:00)"
+    }
+  },
+  "result": {
+    "title": "Tu análisis de nombre",
+    "introduction": "Basado en tu información de nacimiento, hemos generado las siguientes recomendaciones de nombres para ti:",
+    "name_recommendation": "Nombres recomendados",
+    "five_elements": "Análisis de Cinco Elementos",
+    "poetic_reference": "Referencia poética",
+    "name_meaning": "Significado del nombre",
+    "name_score": "Puntuación del nombre",
+    "compatibility": "Compatibilidad con la carta natal",
+    "cultural_depth": "Profundidad cultural",
+    "uniqueness": "Singularidad",
+    "pronunciation": "Estética fonética",
+    "try_again": "Generar de nuevo",
+    "back_to_home": "Volver al inicio"
+  },
+  "footer": {
+    "copyright": "© 2025 CC Name. Todos los derechos reservados.",
+    "privacy": "Política de privacidad",
+    "terms": "Términos de uso",
+    "contact": "Contáctanos"
+  }
+}

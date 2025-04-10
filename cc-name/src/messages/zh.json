@@ -1,0 +1,88 @@
+{
+  "common": {
+    "language": "简体中文",
+    "title": "CC Name - 基于中国古代文化的姓名推荐系统",
+    "description": "基于中国古代诗歌、四书五经以及五行八卦、梅花易数的姓名推荐系统",
+    "not_found": "页面未找到",
+    "path_not_exists": "您尝试访问的路径不存在",
+    "page_moved": "此页面可能已被移动或删除",
+    "back_home": "返回首页"
+  },
+  "header": {
+    "home": "首页",
+    "surnameculture": "姓氏文化",
+    "about": "关于我们",
+    "login": "登录"
+  },
+  "home": {
+    "slogan": "传统智慧 · 现代命名",
+    "description": "融合了《诗经》、《四书五经》的传统文化精髓，结合五行八卦与梅花易数的玄妙智慧，为您打造独具匠心的人生名片。",
+    "wuxing": "五行相生",
+    "wuxing_desc": "基于您的生辰八字，精准匹配五行属性，确保名字与命理相生相融",
+    "shijing": "诗经典故",
+    "shijing_desc": "汲取诗经雅意，融入经典文化，为您的名字注入深邃的文化意境",
+    "wuxing_tooltip": "五行（金、木、水、火、土）是中国古代哲学中阐述自然界基本物质的构成及其运动变化规律的重要理论。这一理论认为世间万物皆由五行相生相克：木生火，火生土，土生金，金生水，水生木。在起名中，通过五行相生相克的原理，可以帮助平衡人生命格，趋吉避凶。",
+    "shijing_tooltip": "《诗经》是中国最早的诗歌总集，收录了西周初年至春秋中叶（前11世纪至前6世纪）的诗歌，共311篇。其中包含了丰富的文化内涵、优美的意境以及深厚的人类精神。在起名时借鉴《诗经》的典故和意境，不仅能赋予名字深远的文化底蕴，更能传承中华文化的精髓。"
+  },
+  "form": {
+    "title": "寻找您的命定之名",
+    "birthdate": "出生日期",
+    "birthdate_placeholder": "请选择您的生日",
+    "birthdate_required": "请提供出生日期",
+    "birthdate_invalid": "请提供有效的出生日期",
+    "birthtime": "出生时辰",
+    "gender": "性别",
+    "male": "男性",
+    "female": "女性",
+    "neutral": "中性",
+    "surname": "姓氏",
+    "surname_placeholder": "请输入您的姓氏（可选）",
+    "surname_required": "请输入您的姓氏",
+    "surname_invalid": "请输入1-2个中文字符",
+    "date_error": "请使用正确的日期格式：yyyy/MM/dd",
+    "submit": "生成命名推荐",
+    "loading": "正在生成...",
+    "generation_error": "生成名字时出错，请重试",
+    "form_title": "填写基本信息",
+    "time_range": "出生时段",
+    "time_range_morning": "早晨 (子时-卯时)",
+    "time_range_afternoon": "白天 (辰时-未时)",
+    "time_range_evening": "傍晚 (申时-戌时)",
+    "time_range_night": "深夜 (亥时-丑时)",
+    "timezones": {
+      "zi": "子时 (0:00-2:00)",
+      "chou": "丑时 (2:00-4:00)",
+      "yin": "寅时 (4:00-6:00)",
+      "mao": "卯时 (6:00-8:00)",
+      "chen": "辰时 (8:00-10:00)",
+      "si": "巳时 (10:00-12:00)",
+      "wu": "午时 (12:00-14:00)",
+      "wei": "未时 (14:00-16:00)",
+      "shen": "申时 (16:00-18:00)",
+      "you": "酉时 (18:00-20:00)",
+      "xu": "戌时 (20:00-22:00)",
+      "hai": "亥时 (22:00-24:00)"
+    }
+  },
+  "result": {
+    "title": "您的命名分析",
+    "introduction": "根据您提供的生辰信息，我们为您生成了以下名字推荐：",
+    "name_recommendation": "推荐名字",
+    "five_elements": "五行分析",
+    "poetic_reference": "诗意来源",
+    "name_meaning": "名字含义",
+    "name_score": "名字评分",
+    "compatibility": "八字契合度",
+    "cultural_depth": "文化底蕴",
+    "uniqueness": "独特性",
+    "pronunciation": "音韵美感",
+    "try_again": "再次生成",
+    "back_to_home": "返回首页"
+  },
+  "footer": {
+    "copyright": "© 2025 CC Name. 保留所有权利。",
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "contact": "联系我们"
+  }
+}

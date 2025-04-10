@@ -4,9 +4,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const Header = () => {
   const [scrollY, setScrollY] = useState(0);
+  const t = useTranslations("header");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,32 +45,36 @@ const Header = () => {
           <span className="text-xl font-bold tracking-wider">CC Name</span>
         </Link>
 
-        <nav className="hidden md:flex space-x-8">
-          <Link
-            href="/"
-            className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
-          >
-            首页
-          </Link>
-          <Link
-            href="/surname-culture"
-            className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
-          >
-            姓氏文化
-          </Link>
-          <Link
-            href="/about"
-            className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
-          >
-            关于我们
-          </Link>
-          {/* <Link
-            href="/login"
-            className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
-          >
-            登录
-          </Link> */}
-        </nav>
+        <div className="flex items-center space-x-4">
+          <nav className="hidden md:flex space-x-8">
+            <Link
+              href="/"
+              className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
+            >
+              {t("home")}
+            </Link>
+            <Link
+              href="/surname-culture"
+              className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
+            >
+              {t("surnameculture")}
+            </Link>
+            <Link
+              href="/about"
+              className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
+            >
+              {t("about")}
+            </Link>
+            {/* <Link
+              href="/login"
+              className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
+            >
+              {t('login')}
+            </Link> */}
+          </nav>
+
+          <LanguageSwitcher />
+        </div>
 
         <div className="md:hidden">
           <button className="p-2">

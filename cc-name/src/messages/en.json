@@ -1,0 +1,73 @@
+{
+  "common": {
+    "language": "English",
+    "title": "CC Name - Chinese Culture-based Name Recommendation System",
+    "description": "A name recommendation system based on ancient Chinese poetry, classics, and the principles of Wu Xing and Yi Jing"
+  },
+  "header": {
+    "home": "Home",
+    "surnameculture": "Surname Culture",
+    "about": "About Us",
+    "login": "Login"
+  },
+  "home": {
+    "slogan": "Traditional Wisdom · Modern Naming",
+    "description": "Combining the essence of traditional culture from 'Shijing' and 'Four Books and Five Classics' with the profound wisdom of Wu Xing and Yi Jing to create a unique personal namecard for you.",
+    "wuxing": "Five Elements",
+    "wuxing_desc": "Based on your birth date and time, precisely matching the Five Elements attributes to ensure your name harmonizes with your destiny",
+    "shijing": "Poetic References",
+    "shijing_desc": "Drawing inspiration from the Book of Songs, incorporating classical culture to infuse your name with profound cultural significance",
+    "wuxing_tooltip": "The Five Elements (Metal, Wood, Water, Fire, Earth) are an important theory in ancient Chinese philosophy that explains the composition of the natural world and its laws of movement and change. This theory holds that everything in the world is composed of the Five Elements, which promote and restrain each other: Wood promotes Fire, Fire promotes Earth, Earth promotes Metal, Metal promotes Water, and Water promotes Wood. In naming, the principle of the Five Elements' mutual promotion and restraint can help balance one's destiny and bring good fortune while avoiding misfortune.",
+    "shijing_tooltip": "The 'Shijing' (Book of Songs) is the earliest collection of poetry in China, containing 311 poems from the early Western Zhou Dynasty to the middle of the Spring and Autumn Period (11th to 6th centuries BCE). It contains rich cultural connotations, beautiful imagery, and profound human spirit. When naming, drawing from the allusions and imagery of the 'Shijing' not only gives names a far-reaching cultural foundation but also carries forward the essence of Chinese culture."
+  },
+  "form": {
+    "title": "Find Your Destined Name",
+    "birthdate": "Date of Birth",
+    "birthtime": "Time of Birth",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "neutral": "Neutral",
+    "surname": "Surname",
+    "surname_placeholder": "Enter your surname (optional)",
+    "surname_error": "Please enter 1-2 Chinese characters",
+    "date_error": "Please use the correct date format: yyyy/MM/dd",
+    "submit": "Generate Name Recommendations",
+    "loading": "Generating...",
+    "timezones": {
+      "zi": "Zi Hour (0:00-2:00)",
+      "chou": "Chou Hour (2:00-4:00)",
+      "yin": "Yin Hour (4:00-6:00)",
+      "mao": "Mao Hour (6:00-8:00)",
+      "chen": "Chen Hour (8:00-10:00)",
+      "si": "Si Hour (10:00-12:00)",
+      "wu": "Wu Hour (12:00-14:00)",
+      "wei": "Wei Hour (14:00-16:00)",
+      "shen": "Shen Hour (16:00-18:00)",
+      "you": "You Hour (18:00-20:00)",
+      "xu": "Xu Hour (20:00-22:00)",
+      "hai": "Hai Hour (22:00-24:00)"
+    }
+  },
+  "result": {
+    "title": "Your Name Analysis",
+    "introduction": "Based on your birth information, we have generated the following name recommendations for you:",
+    "name_recommendation": "Recommended Names",
+    "five_elements": "Five Elements Analysis",
+    "poetic_reference": "Poetic Reference",
+    "name_meaning": "Name Meaning",
+    "name_score": "Name Score",
+    "compatibility": "Birth Chart Compatibility",
+    "cultural_depth": "Cultural Depth",
+    "uniqueness": "Uniqueness",
+    "pronunciation": "Phonetic Aesthetics",
+    "try_again": "Generate Again",
+    "back_to_home": "Back to Home"
+  },
+  "footer": {
+    "copyright": "© 2025 CC Name. All Rights Reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "contact": "Contact Us"
+  }
+}

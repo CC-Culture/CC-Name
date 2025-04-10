@@ -4,9 +4,14 @@
     "title": "CC Name - Sistema de recomendación de nombres basado en la cultura china",
     "description": "Un sistema de recomendación de nombres basado en la poesía china antigua, los clásicos y los principios de Wu Xing y Yi Jing",
     "not_found": "Página no encontrada",
-    "path_not_exists": "La ruta que intenta visitar no existe",
-    "page_moved": "Esta página puede haber sido movida o eliminada",
-    "back_home": "Volver a la página principal"
+    "path_not_exists": "La ruta a la que intenta acceder no existe",
+    "page_moved": "Es posible que esta página haya sido movida o eliminada",
+    "back_home": "Volver al inicio",
+    "data_not_found": "Parámetro de datos no encontrado",
+    "url_decode_error": "Error en la decodificación de URL: formato de datos inválido",
+    "json_parse_error": "Error en el análisis JSON: formato de datos inválido",
+    "data_processing_error": "Se produjo un error durante el procesamiento de datos",
+    "general_error": "Ocurrió un error. Por favor, inténtelo de nuevo más tarde."
   },
   "header": {
     "home": "Inicio",
@@ -64,19 +69,28 @@
     }
   },
   "result": {
-    "title": "Tu análisis de nombre",
-    "introduction": "Basado en tu información de nacimiento, hemos generado las siguientes recomendaciones de nombres para ti:",
+    "title": "Análisis de su nombre",
+    "introduction": "Basado en su información de nacimiento, hemos generado las siguientes recomendaciones de nombres para usted:",
     "name_recommendation": "Nombres recomendados",
-    "five_elements": "Análisis de Cinco Elementos",
+    "five_elements": "Análisis de los cinco elementos",
     "poetic_reference": "Referencia poética",
     "name_meaning": "Significado del nombre",
     "name_score": "Puntuación del nombre",
     "compatibility": "Compatibilidad con la carta natal",
     "cultural_depth": "Profundidad cultural",
     "uniqueness": "Singularidad",
-    "pronunciation": "Estética fonética",
+    "pronunciation": "Estética de pronunciación",
     "try_again": "Generar de nuevo",
-    "back_to_home": "Volver al inicio"
+    "back_to_home": "Volver al inicio",
+    "name_analysis": "Razonamiento de los cinco elementos",
+    "language_notice": "La selección de idioma está desactivada en esta página. Por favor, vuelva a la página de inicio si desea cambiar el idioma.",
+    "elements": {
+      "metal": "Metal",
+      "wood": "Madera",
+      "water": "Agua",
+      "fire": "Fuego",
+      "earth": "Tierra"
+    }
   },
   "footer": {
     "copyright": "© 2025 CC Name. Todos los derechos reservados.",

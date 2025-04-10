@@ -177,9 +177,9 @@ export default function BirthdateForm() {
         timeRange
       );
       const encodedData = encodeURIComponent(JSON.stringify(response));
-      router.push(`/result?data=${encodedData}`);
+      router.push(`/${locale}/result?data=${encodedData}`);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "生成名字时出错");
+      setError(err instanceof Error ? err.message : t("generation_error"));
     } finally {
       setIsLoading(false);
     }

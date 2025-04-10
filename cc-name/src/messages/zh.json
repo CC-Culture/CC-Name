@@ -2,11 +2,16 @@
   "common": {
     "language": "中文",
     "title": "CC Name - 基于中国文化的姓名推荐系统",
-    "description": "基于中国古代诗词经典、五行易经原理的姓名推荐系统",
-    "not_found": "页面未找到",
-    "path_not_exists": "您尝试访问的路径不存在",
-    "page_moved": "此页面可能已被移动或删除",
-    "back_home": "返回首页"
+    "description": "基于中国古代诗经、五行、易经原理的姓名推荐系统",
+    "not_found": "页面不存在",
+    "path_not_exists": "您访问的路径不存在",
+    "page_moved": "该页面可能已被移动或删除",
+    "back_home": "返回首页",
+    "data_not_found": "未找到数据参数",
+    "url_decode_error": "URL解码失败：数据格式不正确",
+    "json_parse_error": "JSON解析失败：数据格式不正确",
+    "data_processing_error": "数据处理过程中发生错误",
+    "general_error": "发生错误，请稍后再试"
   },
   "header": {
     "home": "首页",
@@ -64,19 +69,28 @@
     }
   },
   "result": {
-    "title": "您的姓名分析",
-    "introduction": "基于您的出生信息，我们为您生成了以下姓名推荐：",
-    "name_recommendation": "推荐姓名",
+    "title": "您的名字分析",
+    "introduction": "基于您的出生信息，我们为您生成了以下名字推荐：",
+    "name_recommendation": "推荐名字",
     "five_elements": "五行分析",
     "poetic_reference": "诗词典故",
-    "name_meaning": "名字寓意",
+    "name_meaning": "名字含义",
     "name_score": "名字评分",
-    "compatibility": "命理契合度",
+    "compatibility": "与生辰八字的相容性",
     "cultural_depth": "文化深度",
     "uniqueness": "独特性",
-    "pronunciation": "音韵美感",
+    "pronunciation": "发音美学",
     "try_again": "重新生成",
-    "back_to_home": "返回首页"
+    "back_to_home": "返回首页",
+    "name_analysis": "五行推理",
+    "language_notice": "此页面已禁用语言切换功能。如需更改语言，请返回首页。",
+    "elements": {
+      "metal": "金",
+      "wood": "木",
+      "water": "水",
+      "fire": "火",
+      "earth": "土"
+    }
   },
   "footer": {
     "copyright": "© 2025 CC Name. 保留所有权利。",

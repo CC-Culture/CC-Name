@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 interface ElementSectionProps {
   elements: {
     metal: number;
@@ -20,33 +22,27 @@ const elementChar = {
   earth: "土",
 };
 
-const elementDescriptions = {
-  metal: "Metal",
-  wood: "Wood",
-  water: "Water",
-  fire: "Fire",
-  earth: "Earth",
-};
-
-const elementColors = {
-  metal: "stroke-amber-500",
-  wood: "stroke-green-500",
-  water: "stroke-blue-500",
-  fire: "stroke-red-500",
-  earth: "stroke-yellow-700",
-};
-
 const ElementCircle = ({
   element,
   value,
+  elementNames,
 }: {
   element: string;
   value: number;
+  elementNames: Record<string, string>;
 }) => {
   const radius = 40;
   const circumference = 2 * Math.PI * radius;
   const progress = value * circumference;
   const dashOffset = circumference - progress;
+
+  const elementColors = {
+    metal: "stroke-amber-500",
+    wood: "stroke-green-500",
+    water: "stroke-blue-500",
+    fire: "stroke-red-500",
+    earth: "stroke-yellow-700",
+  };
 
   return (
     <div className="flex flex-col items-center gap-2">
@@ -76,9 +72,7 @@ const ElementCircle = ({
           {elementChar[element as keyof typeof elementChar]}
         </span>
       </div>
-      <span className="text-gray-600">
-        {elementDescriptions[element as keyof typeof elementDescriptions]}
-      </span>
+      <span className="text-gray-600">{elementNames[element]}</span>
     </div>
   );
 };
@@ -87,17 +81,35 @@ export default function ElementSection({
   elements,
   reasoning,
 }: ElementSectionProps) {
+  const t = useTranslations("result");
+
+  // Create element names from translations
+  const elementNames = {
+    metal: t("elements.metal"),
+    wood: t("elements.wood"),
+    water: t("elements.water"),
+    fire: t("elements.fire"),
+    earth: t("elements.earth"),
+  };
+
   return (
     <section>
-      <h2 className="text-2xl font-bold mb-8 text-center">五行分析</h2>
+      <h2 className="text-2xl font-bold mb-8 text-center">
+        {t("five_elements")}
+      </h2>
       <div className="flex justify-center items-center flex-wrap gap-8 mb-8">
         {Object.entries(elements).map(([element, value]) => (
-          <ElementCircle key={element} element={element} value={value} />
+          <ElementCircle
+            key={element}
+            element={element}
+            value={value}
+            elementNames={elementNames}
+          />
         ))}
       </div>
       {reasoning && (
         <div className="border-t border-gray-200 pt-8">
-          <h4 className="text-xl font-semibold mb-2">五行推理</h4>
+          <h4 className="text-xl font-semibold mb-2">{t("name_analysis")}</h4>
           <div className="space-y-2">
             <p className="text-gray-700">{reasoning}</p>
           </div>

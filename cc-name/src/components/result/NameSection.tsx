@@ -1,6 +1,7 @@
 "use client";
 
 import type { NameGenerationResponse } from "@/services/api";
+import { useTranslations } from "next-intl";
 
 interface NameSectionProps {
   name: NameGenerationResponse["name"] & {
@@ -10,9 +11,13 @@ interface NameSectionProps {
 }
 
 export default function NameSection({ name, poetry }: NameSectionProps) {
+  const t = useTranslations("result");
+
   return (
     <section className="mb-12 mt-12">
-      <h2 className="text-xl font-bold mb-8 text-center">姓名推荐</h2>
+      <h2 className="text-xl font-bold mb-8 text-center">
+        {t("name_recommendation")}
+      </h2>
 
       <div className="space-y-6">
         <div className="border-l-4 border-black pl-4">
@@ -31,13 +36,15 @@ export default function NameSection({ name, poetry }: NameSectionProps) {
           </div>
         </div>
         <div className="border-l-4 border-black pl-4">
-          <h4 className="text-lg font-semibold mb-2">名字含义</h4>
+          <h4 className="text-lg font-semibold mb-2">{t("name_meaning")}</h4>
           <p className="text-gray-700">{name.meaning}</p>
         </div>
 
         {poetry && (
           <div className="border-l-4 border-black pl-4">
-            <h4 className="text-lg font-semibold mb-2">关联诗词</h4>
+            <h4 className="text-lg font-semibold mb-2">
+              {t("poetic_reference")}
+            </h4>
             <div className="bg-black/5 p-2 rounded-lg">
               <p className="text-gray-700 whitespace-pre-line mb-4">
                 {poetry.content}

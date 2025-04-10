@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { useState, useRef, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
 
 // Simple inline ChevronDown component
 const ChevronDown = ({ className }: { className?: string }) => (
@@ -30,6 +30,9 @@ export const LanguageSwitcher = () => {
   const pathname = usePathname();
   const router = useRouter();
 
+  // Check if we're on the result page
+  const isResultPage = pathname.includes("/result");
+
   const languages = [
     { code: "zh", name: "中文", flag: "🇨🇳" },
     { code: "en", name: "English", flag: "🇺🇸" },
@@ -47,6 +50,8 @@ export const LanguageSwitcher = () => {
     languages.find((lang) => lang.code === locale) || languages[0];
 
   const handleLanguageChange = (newLocale: string) => {
+    if (isResultPage) return; // Prevent language change on result page
+
     // Remove the locale part from the pathname if it exists
     let pathWithoutLocale = pathname;
 
@@ -90,8 +95,13 @@ export const LanguageSwitcher = () => {
   return (
     <div className="relative" ref={dropdownRef}>
       <button
-        className="flex items-center space-x-1 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-        onClick={() => setIsOpen(!isOpen)}
+        className={`flex items-center space-x-1 px-3 py-2 rounded-md transition-colors ${
+          isResultPage
+            ? "opacity-50 cursor-not-allowed"
+            : "hover:bg-gray-100 dark:hover:bg-gray-700"
+        }`}
+        onClick={() => !isResultPage && setIsOpen(!isOpen)}
+        disabled={isResultPage}
       >
         <span className="text-lg mr-1">{currentLanguage.flag}</span>
         <span>{currentLanguage.name}</span>
@@ -113,7 +123,7 @@ export const LanguageSwitcher = () => {
         </svg>
       </button>
 
-      {isOpen && (
+      {isOpen && !isResultPage && (
         <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg overflow-hidden z-50 max-h-[80vh] overflow-y-auto">
           <div className="py-1">
             {languages.map((language) => (

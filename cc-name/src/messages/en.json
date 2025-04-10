@@ -1,12 +1,17 @@
 {
   "common": {
     "language": "English",
-    "title": "CC Name - Name Recommendation System Based on Chinese Culture",
-    "description": "A name recommendation system based on ancient Chinese poetry, classics, and principles of Wu Xing and Yi Jing",
-    "not_found": "Page Not Found",
-    "path_not_exists": "The path you are trying to access does not exist",
+    "title": "CC Name - Chinese Culture-based Name Recommendation System",
+    "description": "A name recommendation system based on ancient Chinese poetry, classics, and the principles of Wu Xing and Yi Jing",
+    "not_found": "Page not found",
+    "path_not_exists": "The path you're trying to access doesn't exist",
     "page_moved": "This page may have been moved or deleted",
-    "back_home": "Return to Home Page"
+    "back_home": "Back to home",
+    "data_not_found": "Data parameter not found",
+    "url_decode_error": "URL decoding failed: invalid data format",
+    "json_parse_error": "JSON parsing failed: invalid data format",
+    "data_processing_error": "Error occurred during data processing",
+    "general_error": "An error occurred. Please try again later."
   },
   "header": {
     "home": "Home",
@@ -74,9 +79,18 @@
     "compatibility": "Compatibility with Birth Chart",
     "cultural_depth": "Cultural Depth",
     "uniqueness": "Uniqueness",
-    "pronunciation": "Phonetic Aesthetics",
+    "pronunciation": "Pronunciation Aesthetics",
     "try_again": "Generate Again",
-    "back_to_home": "Back to Home"
+    "back_to_home": "Back to Home",
+    "name_analysis": "Five Elements Reasoning",
+    "language_notice": "Language selection is disabled on this page. Please return to the home page if you want to change the language.",
+    "elements": {
+      "metal": "Metal",
+      "wood": "Wood",
+      "water": "Water",
+      "fire": "Fire",
+      "earth": "Earth"
+    }
   },
   "footer": {
     "copyright": "© 2025 CC Name. All rights reserved.",

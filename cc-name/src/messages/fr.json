@@ -2,11 +2,16 @@
   "common": {
     "language": "Français",
     "title": "CC Name - Système de recommandation de noms basé sur la culture chinoise",
-    "description": "Un système de recommandation de noms basé sur la poésie chinoise ancienne, les classiques et les principes du Wu Xing et Yi Jing",
+    "description": "Un système de recommandation de noms basé sur la poésie chinoise ancienne, les classiques et les principes des cinq éléments (Wu Xing) et du Yi Jing",
     "not_found": "Page non trouvée",
     "path_not_exists": "Le chemin que vous essayez d'accéder n'existe pas",
     "page_moved": "Cette page a peut-être été déplacée ou supprimée",
-    "back_home": "Retour à la page d'accueil"
+    "back_home": "Retour à l'accueil",
+    "data_not_found": "Paramètre de données non trouvé",
+    "url_decode_error": "Échec du décodage URL: format de données invalide",
+    "json_parse_error": "Échec de l'analyse JSON: format de données invalide",
+    "data_processing_error": "Une erreur s'est produite lors du traitement des données",
+    "general_error": "Une erreur s'est produite. Veuillez réessayer plus tard."
   },
   "header": {
     "home": "Accueil",
@@ -64,19 +69,28 @@
     }
   },
   "result": {
-    "title": "Votre analyse de nom",
-    "introduction": "Basé sur vos informations de naissance, nous avons généré les recommandations de noms suivantes pour vous :",
+    "title": "Analyse de votre nom",
+    "introduction": "Sur la base de vos informations de naissance, nous avons généré les recommandations de noms suivantes pour vous :",
     "name_recommendation": "Noms recommandés",
-    "five_elements": "Analyse des Cinq Éléments",
+    "five_elements": "Analyse des cinq éléments",
     "poetic_reference": "Référence poétique",
     "name_meaning": "Signification du nom",
     "name_score": "Score du nom",
-    "compatibility": "Compatibilité avec la carte natale",
+    "compatibility": "Compatibilité avec le thème natal",
     "cultural_depth": "Profondeur culturelle",
-    "uniqueness": "Singularité",
-    "pronunciation": "Esthétique phonétique",
+    "uniqueness": "Originalité",
+    "pronunciation": "Esthétique de prononciation",
     "try_again": "Générer à nouveau",
-    "back_to_home": "Retour à l'accueil"
+    "back_to_home": "Retour à l'accueil",
+    "name_analysis": "Raisonnement des cinq éléments",
+    "language_notice": "La sélection de la langue est désactivée sur cette page. Veuillez revenir à la page d'accueil si vous souhaitez changer de langue.",
+    "elements": {
+      "metal": "Métal",
+      "wood": "Bois",
+      "water": "Eau",
+      "fire": "Feu",
+      "earth": "Terre"
+    }
   },
   "footer": {
     "copyright": "© 2025 CC Name. Tous droits réservés.",

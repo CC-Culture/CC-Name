@@ -1,28 +1,35 @@
 {
   "common": {
     "language": "English",
-    "title": "CC Name - Chinese Culture-based Name Recommendation System",
-    "description": "A name recommendation system based on ancient Chinese poetry, classics, and the principles of Wu Xing and Yi Jing"
+    "title": "CC Name - Name Recommendation System Based on Chinese Culture",
+    "description": "A name recommendation system based on ancient Chinese poetry, classics, and principles of Wu Xing and Yi Jing",
+    "not_found": "Page Not Found",
+    "path_not_exists": "The path you are trying to access does not exist",
+    "page_moved": "This page may have been moved or deleted",
+    "back_home": "Return to Home Page"
   },
   "header": {
     "home": "Home",
     "surnameculture": "Surname Culture",
-    "about": "About Us",
+    "about": "About",
     "login": "Login"
   },
   "home": {
-    "slogan": "Traditional Wisdom · Modern Naming",
-    "description": "Combining the essence of traditional culture from 'Shijing' and 'Four Books and Five Classics' with the profound wisdom of Wu Xing and Yi Jing to create a unique personal namecard for you.",
+    "slogan": "Traditional Wisdom · Modern Names",
+    "description": "Combining the essence of traditional culture from 'Shijing' and 'Four Books and Five Classics' with the profound wisdom of Wu Xing and Yi Jing to create a unique name chart for you.",
     "wuxing": "Five Elements",
-    "wuxing_desc": "Based on your birth date and time, precisely matching the Five Elements attributes to ensure your name harmonizes with your destiny",
+    "wuxing_desc": "Based on your date and time of birth, precisely matching the Five Elements attributes to ensure your name harmonizes with your destiny",
     "shijing": "Poetic References",
-    "shijing_desc": "Drawing inspiration from the Book of Songs, incorporating classical culture to infuse your name with profound cultural significance",
-    "wuxing_tooltip": "The Five Elements (Metal, Wood, Water, Fire, Earth) are an important theory in ancient Chinese philosophy that explains the composition of the natural world and its laws of movement and change. This theory holds that everything in the world is composed of the Five Elements, which promote and restrain each other: Wood promotes Fire, Fire promotes Earth, Earth promotes Metal, Metal promotes Water, and Water promotes Wood. In naming, the principle of the Five Elements' mutual promotion and restraint can help balance one's destiny and bring good fortune while avoiding misfortune.",
-    "shijing_tooltip": "The 'Shijing' (Book of Songs) is the earliest collection of poetry in China, containing 311 poems from the early Western Zhou Dynasty to the middle of the Spring and Autumn Period (11th to 6th centuries BCE). It contains rich cultural connotations, beautiful imagery, and profound human spirit. When naming, drawing from the allusions and imagery of the 'Shijing' not only gives names a far-reaching cultural foundation but also carries forward the essence of Chinese culture."
+    "shijing_desc": "Drawing inspiration from the Book of Odes, incorporating classical culture to infuse your name with deep cultural meaning",
+    "wuxing_tooltip": "The Five Elements (Metal, Wood, Water, Fire, Earth) are an important theory in ancient Chinese philosophy that explains the composition of the natural world and its laws of movement and change. This theory holds that everything in the world is composed of the Five Elements, which mutually promote and restrain each other: Wood promotes Fire, Fire promotes Earth, Earth promotes Metal, Metal promotes Water, and Water promotes Wood. In naming, the principle of mutual promotion and restraint of the Five Elements can help balance one's destiny and bring good fortune while avoiding misfortune.",
+    "shijing_tooltip": "The 'Shijing' (Book of Odes) is the oldest collection of poetry in China, containing 311 poems from the early Western Zhou Dynasty to the middle of the Spring and Autumn Period (11th to 6th centuries BCE). It contains rich cultural connotations, beautiful imagery, and profound human spirit. In naming, drawing inspiration from the allusions and imagery in the 'Shijing' not only gives names a far-reaching cultural foundation but also continues the essence of Chinese culture."
   },
   "form": {
     "title": "Find Your Destined Name",
     "birthdate": "Date of Birth",
+    "birthdate_placeholder": "Select your date of birth",
+    "birthdate_required": "Please provide a date of birth",
+    "birthdate_invalid": "Please provide a valid date of birth",
     "birthtime": "Time of Birth",
     "gender": "Gender",
     "male": "Male",
@@ -34,6 +41,13 @@
     "date_error": "Please use the correct date format: yyyy/MM/dd",
     "submit": "Generate Name Recommendations",
     "loading": "Generating...",
+    "generation_error": "Error generating names, please try again",
+    "form_title": "Fill in Basic Information",
+    "time_range": "Birth Time Range",
+    "time_range_morning": "Morning (Zi Hour - Mao Hour)",
+    "time_range_afternoon": "Afternoon (Chen Hour - Wei Hour)",
+    "time_range_evening": "Evening (Shen Hour - Xu Hour)",
+    "time_range_night": "Night (Hai Hour - Chou Hour)",
     "timezones": {
       "zi": "Zi Hour (0:00-2:00)",
       "chou": "Chou Hour (2:00-4:00)",
@@ -57,7 +71,7 @@
     "poetic_reference": "Poetic Reference",
     "name_meaning": "Name Meaning",
     "name_score": "Name Score",
-    "compatibility": "Birth Chart Compatibility",
+    "compatibility": "Compatibility with Birth Chart",
     "cultural_depth": "Cultural Depth",
     "uniqueness": "Uniqueness",
     "pronunciation": "Phonetic Aesthetics",
@@ -65,9 +79,77 @@
     "back_to_home": "Back to Home"
   },
   "footer": {
-    "copyright": "© 2025 CC Name. All Rights Reserved.",
+    "copyright": "© 2025 CC Name. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "contact": "Contact Us"
+  },
+  "feedback": {
+    "title": "User Feedback",
+    "anonymous": "Anonymous User",
+    "name_label": "Your Name (optional)",
+    "email_label": "Email (optional)",
+    "message_label": "Feedback Content",
+    "submit": "Submit Feedback",
+    "submitting": "Submitting...",
+    "thank_you": "Thank you for your feedback! We will carefully review your suggestions.",
+    "continue": "Continue Feedback",
+    "error_message": "Error submitting, please try again later or contact us through other means.",
+    "timeout_message": "Submission timed out, please check your network connection and try again."
+  },
+  "about": {
+    "title": "About Us",
+    "intro": {
+      "p1": "We are a team dedicated to the inheritance of traditional Chinese culture, focused on providing cultural heritage name recommendation services.",
+      "p2": "Combining traditional naming principles and modern data analysis, we offer unique and meaningful name options for every family."
+    },
+    "philosophy": {
+      "title": "Our Philosophy",
+      "item1": "Respect tradition, inherit culture",
+      "item2": "Scientific analysis, accurate recommendations",
+      "item3": "Professional service, meticulous care"
+    },
+    "advantages": {
+      "title": "Our Advantages",
+      "team": {
+        "title": "Professional Team",
+        "description": "A professional team with years of naming experience, deeply versed in the essence of traditional culture"
+      },
+      "method": {
+        "title": "Scientific Method",
+        "description": "Combining traditional culture with modern analytical methods to provide you with the best recommendations"
+      }
+    },
+    "contact": {
+      "intro": "If you have any questions or suggestions, please feel free to contact us",
+      "email": {
+        "title": "Email"
+      }
+    }
+  },
+  "surname": {
+    "title": "Chinese Surname Culture",
+    "subtitle": "Explore five thousand years of surname origins, inherit the imprint of Chinese civilization",
+    "banner": {
+      "alt": "History of the Hundred Family Names"
+    },
+    "wiki_link": "Explore more surname origins",
+    "origin": {
+      "title": "Origin and Evolution of Surnames",
+      "description": "Chinese surname culture has a long history dating back to antiquity. Initially, there was a distinction between 'xing' (姓) and 'shi' (氏): 'xing' represented blood relations, while 'shi' indicated social status or territorial division."
+    },
+    "distribution": {
+      "title": "Hundred Family Names and Regional Distribution",
+      "ranking": "Surname Rankings",
+      "ranking_desc": "The most common surnames in China currently are Li, Wang, Zhang, Liu, Chen, etc. The distribution and migration of these surnames reflect population movement and cultural integration throughout Chinese history.",
+      "regional": "Regional Characteristics",
+      "regional_desc": "Common surnames in southern regions differ from those in the north, which is closely related to historical migration waves, geographical environment, and cultural traditions."
+    },
+    "navigation": {
+      "title": "Quick Navigation",
+      "origin": "Origin of Names",
+      "distribution": "Regional Distribution",
+      "culture": "Name Culture"
+    }
   }
 }

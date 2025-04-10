@@ -35,7 +35,7 @@ const Header = () => {
     >
       <div className="container mx-auto flex justify-between items-center">
         <Link
-          href="/"
+          href={`/${locale}`}
           className={`flex items-center ${
             isRtl ? "space-x-reverse" : "space-x-2"
           }`}
@@ -63,25 +63,25 @@ const Header = () => {
             }`}
           >
             <Link
-              href="/"
+              href={`/${locale}`}
               className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
             >
               {t("home")}
             </Link>
             <Link
-              href="/surname-culture"
+              href={`/${locale}/surname-culture`}
               className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
             >
               {t("surnameculture")}
             </Link>
             <Link
-              href="/about"
+              href={`/${locale}/about`}
               className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
             >
               {t("about")}
             </Link>
             {/* <Link
-              href="/login"
+              href={`/${locale}/login`}
               className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
             >
               {t('login')}

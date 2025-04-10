@@ -2,7 +2,11 @@
   "common": {
     "language": "Français",
     "title": "CC Name - Système de recommandation de noms basé sur la culture chinoise",
-    "description": "Un système de recommandation de noms basé sur la poésie chinoise ancienne, les classiques, et les principes du Wu Xing et du Yi Jing"
+    "description": "Un système de recommandation de noms basé sur la poésie chinoise ancienne, les classiques et les principes du Wu Xing et Yi Jing",
+    "not_found": "Page non trouvée",
+    "path_not_exists": "Le chemin que vous essayez d'accéder n'existe pas",
+    "page_moved": "Cette page a peut-être été déplacée ou supprimée",
+    "back_home": "Retour à la page d'accueil"
   },
   "header": {
     "home": "Accueil",
@@ -11,18 +15,21 @@
     "login": "Connexion"
   },
   "home": {
-    "slogan": "Sagesse traditionnelle · Nomination moderne",
-    "description": "Combinant l'essence de la culture traditionnelle du 'Shijing' et des 'Quatre Livres et Cinq Classiques' avec la sagesse profonde du Wu Xing et du Yi Jing pour créer une carte de nom personnelle unique pour vous.",
+    "slogan": "Sagesse traditionnelle · Noms modernes",
+    "description": "Combinant l'essence de la culture traditionnelle du 'Shijing' et des 'Quatre Livres et Cinq Classiques' avec la profonde sagesse du Wu Xing et Yi Jing pour créer une carte de nom personnelle unique pour vous.",
     "wuxing": "Cinq Éléments",
     "wuxing_desc": "Basé sur votre date et heure de naissance, correspondant précisément aux attributs des Cinq Éléments pour assurer que votre nom s'harmonise avec votre destin",
     "shijing": "Références poétiques",
-    "shijing_desc": "S'inspirant du Livre des Odes, incorporant la culture classique pour infuser votre nom d'une signification culturelle profonde",
-    "wuxing_tooltip": "Les Cinq Éléments (Métal, Bois, Eau, Feu, Terre) sont une théorie importante dans la philosophie chinoise ancienne qui explique la composition du monde naturel et ses lois de mouvement et de changement. Cette théorie soutient que tout dans le monde est composé des Cinq Éléments, qui se favorisent et se restreignent mutuellement : le Bois favorise le Feu, le Feu favorise la Terre, la Terre favorise le Métal, le Métal favorise l'Eau, et l'Eau favorise le Bois. Dans la nomination, le principe de promotion et de restriction mutuelles des Cinq Éléments peut aider à équilibrer son destin et apporter chance tout en évitant les malheurs.",
-    "shijing_tooltip": "Le 'Shijing' (Livre des Odes) est la plus ancienne collection de poésie en Chine, contenant 311 poèmes du début de la dynastie Zhou occidentale au milieu de la période des Printemps et Automnes (11e au 6e siècles av. J.-C.). Il contient de riches connotations culturelles, de belles images et un esprit humain profond. Lors de la nomination, s'inspirer des allusions et des images du 'Shijing' donne non seulement aux noms une fondation culturelle lointaine mais perpétue également l'essence de la culture chinoise."
+    "shijing_desc": "S'inspirant du Livre des Odes, incorporant la culture classique pour insuffler à votre nom une signification culturelle profonde",
+    "wuxing_tooltip": "Les Cinq Éléments (Métal, Bois, Eau, Feu, Terre) sont une théorie importante dans la philosophie chinoise ancienne qui explique la composition du monde naturel et ses lois de mouvement et de changement. Cette théorie soutient que tout dans le monde est composé des Cinq Éléments, qui se promeuvent et se restreignent mutuellement : le Bois promeut le Feu, le Feu promeut la Terre, la Terre promeut le Métal, le Métal promeut l'Eau, et l'Eau promeut le Bois. Dans la nomination, le principe de promotion et de restriction mutuelle des Cinq Éléments peut aider à équilibrer le destin et apporter la bonne fortune tout en évitant le malheur.",
+    "shijing_tooltip": "Le 'Shijing' (Livre des Odes) est la plus ancienne collection de poésie de Chine, contenant 311 poèmes du début de la dynastie Zhou occidentale jusqu'au milieu de la période des Printemps et Automnes (XIe au VIe siècle av. J.-C.). Il contient de riches connotations culturelles, de belles images et un profond esprit humain. En nommant, s'inspirer des allusions et des images du 'Shijing' donne non seulement aux noms une base culturelle de grande portée, mais continue également l'essence de la culture chinoise."
   },
   "form": {
     "title": "Trouvez votre nom destiné",
     "birthdate": "Date de naissance",
+    "birthdate_placeholder": "Sélectionnez votre date de naissance",
+    "birthdate_required": "Veuillez fournir une date de naissance",
+    "birthdate_invalid": "Veuillez fournir une date de naissance valide",
     "birthtime": "Heure de naissance",
     "gender": "Genre",
     "male": "Masculin",
@@ -33,7 +40,14 @@
     "surname_error": "Veuillez entrer 1-2 caractères chinois",
     "date_error": "Veuillez utiliser le format de date correct : yyyy/MM/dd",
     "submit": "Générer des recommandations de noms",
-    "loading": "Génération en cours...",
+    "loading": "Génération...",
+    "generation_error": "Erreur lors de la génération de noms, veuillez réessayer",
+    "form_title": "Remplir les informations de base",
+    "time_range": "Plage horaire de naissance",
+    "time_range_morning": "Matin (Heure Zi - Heure Mao)",
+    "time_range_afternoon": "Après-midi (Heure Chen - Heure Wei)",
+    "time_range_evening": "Soir (Heure Shen - Heure Xu)",
+    "time_range_night": "Nuit (Heure Hai - Heure Chou)",
     "timezones": {
       "zi": "Heure Zi (0:00-2:00)",
       "chou": "Heure Chou (2:00-4:00)",
@@ -51,15 +65,15 @@
   },
   "result": {
     "title": "Votre analyse de nom",
-    "introduction": "D'après vos informations de naissance, nous avons généré les recommandations de noms suivantes pour vous :",
+    "introduction": "Basé sur vos informations de naissance, nous avons généré les recommandations de noms suivantes pour vous :",
     "name_recommendation": "Noms recommandés",
     "five_elements": "Analyse des Cinq Éléments",
     "poetic_reference": "Référence poétique",
     "name_meaning": "Signification du nom",
     "name_score": "Score du nom",
-    "compatibility": "Compatibilité avec le thème natal",
+    "compatibility": "Compatibilité avec la carte natale",
     "cultural_depth": "Profondeur culturelle",
-    "uniqueness": "Unicité",
+    "uniqueness": "Singularité",
     "pronunciation": "Esthétique phonétique",
     "try_again": "Générer à nouveau",
     "back_to_home": "Retour à l'accueil"
@@ -68,6 +82,74 @@
     "copyright": "© 2025 CC Name. Tous droits réservés.",
     "privacy": "Politique de confidentialité",
     "terms": "Conditions d'utilisation",
-    "contact": "Nous contacter"
+    "contact": "Contactez-nous"
+  },
+  "feedback": {
+    "title": "Commentaires des Utilisateurs",
+    "anonymous": "Utilisateur Anonyme",
+    "name_label": "Votre Nom (facultatif)",
+    "email_label": "Courriel (facultatif)",
+    "message_label": "Contenu du Commentaire",
+    "submit": "Envoyer le Commentaire",
+    "submitting": "Envoi en cours...",
+    "thank_you": "Merci pour votre commentaire ! Nous examinerons attentivement vos suggestions.",
+    "continue": "Continuer le Commentaire",
+    "error_message": "Erreur lors de l'envoi, veuillez réessayer plus tard ou nous contacter par d'autres moyens.",
+    "timeout_message": "Délai d'envoi dépassé, veuillez vérifier votre connexion réseau et réessayer."
+  },
+  "about": {
+    "title": "À Propos de Nous",
+    "intro": {
+      "p1": "Nous sommes une équipe dédiée à l'héritage de la culture traditionnelle chinoise, axée sur la fourniture de services de recommandation de noms à patrimoine culturel.",
+      "p2": "Combinant les principes traditionnels de dénomination et l'analyse de données modernes, nous offrons des options de noms uniques et significatifs pour chaque famille."
+    },
+    "philosophy": {
+      "title": "Notre Philosophie",
+      "item1": "Respecter la tradition, hériter de la culture",
+      "item2": "Analyse scientifique, recommandations précises",
+      "item3": "Service professionnel, attention soignée"
+    },
+    "advantages": {
+      "title": "Nos Avantages",
+      "team": {
+        "title": "Équipe Professionnelle",
+        "description": "Une équipe professionnelle avec des années d'expérience en dénomination, profondément versée dans l'essence de la culture traditionnelle"
+      },
+      "method": {
+        "title": "Méthode Scientifique",
+        "description": "Combinant la culture traditionnelle avec des méthodes analytiques modernes pour vous fournir les meilleures recommandations"
+      }
+    },
+    "contact": {
+      "intro": "Si vous avez des questions ou des suggestions, n'hésitez pas à nous contacter",
+      "email": {
+        "title": "Courriel"
+      }
+    }
+  },
+  "surname": {
+    "title": "Culture des Noms de Famille Chinois",
+    "subtitle": "Explorez cinq mille ans d'origines des noms de famille, héritez de l'empreinte de la civilisation chinoise",
+    "banner": {
+      "alt": "Histoire des Cent Noms de Famille"
+    },
+    "wiki_link": "Explorer plus d'origines de noms de famille",
+    "origin": {
+      "title": "Origine et Évolution des Noms de Famille",
+      "description": "La culture des noms de famille chinois a une longue histoire qui remonte à l'antiquité. Initialement, il y avait une distinction entre 'xing' (姓) et 'shi' (氏) : 'xing' représentait les relations de sang, tandis que 'shi' indiquait le statut social ou la division territoriale."
+    },
+    "distribution": {
+      "title": "Cent Noms de Famille et Distribution Régionale",
+      "ranking": "Classement des Noms de Famille",
+      "ranking_desc": "Les noms de famille les plus courants en Chine actuellement sont Li, Wang, Zhang, Liu, Chen, etc. La distribution et la migration de ces noms de famille reflètent le mouvement de population et l'intégration culturelle tout au long de l'histoire chinoise.",
+      "regional": "Caractéristiques Régionales",
+      "regional_desc": "Les noms de famille courants dans les régions du sud diffèrent de ceux du nord, ce qui est étroitement lié aux vagues migratoires historiques, à l'environnement géographique et aux traditions culturelles."
+    },
+    "navigation": {
+      "title": "Navigation Rapide",
+      "origin": "Origine des Noms",
+      "distribution": "Distribution Régionale",
+      "culture": "Culture des Noms"
+    }
   }
 }

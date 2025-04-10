@@ -2,7 +2,11 @@
   "common": {
     "language": "Español",
     "title": "CC Name - Sistema de recomendación de nombres basado en la cultura china",
-    "description": "Un sistema de recomendación de nombres basado en la poesía china antigua, los clásicos y los principios de Wu Xing y Yi Jing"
+    "description": "Un sistema de recomendación de nombres basado en la poesía china antigua, los clásicos y los principios de Wu Xing y Yi Jing",
+    "not_found": "Página no encontrada",
+    "path_not_exists": "La ruta que intenta visitar no existe",
+    "page_moved": "Esta página puede haber sido movida o eliminada",
+    "back_home": "Volver a la página principal"
   },
   "header": {
     "home": "Inicio",
@@ -23,6 +27,9 @@
   "form": {
     "title": "Encuentra tu nombre destinado",
     "birthdate": "Fecha de nacimiento",
+    "birthdate_placeholder": "Selecciona tu fecha de nacimiento",
+    "birthdate_required": "Por favor proporciona tu fecha de nacimiento",
+    "birthdate_invalid": "Por favor proporciona una fecha de nacimiento válida",
     "birthtime": "Hora de nacimiento",
     "gender": "Género",
     "male": "Masculino",
@@ -34,6 +41,13 @@
     "date_error": "Por favor usa el formato de fecha correcto: yyyy/MM/dd",
     "submit": "Generar recomendaciones de nombres",
     "loading": "Generando...",
+    "generation_error": "Error al generar nombres, por favor intenta de nuevo",
+    "form_title": "Completa la información básica",
+    "time_range": "Rango de tiempo de nacimiento",
+    "time_range_morning": "Mañana (Hora Zi - Hora Mao)",
+    "time_range_afternoon": "Tarde (Hora Chen - Hora Wei)",
+    "time_range_evening": "Noche (Hora Shen - Hora Xu)",
+    "time_range_night": "Madrugada (Hora Hai - Hora Chou)",
     "timezones": {
       "zi": "Hora Zi (0:00-2:00)",
       "chou": "Hora Chou (2:00-4:00)",
@@ -69,5 +83,73 @@
     "privacy": "Política de privacidad",
     "terms": "Términos de uso",
     "contact": "Contáctanos"
+  },
+  "feedback": {
+    "title": "Comentarios de Usuarios",
+    "anonymous": "Usuario Anónimo",
+    "name_label": "Tu Nombre (opcional)",
+    "email_label": "Correo Electrónico (opcional)",
+    "message_label": "Contenido del Comentario",
+    "submit": "Enviar Comentario",
+    "submitting": "Enviando...",
+    "thank_you": "¡Gracias por tu comentario! Consideraremos cuidadosamente tus sugerencias.",
+    "continue": "Continuar Comentario",
+    "error_message": "Error al enviar, por favor intenta de nuevo más tarde o contáctanos por otros medios.",
+    "timeout_message": "Tiempo de envío agotado, por favor verifica tu conexión de red e intenta de nuevo."
+  },
+  "about": {
+    "title": "Acerca de Nosotros",
+    "intro": {
+      "p1": "Somos un equipo dedicado a la herencia de la cultura tradicional china, enfocados en proporcionar servicios de recomendación de nombres con patrimonio cultural.",
+      "p2": "Combinando principios tradicionales de nomenclatura y análisis de datos modernos, ofrecemos opciones de nombres únicos y significativos para cada familia."
+    },
+    "philosophy": {
+      "title": "Nuestra Filosofía",
+      "item1": "Respetar la tradición, heredar la cultura",
+      "item2": "Análisis científico, recomendaciones precisas",
+      "item3": "Servicio profesional, atención cuidadosa"
+    },
+    "advantages": {
+      "title": "Nuestras Ventajas",
+      "team": {
+        "title": "Equipo Profesional",
+        "description": "Un equipo profesional con años de experiencia en nomenclatura, profundamente versado en la esencia de la cultura tradicional"
+      },
+      "method": {
+        "title": "Método Científico",
+        "description": "Combinando la cultura tradicional con métodos analíticos modernos para proporcionarte las mejores recomendaciones"
+      }
+    },
+    "contact": {
+      "intro": "Si tienes alguna pregunta o sugerencia, no dudes en contactarnos",
+      "email": {
+        "title": "Correo Electrónico"
+      }
+    }
+  },
+  "surname": {
+    "title": "Cultura de Apellidos Chinos",
+    "subtitle": "Explora cinco mil años de orígenes de apellidos, hereda la huella de la civilización china",
+    "banner": {
+      "alt": "Historia de los Cien Apellidos"
+    },
+    "wiki_link": "Explora más orígenes de apellidos",
+    "origin": {
+      "title": "Origen y Evolución de los Apellidos",
+      "description": "La cultura de apellidos chinos tiene una larga historia que se remonta a tiempos antiguos. Inicialmente, había una distinción entre 'xing' (姓) y 'shi' (氏): 'xing' representaba relaciones de sangre, mientras que 'shi' indicaba estatus social o división territorial."
+    },
+    "distribution": {
+      "title": "Cien Apellidos y Distribución Regional",
+      "ranking": "Clasificación de Apellidos",
+      "ranking_desc": "Los apellidos más comunes en China actualmente son Li, Wang, Zhang, Liu, Chen, etc. La distribución y migración de estos apellidos refleja el movimiento de población y la integración cultural a lo largo de la historia china.",
+      "regional": "Características Regionales",
+      "regional_desc": "Los apellidos comunes en las regiones del sur difieren de los del norte, lo cual está estrechamente relacionado con las olas migratorias históricas, el entorno geográfico y las tradiciones culturales."
+    },
+    "navigation": {
+      "title": "Navegación Rápida",
+      "origin": "Origen de Apellidos",
+      "distribution": "Distribución Regional",
+      "culture": "Cultura de Apellidos"
+    }
   }
 }

@@ -1,73 +1,155 @@
 {
   "common": {
-    "language": "Português",
-    "title": "CC Name - Sistema de Recomendação de Nomes Baseado na Cultura Chinesa",
-    "description": "Um sistema de recomendação de nomes baseado na poesia chinesa antiga, clássicos e nos princípios de Wu Xing e Yi Jing"
+    "language": "português",
+    "title": "CC Name - Sistema de recomendação de nomes baseado na cultura chinesa",
+    "description": "Sistema de recomendação de nomes baseado na poesia clássica chinesa e nos princípios de Wu Xing e Yi Jing",
+    "not_found": "Página não encontrada",
+    "path_not_exists": "O caminho que você está tentando acessar não existe",
+    "page_moved": "Esta página pode ter sido movida ou removida",
+    "back_home": "Voltar para a página inicial"
   },
   "header": {
     "home": "Início",
-    "surnameculture": "Cultura de Sobrenomes",
-    "about": "Sobre Nós",
+    "surnameculture": "Cultura dos sobrenomes",
+    "about": "Sobre nós",
     "login": "Entrar"
   },
   "home": {
-    "slogan": "Sabedoria Tradicional · Nomes Modernos",
-    "description": "Combinando a essência da cultura tradicional do 'Shijing' e dos 'Quatro Livros e Cinco Clássicos' com a profunda sabedoria do Wu Xing e Yi Jing para criar um cartão de identidade pessoal único para você.",
-    "wuxing": "Cinco Elementos",
-    "wuxing_desc": "Com base na sua data e hora de nascimento, combinando precisamente os atributos dos Cinco Elementos para garantir que seu nome harmonize com seu destino",
-    "shijing": "Referências Poéticas",
-    "shijing_desc": "Inspirando-se no Livro das Canções, incorporando a cultura clássica para infundir seu nome com profundo significado cultural",
-    "wuxing_tooltip": "Os Cinco Elementos (Metal, Madeira, Água, Fogo, Terra) são uma teoria importante na filosofia chinesa antiga que explica a composição do mundo natural e suas leis de movimento e mudança. Esta teoria sustenta que tudo no mundo é composto pelos Cinco Elementos, que se promovem e restringem mutuamente: a Madeira promove o Fogo, o Fogo promove a Terra, a Terra promove o Metal, o Metal promove a Água, e a Água promove a Madeira. Na nomeação, o princípio de promoção e restrição mútua dos Cinco Elementos pode ajudar a equilibrar o destino de alguém e trazer boa sorte, evitando o infortúnio.",
-    "shijing_tooltip": "O 'Shijing' (Livro das Canções) é a coleção mais antiga de poesia na China, contendo 311 poemas do início da Dinastia Zhou Ocidental até o meio do Período de Primavera e Outono (séculos 11 a 6 a.C.). Contém ricas conotações culturais, belas imagens e profundo espírito humano. Ao nomear, inspirar-se nas alusões e imagens do 'Shijing' não só confere aos nomes uma ampla base cultural, mas também transmite a essência da cultura chinesa."
+    "slogan": "Sabedoria tradicional · Nomenclatura moderna",
+    "description": "Combinando a essência da cultura tradicional do Shi Jing e dos Quatro Livros e Cinco Clássicos com a profunda sabedoria do Wu Xing e Yi Jing, criamos para você uma experiência única de nomeação.",
+    "wuxing": "Elementos Wu Xing",
+    "wuxing_desc": "Com base na sua data e hora de nascimento, combinamos com precisão os atributos dos Cinco Elementos, garantindo que seu nome esteja em harmonia com seu destino",
+    "shijing": "Referências poéticas",
+    "shijing_desc": "Inspirado na poesia clássica, incorporamos a cultura tradicional para dar ao seu nome uma profunda significância cultural",
+    "wuxing_tooltip": "Wu Xing (metal, madeira, água, fogo, terra) é uma teoria importante na filosofia chinesa antiga, que explica a composição do mundo natural e suas leis de movimento e mudança. Esta teoria afirma que tudo no mundo é composto pelos Cinco Elementos, que se promovem e restringem mutuamente: madeira gera fogo, fogo gera terra, terra gera metal, metal gera água, água gera madeira. Na nomeação, a aplicação do princípio de promoção e restrição mútua dos Cinco Elementos pode ajudar a equilibrar o destino, atrair boa sorte e evitar o infortúnio.",
+    "shijing_tooltip": "O 'Shi Jing' (Livro das Canções) é a mais antiga coleção de poesia na China, contendo 311 poemas desde o início da dinastia Zhou Ocidental até meados do período de Primavera e Outono (séculos XI-VI a.C.). É rico em conotações culturais, belas imagens e um profundo espírito humanista. Ao buscar inspiração nas alusões e imagens do 'Shi Jing' para nomear, não apenas damos aos nomes uma base cultural profunda, mas também transmitimos a essência da cultura chinesa."
   },
   "form": {
-    "title": "Encontre Seu Nome Destinado",
-    "birthdate": "Data de Nascimento",
-    "birthtime": "Hora de Nascimento",
+    "title": "Encontre seu nome predestinado",
+    "birthdate": "Data de nascimento",
+    "birthdate_placeholder": "Selecione sua data de nascimento",
+    "birthdate_required": "Por favor, forneça a data de nascimento",
+    "birthdate_invalid": "Por favor, forneça uma data de nascimento válida",
+    "birthtime": "Hora de nascimento",
     "gender": "Gênero",
     "male": "Masculino",
     "female": "Feminino",
     "neutral": "Neutro",
     "surname": "Sobrenome",
     "surname_placeholder": "Digite seu sobrenome (opcional)",
-    "surname_error": "Por favor, insira 1-2 caracteres chineses",
-    "date_error": "Por favor, use o formato de data correto: aaaa/MM/dd",
-    "submit": "Gerar Recomendações de Nome",
+    "surname_error": "Por favor, digite 1-2 caracteres chineses",
+    "date_error": "Por favor, use o formato correto de data: aaaa/mm/dd",
+    "submit": "Gerar recomendações de nomes",
     "loading": "Gerando...",
+    "generation_error": "Erro ao gerar o nome, por favor tente novamente",
+    "form_title": "Preencha as informações básicas",
+    "time_range": "Período de nascimento",
+    "time_range_morning": "Manhã (Zi Shi - Mao Shi)",
+    "time_range_afternoon": "Tarde (Chen Shi - Wei Shi)",
+    "time_range_evening": "Anoitecer (Shen Shi - Xu Shi)",
+    "time_range_night": "Noite (Hai Shi - Chou Shi)",
     "timezones": {
-      "zi": "Hora Zi (0:00-2:00)",
-      "chou": "Hora Chou (2:00-4:00)",
-      "yin": "Hora Yin (4:00-6:00)",
-      "mao": "Hora Mao (6:00-8:00)",
-      "chen": "Hora Chen (8:00-10:00)",
-      "si": "Hora Si (10:00-12:00)",
-      "wu": "Hora Wu (12:00-14:00)",
-      "wei": "Hora Wei (14:00-16:00)",
-      "shen": "Hora Shen (16:00-18:00)",
-      "you": "Hora You (18:00-20:00)",
-      "xu": "Hora Xu (20:00-22:00)",
-      "hai": "Hora Hai (22:00-24:00)"
+      "zi": "Zi Shi (0:00-2:00)",
+      "chou": "Chou Shi (2:00-4:00)",
+      "yin": "Yin Shi (4:00-6:00)",
+      "mao": "Mao Shi (6:00-8:00)",
+      "chen": "Chen Shi (8:00-10:00)",
+      "si": "Si Shi (10:00-12:00)",
+      "wu": "Wu Shi (12:00-14:00)",
+      "wei": "Wei Shi (14:00-16:00)",
+      "shen": "Shen Shi (16:00-18:00)",
+      "you": "You Shi (18:00-20:00)",
+      "xu": "Xu Shi (20:00-22:00)",
+      "hai": "Hai Shi (22:00-24:00)"
     }
   },
   "result": {
-    "title": "Análise do Seu Nome",
-    "introduction": "Com base nas informações do seu nascimento, geramos as seguintes recomendações de nome para você:",
-    "name_recommendation": "Nomes Recomendados",
-    "five_elements": "Análise dos Cinco Elementos",
-    "poetic_reference": "Referência Poética",
-    "name_meaning": "Significado do Nome",
-    "name_score": "Pontuação do Nome",
-    "compatibility": "Compatibilidade com o Mapa de Nascimento",
-    "cultural_depth": "Profundidade Cultural",
+    "title": "Análise do seu nome",
+    "introduction": "Com base nas suas informações de nascimento, geramos as seguintes recomendações de nomes para você:",
+    "name_recommendation": "Nomes recomendados",
+    "five_elements": "Análise Wu Xing",
+    "poetic_reference": "Referências poéticas",
+    "name_meaning": "Significado do nome",
+    "name_score": "Pontuação do nome",
+    "compatibility": "Compatibilidade com o destino",
+    "cultural_depth": "Profundidade cultural",
     "uniqueness": "Singularidade",
-    "pronunciation": "Estética Fonética",
-    "try_again": "Gerar Novamente",
-    "back_to_home": "Voltar para o Início"
+    "pronunciation": "Estética fonética",
+    "try_again": "Gerar novamente",
+    "back_to_home": "Voltar para a página inicial"
   },
   "footer": {
     "copyright": "© 2025 CC Name. Todos os direitos reservados.",
-    "privacy": "Política de Privacidade",
-    "terms": "Termos de Uso",
+    "privacy": "Política de privacidade",
+    "terms": "Termos de uso",
     "contact": "Contate-nos"
+  },
+  "feedback": {
+    "title": "Feedback do usuário",
+    "anonymous": "Usuário anônimo",
+    "name_label": "Seu nome (opcional)",
+    "email_label": "E-mail (opcional)",
+    "message_label": "Conteúdo do feedback",
+    "submit": "Enviar feedback",
+    "submitting": "Enviando...",
+    "thank_you": "Obrigado pelo seu feedback! Estudaremos suas sugestões com atenção.",
+    "continue": "Continuar fornecendo feedback",
+    "error_message": "Falha no envio, por favor tente novamente mais tarde ou entre em contato conosco por outros meios.",
+    "timeout_message": "Tempo esgotado para envio, por favor verifique sua conexão com a internet e tente novamente."
+  },
+  "about": {
+    "title": "Sobre nós",
+    "intro": {
+      "p1": "Somos uma equipe dedicada a preservar a cultura tradicional chinesa e oferecer serviços de recomendação de nomes com profundo significado cultural.",
+      "p2": "Combinando princípios tradicionais de nomeação com análise de dados moderna, proporcionamos a cada família escolhas de nomes únicas e significativas."
+    },
+    "philosophy": {
+      "title": "Nossa filosofia",
+      "item1": "Respeitar a tradição, preservar a cultura",
+      "item2": "Análise científica, recomendações precisas",
+      "item3": "Serviço profissional, cuidado atencioso"
+    },
+    "advantages": {
+      "title": "Nossas vantagens",
+      "team": {
+        "title": "Equipe profissional",
+        "description": "Uma equipe profissional com anos de experiência em nomenclatura, compreendendo profundamente a essência da cultura tradicional"
+      },
+      "method": {
+        "title": "Método científico",
+        "description": "Combinação de cultura tradicional e métodos de análise modernos para fornecer as melhores recomendações"
+      }
+    },
+    "contact": {
+      "intro": "Se você tiver alguma dúvida ou sugestão, não hesite em nos contatar",
+      "email": {
+        "title": "E-mail"
+      }
+    }
+  },
+  "surname": {
+    "title": "Cultura dos sobrenomes chineses",
+    "subtitle": "Explore os cinco mil anos de origem dos sobrenomes, herança da civilização chinesa",
+    "banner": {
+      "alt": "História do Bai Jia Xing (Cem Sobrenomes)"
+    },
+    "wiki_link": "Explore mais sobre a origem dos sobrenomes",
+    "origin": {
+      "title": "Origem e evolução dos sobrenomes",
+      "description": "A cultura dos sobrenomes chineses tem uma longa história, remontando aos tempos antigos. Inicialmente, havia uma distinção entre 'xing' (姓) e 'shi' (氏): 'xing' representava relações de sangue, enquanto 'shi' indicava status social ou divisão territorial."
+    },
+    "distribution": {
+      "title": "Bai Jia Xing e distribuição geográfica",
+      "ranking": "Classificação dos sobrenomes",
+      "ranking_desc": "Atualmente, os sobrenomes mais comuns na China são Li, Wang, Zhang, Liu, Chen, etc. A distribuição desses sobrenomes reflete o processo de migração populacional e fusão cultural na história chinesa.",
+      "regional": "Características regionais",
+      "regional_desc": "Os sobrenomes comuns nas regiões do sul diferem dos do norte, o que está intimamente relacionado com as ondas históricas de migração, geografia e tradições culturais."
+    },
+    "navigation": {
+      "title": "Navegação rápida",
+      "origin": "Origem dos sobrenomes",
+      "distribution": "Distribuição geográfica",
+      "culture": "Cultura dos sobrenomes"
+    }
   }
 }

@@ -2,12 +2,17 @@ import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import { useTranslations, useLocale } from "next-intl";
 
 type FeedbackFormProps = {
   className?: string;
 };
 
 export default function FeedbackForm({ className = "" }: FeedbackFormProps) {
+  const t = useTranslations("feedback");
+  const locale = useLocale();
+  const isRtl = locale === "ar" || locale === "ur";
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -40,7 +45,7 @@ export default function FeedbackForm({ className = "" }: FeedbackFormProps) {
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
-    // 设置10秒超时计时器
+    // 设置8秒超时计时器
     clearTimeoutTimer();
     timeoutRef.current = setTimeout(() => {
       setSubmitStatus("timeout");
@@ -49,9 +54,10 @@ export default function FeedbackForm({ className = "" }: FeedbackFormProps) {
     try {
       // 将反馈添加到Firestore
       await addDoc(collection(db, "feedback"), {
-        name: name.trim() || "匿名用户",
+        name: name.trim() || t("anonymous"),
         email: email.trim() || null,
         message: message.trim(),
+        locale: locale,
         createdAt: serverTimestamp(),
       });
       // 清除超时计时器
@@ -66,7 +72,7 @@ export default function FeedbackForm({ className = "" }: FeedbackFormProps) {
       // 清除超时计时器
       clearTimeoutTimer();
 
-      console.error("提交反馈时出错:", error);
+      console.error("Error submitting feedback:", error);
       setSubmitStatus("error");
     } finally {
       // 如果计时器还在运行（没有超时），则清除它
@@ -77,7 +83,9 @@ export default function FeedbackForm({ className = "" }: FeedbackFormProps) {
 
   return (
     <div className={`${className}`}>
-      <h3 className="text-2xl font-semibold mb-4 text-[#8B4513]">用户反馈</h3>
+      <h3 className="text-2xl font-semibold mb-4 text-[#8B4513]">
+        {t("title")}
+      </h3>
 
       {submitStatus === "success" ? (
         <motion.div
@@ -86,13 +94,13 @@ export default function FeedbackForm({ className = "" }: FeedbackFormProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <p className="text-center">感谢您的反馈！我们会认真考虑您的建议。</p>
+          <p className="text-center">{t("thank_you")}</p>
           <div className="text-center mt-4">
             <button
               onClick={() => setSubmitStatus("idle")}
               className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
             >
-              继续反馈
+              {t("continue")}
             </button>
           </div>
         </motion.div>
@@ -103,7 +111,7 @@ export default function FeedbackForm({ className = "" }: FeedbackFormProps) {
               htmlFor="name"
               className="block text-lg font-medium mb-2 text-[#8B4513]"
             >
-              您的姓名 (选填)
+              {t("name_label")}
             </label>
             <input
               type="text"
@@ -111,7 +119,9 @@ export default function FeedbackForm({ className = "" }: FeedbackFormProps) {
               name="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full p-3 rounded-lg bg-white/50 backdrop-blur-sm border border-[#8B4513]/20 focus:outline-none focus:border-[#8B4513]"
+              className={`w-full p-3 rounded-lg bg-white/50 backdrop-blur-sm border border-[#8B4513]/20 focus:outline-none focus:border-[#8B4513] ${
+                isRtl ? "text-right" : ""
+              }`}
               disabled={isSubmitting}
             />
           </div>
@@ -121,7 +131,7 @@ export default function FeedbackForm({ className = "" }: FeedbackFormProps) {
               htmlFor="email"
               className="block text-lg font-medium mb-2 text-[#8B4513]"
             >
-              电子邮件 (选填)
+              {t("email_label")}
             </label>
             <input
               type="email"
@@ -129,7 +139,9 @@ export default function FeedbackForm({ className = "" }: FeedbackFormProps) {
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-3 rounded-lg bg-white/50 backdrop-blur-sm border border-[#8B4513]/20 focus:outline-none focus:border-[#8B4513]"
+              className={`w-full p-3 rounded-lg bg-white/50 backdrop-blur-sm border border-[#8B4513]/20 focus:outline-none focus:border-[#8B4513] ${
+                isRtl ? "text-right" : ""
+              }`}
               disabled={isSubmitting}
             />
           </div>
@@ -139,7 +151,7 @@ export default function FeedbackForm({ className = "" }: FeedbackFormProps) {
               htmlFor="message"
               className="block text-lg font-medium mb-2 text-[#8B4513]"
             >
-              反馈内容 <span className="text-red-500">*</span>
+              {t("message_label")} <span className="text-red-500">*</span>
             </label>
             <textarea
               id="message"
@@ -147,7 +159,9 @@ export default function FeedbackForm({ className = "" }: FeedbackFormProps) {
               rows={4}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="w-full p-3 rounded-lg bg-white/50 backdrop-blur-sm border border-[#8B4513]/20 focus:outline-none focus:border-[#8B4513]"
+              className={`w-full p-3 rounded-lg bg-white/50 backdrop-blur-sm border border-[#8B4513]/20 focus:outline-none focus:border-[#8B4513] ${
+                isRtl ? "text-right" : ""
+              }`}
               required
               disabled={isSubmitting}
             />
@@ -155,13 +169,13 @@ export default function FeedbackForm({ className = "" }: FeedbackFormProps) {
 
           {submitStatus === "error" && (
             <div className="p-4 bg-red-50 text-red-700 rounded-lg">
-              提交失败，请稍后再试或通过其他方式联系我们。
+              {t("error_message")}
             </div>
           )}
 
           {submitStatus === "timeout" && (
             <div className="p-4 bg-red-50 text-red-700 rounded-lg">
-              提交超时，请检查您的网络连接后再试。
+              {t("timeout_message")}
             </div>
           )}
 
@@ -175,7 +189,7 @@ export default function FeedbackForm({ className = "" }: FeedbackFormProps) {
                   : "hover:opacity-90"
               }`}
             >
-              {isSubmitting ? "提交中..." : "发送反馈"}
+              {isSubmitting ? t("submitting") : t("submit")}
             </button>
           </div>
         </form>

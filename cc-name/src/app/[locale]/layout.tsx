@@ -76,6 +76,11 @@ export default async function RootLayout({
       } ${isUrdu ? "urdu" : ""}`}
     >
       <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5349784820675227"
+          crossorigin="anonymous"
+        ></script>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* 额外字体加载 */}
         {isBengali && (

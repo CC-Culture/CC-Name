@@ -48,6 +48,10 @@
     "time_range_afternoon": "昼（辰の刻〜未の刻）",
     "time_range_evening": "夕方（申の刻〜戌の刻）",
     "time_range_night": "夜（亥の刻〜丑の刻）",
+    "network_timeout_error": "ネットワークリクエストがタイムアウトしました。接続を確認して再試行してください",
+    "try_again": "再試行",
+    "name_generating": "あなた専用の名前推薦を生成するために一生懸命作業しています。しばらくお待ちください...",
+    "almost_done": "もうすぐ完了です。もう少しお待ちください...",
     "timezones": {
       "zi": "子の刻 (0:00-2:00)",
       "chou": "丑の刻 (2:00-4:00)",
@@ -75,7 +79,6 @@
     "cultural_depth": "文化的深み",
     "uniqueness": "独自性",
     "pronunciation": "音韻の美しさ",
-    "try_again": "再生成",
     "back_to_home": "ホームに戻る",
     "name_analysis": "五行推論",
     "language_notice": "このページでは言語切り替え機能が無効になっています。言語を変更するには、ホームページに戻ってください。",
@@ -258,7 +261,7 @@
         "zhouGongDan": "周公旦",
         "zhouDunYi": "周敦頤",
         "zhouEnLai": "周恩来",
-        "zhouXingChi": "周星馳"
+        "zhouShuRen": "周樹人"
       }
     },
     "wu": {

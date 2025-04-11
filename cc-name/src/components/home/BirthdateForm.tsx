@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -72,6 +72,13 @@ export default function BirthdateForm() {
   const [error, setError] = useState("");
   const [surnameError, setSurnameError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  // 进度条相关状态
+  const [progress, setProgress] = useState(0);
+  const [showProgressBar, setShowProgressBar] = useState(false);
+  const [isTimeoutError, setIsTimeoutError] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const requestRef = useRef<AbortController | null>(null);
 
   // Use the date format from the helper function
   const dateFormat = getDateFormat(locale);
@@ -167,6 +174,47 @@ export default function BirthdateForm() {
     setError("");
     setSurnameError("");
     setIsLoading(true);
+    setShowProgressBar(true);
+    setProgress(0);
+    setIsTimeoutError(false);
+
+    // 创建新的AbortController用于取消请求
+    requestRef.current = new AbortController();
+
+    // 设置定时器更新进度条
+    const startTime = Date.now();
+    const duration = 30000; // 30秒
+
+    // 清除之前的定时器
+    if (timeoutRef.current) {
+      clearInterval(timeoutRef.current);
+    }
+
+    // 设置进度条更新定时器
+    timeoutRef.current = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const newProgress = Math.min(100, (elapsed / duration) * 100);
+      setProgress(newProgress);
+
+      // 如果到达30秒，显示超时错误
+      if (elapsed >= duration) {
+        setIsTimeoutError(true);
+        setIsLoading(false);
+        setShowProgressBar(false);
+        setError(t("network_timeout_error"));
+
+        if (timeoutRef.current) {
+          clearInterval(timeoutRef.current);
+          timeoutRef.current = null;
+        }
+
+        // 如果有正在进行的请求，取消它
+        if (requestRef.current) {
+          requestRef.current.abort();
+          requestRef.current = null;
+        }
+      }
+    }, 100); // 每100毫秒更新一次进度
 
     try {
       const formattedDate = format(birthdate, "yyyy-MM-dd");
@@ -175,14 +223,28 @@ export default function BirthdateForm() {
         gender,
         surname,
         timeRange,
-        locale
+        locale,
+        requestRef.current.signal
       );
+
+      // 如果成功获取到响应，清除定时器
+      if (timeoutRef.current) {
+        clearInterval(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+
       const encodedData = encodeURIComponent(JSON.stringify(response));
       router.push(`/${locale}/result?data=${encodedData}`);
     } catch (err) {
-      setError(err instanceof Error ? err.message : t("generation_error"));
+      // 非中止错误才设置错误信息
+      if (!(err instanceof DOMException && err.name === "AbortError")) {
+        setError(err instanceof Error ? err.message : t("generation_error"));
+      }
     } finally {
-      setIsLoading(false);
+      if (!isTimeoutError) {
+        setIsLoading(false);
+        setShowProgressBar(false);
+      }
     }
   };
 
@@ -217,6 +279,15 @@ export default function BirthdateForm() {
   useEffect(() => {
     setDateString(format(defaultDate, dateFormat));
   }, [locale, dateFormat]);
+
+  // 确保组件卸载时清除定时器
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearInterval(timeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <motion.form
@@ -390,7 +461,37 @@ export default function BirthdateForm() {
         </div>
       </div>
 
-      {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+      {error && (
+        <div className="text-red-500 text-center mb-4">
+          <p>{error}</p>
+          {isTimeoutError && (
+            <button
+              type="button"
+              onClick={() => {
+                setIsTimeoutError(false);
+                setError("");
+              }}
+              className="text-[var(--dunhuang-primary)] hover:underline mt-2"
+            >
+              {t("try_again")}
+            </button>
+          )}
+        </div>
+      )}
+
+      {showProgressBar && (
+        <div className="mb-6">
+          <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2">
+            <div
+              className="bg-[var(--dunhuang-primary)] h-2.5 rounded-full transition-all duration-100 ease-linear"
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
+          <p className="text-sm text-gray-600 text-center">
+            {progress < 100 ? t("name_generating") : t("almost_done")}
+          </p>
+        </div>
+      )}
 
       <div className="text-center">
         <motion.button

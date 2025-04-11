@@ -53,6 +53,10 @@
     "time_range_afternoon": "Tarde (Hora Chen - Hora Wei)",
     "time_range_evening": "Noche (Hora Shen - Hora Xu)",
     "time_range_night": "Madrugada (Hora Hai - Hora Chou)",
+    "network_timeout_error": "Tiempo de espera de solicitud de red agotado, verifique su conexión e intente nuevamente",
+    "try_again": "Intentar de nuevo",
+    "name_generating": "Estamos trabajando arduamente para generar recomendaciones de nombres personalizadas para usted, por favor espere...",
+    "almost_done": "Casi terminado, un momento más...",
     "timezones": {
       "zi": "Hora Zi (0:00-2:00)",
       "chou": "Hora Chou (2:00-4:00)",
@@ -80,7 +84,6 @@
     "cultural_depth": "Profundidad cultural",
     "uniqueness": "Singularidad",
     "pronunciation": "Estética de pronunciación",
-    "try_again": "Generar de nuevo",
     "back_to_home": "Volver al inicio",
     "name_analysis": "Razonamiento de los cinco elementos",
     "language_notice": "La selección de idioma está desactivada en esta página. Por favor, vuelva a la página de inicio si desea cambiar el idioma.",

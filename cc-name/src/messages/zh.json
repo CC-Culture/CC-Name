@@ -53,6 +53,10 @@
     "time_range_afternoon": "白天 (辰时-未时)",
     "time_range_evening": "傍晚 (申时-戌时)",
     "time_range_night": "深夜 (亥时-丑时)",
+    "network_timeout_error": "网络请求超时，请检查您的网络连接并重试",
+    "try_again": "重试",
+    "name_generating": "正在努力生成您的专属姓名推荐，请稍候...",
+    "almost_done": "即将完成，还需要一点时间...",
     "timezones": {
       "zi": "子时 (0:00-2:00)",
       "chou": "丑时 (2:00-4:00)",

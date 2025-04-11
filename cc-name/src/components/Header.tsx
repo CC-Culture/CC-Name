@@ -6,12 +6,17 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [scrollY, setScrollY] = useState(0);
   const t = useTranslations("header");
   const locale = useLocale();
   const isRtl = locale === "ar" || locale === "ur";
+  const pathname = usePathname();
+
+  // 检测是否在结果页面
+  const isResultPage = pathname.includes("/result");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,7 +93,72 @@ const Header = () => {
             </Link> */}
           </nav>
 
-          <LanguageSwitcher />
+          {isResultPage ? (
+            <div className="text-gray-400 cursor-not-allowed px-3 py-2 flex items-center">
+              <span className="text-lg mr-1">
+                {locale === "zh"
+                  ? "🇨🇳"
+                  : locale === "en"
+                  ? "🇺🇸"
+                  : locale === "fr"
+                  ? "🇫🇷"
+                  : locale === "es"
+                  ? "🇪🇸"
+                  : locale === "ja"
+                  ? "🇯🇵"
+                  : locale === "ar"
+                  ? "🇸🇦"
+                  : locale === "ru"
+                  ? "🇷🇺"
+                  : locale === "pt"
+                  ? "🇵🇹"
+                  : locale === "bn"
+                  ? "🇧🇩"
+                  : locale === "ur"
+                  ? "🇵🇰"
+                  : ""}
+              </span>
+              <span>
+                {locale === "zh"
+                  ? "中文"
+                  : locale === "en"
+                  ? "English"
+                  : locale === "fr"
+                  ? "Français"
+                  : locale === "es"
+                  ? "Español"
+                  : locale === "ja"
+                  ? "日本語"
+                  : locale === "ar"
+                  ? "العربية"
+                  : locale === "ru"
+                  ? "Русский"
+                  : locale === "pt"
+                  ? "Português"
+                  : locale === "bn"
+                  ? "বাংলা"
+                  : locale === "ur"
+                  ? "اردو"
+                  : ""}
+              </span>
+              <svg
+                className="w-4 h-4 ml-1 opacity-50"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </div>
+          ) : (
+            <LanguageSwitcher />
+          )}
         </div>
 
         <div className="md:hidden">

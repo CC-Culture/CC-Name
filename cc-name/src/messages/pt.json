@@ -48,6 +48,10 @@
     "time_range_afternoon": "Tarde (Chen Shi - Wei Shi)",
     "time_range_evening": "Anoitecer (Shen Shi - Xu Shi)",
     "time_range_night": "Noite (Hai Shi - Chou Shi)",
+    "network_timeout_error": "Tempo limite da solicitação de rede excedido, verifique sua conexão e tente novamente",
+    "try_again": "Tentar novamente",
+    "name_generating": "Estamos trabalhando intensamente para gerar recomendações de nomes personalizadas para você, por favor aguarde...",
+    "almost_done": "Quase pronto, só mais um momento...",
     "timezones": {
       "zi": "Zi Shi (0:00-2:00)",
       "chou": "Chou Shi (2:00-4:00)",
@@ -75,8 +79,16 @@
     "cultural_depth": "Profundidade cultural",
     "uniqueness": "Singularidade",
     "pronunciation": "Estética fonética",
-    "try_again": "Gerar novamente",
-    "back_to_home": "Voltar para a página inicial"
+    "back_to_home": "Voltar para a página inicial",
+    "name_analysis": "Raciocínio Wu Xing",
+    "language_notice": "A função de alteração de idioma está desativada nesta página. Para mudar o idioma, por favor retorne à página inicial.",
+    "elements": {
+      "metal": "Metal",
+      "wood": "Madeira",
+      "water": "Água",
+      "fire": "Fogo",
+      "earth": "Terra"
+    }
   },
   "footer": {
     "copyright": "© 2025 CC Name. Todos os direitos reservados.",

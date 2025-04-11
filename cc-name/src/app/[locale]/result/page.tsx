@@ -67,9 +67,13 @@ function ResultContent() {
           </h1>
           <ElementSection
             elements={data.elements}
-            reasoning={data.meaning.reasoning}
+            reasoning={data.translation.name.reasoning}
           />
-          <NameSection name={data.name} poetry={data.poetry} />
+          <NameSection
+            chineseName={data.name}
+            name={data.translation.name}
+            poetry={data.translation.poetry}
+          />
 
           <div className="mt-10 flex justify-center space-x-4">
             <button

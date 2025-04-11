@@ -4,13 +4,18 @@ import type { NameGenerationResponse } from "@/services/api";
 import { useTranslations } from "next-intl";
 
 interface NameSectionProps {
-  name: NameGenerationResponse["translated"]["name"] & {
+  chineseName: NameGenerationResponse["name"];
+  name: NameGenerationResponse["translation"]["name"] & {
     elements?: string[];
   };
-  poetry?: NameGenerationResponse["translated"]["poetry"];
+  poetry?: NameGenerationResponse["translation"]["poetry"];
 }
 
-export default function NameSection({ name, poetry }: NameSectionProps) {
+export default function NameSection({
+  chineseName,
+  name,
+  poetry,
+}: NameSectionProps) {
   const t = useTranslations("result");
 
   return (
@@ -22,7 +27,9 @@ export default function NameSection({ name, poetry }: NameSectionProps) {
       <div className="space-y-6">
         <div className="border-l-4 border-black pl-4">
           <h4 className="text-lg font-semibold mb-2">
-            {name.elements ? name.firstName : name.lastName + name.firstName}
+            {name.elements
+              ? chineseName.firstName
+              : chineseName.lastName + chineseName.firstName}
           </h4>
           <div className="text-gray-600">
             {name.elements ? (
@@ -47,6 +54,8 @@ export default function NameSection({ name, poetry }: NameSectionProps) {
             </h4>
             <div className="bg-black/5 p-2 rounded-lg">
               <p className="text-gray-700 whitespace-pre-line mb-4">
+                c:{poetry.title}
+                <br />
                 {poetry.content}
               </p>
             </div>

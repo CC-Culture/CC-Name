@@ -3,13 +3,14 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslations("header");
   const locale = useLocale();
   const isRtl = locale === "ar" || locale === "ur";
@@ -27,6 +28,11 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // 点击菜单项时关闭菜单
+  const handleMenuClick = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <motion.header
@@ -85,12 +91,6 @@ const Header = () => {
             >
               {t("about")}
             </Link>
-            {/* <Link
-              href={`/${locale}/login`}
-              className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
-            >
-              {t('login')}
-            </Link> */}
           </nav>
 
           {isResultPage ? (
@@ -162,7 +162,7 @@ const Header = () => {
         </div>
 
         <div className="md:hidden">
-          <button className="p-2">
+          <button className="p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -180,6 +180,45 @@ const Header = () => {
           </button>
         </div>
       </div>
+
+      {/* 移动端下拉菜单 */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden absolute top-16 left-0 w-full bg-white shadow-lg"
+          >
+            <div className="container mx-auto py-4">
+              <nav className="flex flex-col space-y-4">
+                <Link
+                  href={`/${locale}`}
+                  className="text-gray-800 hover:text-gray-600 transition-colors duration-300 px-6 py-2"
+                  onClick={handleMenuClick}
+                >
+                  {t("home")}
+                </Link>
+                <Link
+                  href={`/${locale}/surname-culture`}
+                  className="text-gray-800 hover:text-gray-600 transition-colors duration-300 px-6 py-2"
+                  onClick={handleMenuClick}
+                >
+                  {t("surnameculture")}
+                </Link>
+                <Link
+                  href={`/${locale}/about`}
+                  className="text-gray-800 hover:text-gray-600 transition-colors duration-300 px-6 py-2"
+                  onClick={handleMenuClick}
+                >
+                  {t("about")}
+                </Link>
+              </nav>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 };

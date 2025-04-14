@@ -10,16 +10,16 @@ const openai = new OpenAI({
 
 // 语言代码到语言名称的映射表
 const languageNameMap: Record<string, string> = {
-  en: "英语",
-  zh: "中文",
-  fr: "法语",
-  es: "西班牙语",
-  ja: "日语",
-  ar: "阿拉伯语",
-  ru: "俄语",
-  pt: "葡萄牙语",
-  bn: "孟加拉语",
-  ur: "乌尔都语",
+  en: "en",
+  zh: "zh",
+  fr: "fr",
+  es: "es",
+  ja: "ja",
+  ar: "ara",
+  ru: "ru",
+  pt: "pt",
+  bn: "zh",
+  ur: "zh",
 };
 
 export async function POST(request: Request) {
@@ -123,7 +123,10 @@ export async function POST(request: Request) {
       try {
         console.log(`开始翻译结果到 ${language} 语言...`);
         const startTime = Date.now();
-        const translatedResult = await translateNameResult(result, language);
+        const translatedResult = await translateNameResult(
+          result,
+          languageNameMap[language]
+        );
         const endTime = Date.now();
         console.log(
           `翻译完成，耗时: ${endTime - startTime}ms，目标语言: ${language}`

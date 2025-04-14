@@ -27,7 +27,22 @@
     "shijing": "Referencias poéticas",
     "shijing_desc": "Inspirándose en el Libro de las Odas, incorporando la cultura clásica para infundir a tu nombre un profundo significado cultural",
     "wuxing_tooltip": "Los Cinco Elementos (Metal, Madera, Agua, Fuego, Tierra) son una teoría importante en la filosofía china antigua que explica la composición del mundo natural y sus leyes de movimiento y cambio. Esta teoría sostiene que todo en el mundo está compuesto por los Cinco Elementos, que se promueven y restringen mutuamente: la Madera promueve el Fuego, el Fuego promueve la Tierra, la Tierra promueve el Metal, el Metal promueve el Agua, y el Agua promueve la Madera. En la nominación, el principio de promoción y restricción mutua de los Cinco Elementos puede ayudar a equilibrar el destino de uno y traer buena fortuna mientras se evita la desgracia.",
-    "shijing_tooltip": "El 'Shijing' (Libro de las Odas) es la colección de poesía más antigua de China, que contiene 311 poemas desde principios de la dinastía Zhou occidental hasta mediados del período de Primavera y Otoño (siglos XI a VI a.C.). Contiene ricas connotaciones culturales, hermosas imágenes y un profundo espíritu humano. Al nombrar, inspirarse en las alusiones e imágenes del 'Shijing' no solo da a los nombres una base cultural de largo alcance, sino que también continúa la esencia de la cultura china."
+    "shijing_tooltip": "El 'Shijing' (Libro de las Odas) es la colección de poesía más antigua de China, que contiene 311 poemas desde principios de la dinastía Zhou occidental hasta mediados del período de Primavera y Otoño (siglos XI a VI a.C.). Contiene ricas connotaciones culturales, hermosas imágenes y un profundo espíritu humano. Al nombrar, inspirarse en las alusiones e imágenes del 'Shijing' no solo da a los nombres una base cultural de largo alcance, sino que también continúa la esencia de la cultura china.",
+    "hover_for_details": "Pasa el cursor para ver información detallada",
+    "shijing_quote": "Guan-guan cantan los ospreys, en el islote del río. La doncella modesta, recatada y virtuosa: para nuestro príncipe, una buena compañera.",
+    "shijing_source": "Libro de las Odas, Guanju",
+    "classics_in_naming": "Aplicación de la cultura clásica en la nominación",
+    "classics_point1": "Extrayendo bellas imágenes de clásicos como Shijing y Chuci",
+    "classics_point2": "Incorporando el contexto cultural tradicional para dar a los nombres un significado profundo",
+    "classics_point3": "Heredando la esencia de la civilización china, conectando la cultura antigua y moderna",
+    "shijing_naming": "Un buen nombre no es solo una combinación de caracteres, sino la herencia e innovación de la cultura tradicional.",
+    "wuxing_naming": "Aplicación de los Cinco Elementos en la nominación: seleccionando caracteres con atributos correspondientes basados en la deficiencia en la carta natal para lograr el equilibrio.",
+    "metal_desc": "Fuerte y resuelto, simbolizando la decisión y el otoño",
+    "wood_desc": "Creciente y flexible, simbolizando la innovación y la primavera",
+    "water_desc": "Fluido y sabio, simbolizando la adaptabilidad y el invierno",
+    "fire_desc": "Apasionado y enérgico, simbolizando el cambio y el verano",
+    "earth_desc": "Estable e inclusivo, simbolizando la armonía y las estaciones tardías",
+    "intro_title": "Explorando la filosofía tradicional china de nombrar"
   },
   "form": {
     "title": "Encuentra tu nombre destinado",

@@ -27,7 +27,22 @@
     "shijing": "Poetic References",
     "shijing_desc": "Drawing inspiration from the Book of Odes, incorporating classical culture to infuse your name with deep cultural meaning",
     "wuxing_tooltip": "The Five Elements (Metal, Wood, Water, Fire, Earth) are an important theory in ancient Chinese philosophy that explains the composition of the natural world and its laws of movement and change. This theory holds that everything in the world is composed of the Five Elements, which mutually promote and restrain each other: Wood promotes Fire, Fire promotes Earth, Earth promotes Metal, Metal promotes Water, and Water promotes Wood. In naming, the principle of mutual promotion and restraint of the Five Elements can help balance one's destiny and bring good fortune while avoiding misfortune.",
-    "shijing_tooltip": "The 'Shijing' (Book of Odes) is the oldest collection of poetry in China, containing 311 poems from the early Western Zhou Dynasty to the middle of the Spring and Autumn Period (11th to 6th centuries BCE). It contains rich cultural connotations, beautiful imagery, and profound human spirit. In naming, drawing inspiration from the allusions and imagery in the 'Shijing' not only gives names a far-reaching cultural foundation but also continues the essence of Chinese culture."
+    "shijing_tooltip": "The 'Shijing' (Book of Odes) is the oldest collection of poetry in China, containing 311 poems from the early Western Zhou Dynasty to the middle of the Spring and Autumn Period (11th to 6th centuries BCE). It contains rich cultural connotations, beautiful imagery, and profound human spirit. In naming, drawing inspiration from the allusions and imagery in the 'Shijing' not only gives names a far-reaching cultural foundation but also continues the essence of Chinese culture.",
+    "hover_for_details": "Hover for detailed introduction",
+    "shijing_quote": "Guan-guan cry the ospreys, on the islet in the river. The modest, retiring, virtuous, young lady: for our prince a good mate she.",
+    "shijing_source": "Book of Odes, Guanju",
+    "classics_in_naming": "Application of Classical Culture in Naming",
+    "classics_point1": "Drawing beautiful imagery from classics like Shijing and Chuci",
+    "classics_point2": "Incorporating traditional cultural context to give names deep meaning",
+    "classics_point3": "Inheriting the essence of Chinese civilization, connecting ancient and modern culture",
+    "shijing_naming": "A good name is not just a combination of characters, but the inheritance and innovation of traditional culture.",
+    "wuxing_naming": "Application of Five Elements in naming: selecting characters with corresponding attributes based on the deficiency in one's birth chart to achieve balance.",
+    "metal_desc": "Strong and resolute, symbolizing decisiveness and autumn",
+    "wood_desc": "Growing and flexible, symbolizing innovation and spring",
+    "water_desc": "Flowing and wise, symbolizing adaptability and winter",
+    "fire_desc": "Passionate and energetic, symbolizing change and summer",
+    "earth_desc": "Steady and inclusive, symbolizing harmony and late seasons",
+    "intro_title": "Exploring Traditional Chinese Naming Philosophy"
   },
   "form": {
     "title": "Find Your Destined Name",

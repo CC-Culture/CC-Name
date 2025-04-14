@@ -97,6 +97,22 @@ export default function BirthdateForm() {
     { value: "hai", key: "timezones.hai" }, // 亥时 (21:00-23:00)
   ];
 
+  // Map Chinese time ranges to their start times
+  const timeRangeStartMap: Record<string, string> = {
+    zi: "23:00",
+    chou: "01:00",
+    yin: "03:00",
+    mao: "05:00",
+    chen: "07:00",
+    si: "09:00",
+    wu: "11:00",
+    wei: "13:00",
+    shen: "15:00",
+    you: "17:00",
+    xu: "19:00",
+    hai: "21:00",
+  };
+
   // Add custom CSS for RTL datepicker fixes
   useEffect(() => {
     if (isRtl) {
@@ -216,7 +232,7 @@ export default function BirthdateForm() {
         formattedDate,
         gender,
         undefined, // 删除姓氏参数
-        timeRange,
+        timeRangeStartMap[timeRange],
         locale,
         requestRef.current.signal
       );

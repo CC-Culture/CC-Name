@@ -8,7 +8,7 @@ const openai = new OpenAI({
   baseURL: "https://dashscope.aliyuncs.com/compatible-mode/v1",
 });
 
-// 语言代码到语言名称的映射表
+// 语言代码到语言名称的映射表，用于百度翻译映射
 const languageNameMap: Record<string, string> = {
   en: "en",
   zh: "zh",

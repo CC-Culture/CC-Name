@@ -58,6 +58,8 @@ export default function BirthdateForm() {
 
   // Add RTL detection
   const isRtl = locale === "ar" || locale === "ur";
+  // Add Russian detection
+  const isRussian = locale === "ru";
 
   // Initialize birthdate to January 1, 2000
   const defaultDate = new Date(2000, 0, 1);
@@ -113,11 +115,12 @@ export default function BirthdateForm() {
     hai: "21:00",
   };
 
-  // Add custom CSS for RTL datepicker fixes
+  // Add custom CSS for RTL datepicker fixes and Russian text adjustments
   useEffect(() => {
+    const style = document.createElement("style");
+    style.id = "custom-form-styles";
+
     if (isRtl) {
-      const style = document.createElement("style");
-      style.id = "rtl-datepicker-fixes";
       style.innerHTML = `
         /* RTL DatePicker Fixes */
         .react-datepicker__close-icon {
@@ -160,16 +163,46 @@ export default function BirthdateForm() {
           direction: rtl !important;
         }
       `;
-      document.head.appendChild(style);
-
-      return () => {
-        const styleElement = document.getElementById("rtl-datepicker-fixes");
-        if (styleElement) {
-          document.head.removeChild(styleElement);
+    } else if (isRussian) {
+      style.innerHTML = `
+        /* Russian text adjustments */
+        .russian-date-input {
+          font-family: 'Arial', sans-serif !important;
+          font-size: 0.85rem !important;
+          letter-spacing: -0.02em !important;
+          font-weight: normal !important;
         }
-      };
+        .russian-select {
+          font-family: 'Arial', sans-serif !important;
+          font-size: 0.85rem !important;
+          letter-spacing: -0.02em !important;
+        }
+        .russian-label {
+          font-size: 0.95rem !important;
+          letter-spacing: -0.02em !important;
+        }
+        .russian-button {
+          font-size: 0.85rem !important;
+          letter-spacing: -0.02em !important;
+          padding-left: 0.5rem !important;
+          padding-right: 0.5rem !important;
+        }
+        .russian-title {
+          font-size: 1.5rem !important;
+          letter-spacing: -0.02em !important;
+        }
+      `;
     }
-  }, [isRtl]);
+
+    document.head.appendChild(style);
+
+    return () => {
+      const styleElement = document.getElementById("custom-form-styles");
+      if (styleElement) {
+        document.head.removeChild(styleElement);
+      }
+    };
+  }, [isRtl, isRussian]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -313,7 +346,11 @@ export default function BirthdateForm() {
       <div className="absolute inset-x-8 bottom-0 h-px bg-gradient-to-r from-transparent via-[#8B4513]/30 to-transparent" />
 
       <div className="mb-8 text-center">
-        <h2 className="text-3xl font-bold chinese-font bg-gradient-to-r from-[var(--dunhuang-primary)] to-[var(--dunhuang-secondary)] bg-clip-text text-transparent inline-block">
+        <h2
+          className={`text-3xl font-bold chinese-font bg-gradient-to-r from-[var(--dunhuang-primary)] to-[var(--dunhuang-secondary)] bg-clip-text text-transparent inline-block ${
+            isRussian ? "russian-title" : ""
+          }`}
+        >
           {t("title")}
         </h2>
       </div>
@@ -324,7 +361,9 @@ export default function BirthdateForm() {
         <div className="space-y-2">
           <label
             htmlFor="birthdate"
-            className="block text-lg font-medium chinese-font text-[#8B4513] mb-2"
+            className={`block text-lg font-medium chinese-font text-[#8B4513] mb-2 ${
+              isRussian ? "russian-label" : ""
+            }`}
           >
             {t("birthdate")}
           </label>
@@ -336,7 +375,9 @@ export default function BirthdateForm() {
               locale={localeMap[locale]}
               className={`w-full ${
                 isRtl ? "pr-4 pl-10 text-right" : "pr-10 pl-4"
-              } py-3 border-2 border-[#D4B08C] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B4513] focus:border-transparent calligraphy-input bg-white/90 text-base transition-all duration-300`}
+              } py-3 border-2 border-[#D4B08C] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B4513] focus:border-transparent calligraphy-input bg-white/90 text-base transition-all duration-300 ${
+                isRussian ? "russian-date-input" : ""
+              }`}
               placeholderText={t("birthdate_placeholder")}
               popperClassName="react-datepicker-popper z-50"
               popperPlacement={isRtl ? "bottom-end" : "bottom-start"}
@@ -375,7 +416,11 @@ export default function BirthdateForm() {
 
         {/* 出生时辰 */}
         <div className="space-y-2">
-          <label className="block text-lg font-medium chinese-font text-[#8B4513] mb-2">
+          <label
+            className={`block text-lg font-medium chinese-font text-[#8B4513] mb-2 ${
+              isRussian ? "russian-label" : ""
+            }`}
+          >
             {t("birthtime")}
           </label>
           <div className={`relative ${isRtl ? "rtl-select-wrapper" : ""}`}>
@@ -384,7 +429,9 @@ export default function BirthdateForm() {
               onChange={(e) => setTimeRange(e.target.value)}
               className={`w-full ${
                 isRtl ? "pr-10 pl-4 text-right" : "pr-10 pl-4"
-              } py-3 border-2 border-[#D4B08C] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B4513] focus:border-transparent calligraphy-input bg-white/90 text-base transition-all duration-300 appearance-none`}
+              } py-3 border-2 border-[#D4B08C] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B4513] focus:border-transparent calligraphy-input bg-white/90 text-base transition-all duration-300 appearance-none ${
+                isRussian ? "russian-select" : ""
+              }`}
             >
               {chineseTimeRanges.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -413,7 +460,11 @@ export default function BirthdateForm() {
 
         {/* 性别选择 */}
         <div className="space-y-2">
-          <label className="block text-lg font-medium chinese-font text-[#8B4513] mb-2">
+          <label
+            className={`block text-lg font-medium chinese-font text-[#8B4513] mb-2 ${
+              isRussian ? "russian-label" : ""
+            }`}
+          >
             {t("gender")}
           </label>
           <div className="grid grid-cols-3 gap-3">
@@ -430,7 +481,7 @@ export default function BirthdateForm() {
                   gender === option.value
                     ? "bg-[#8B4513] text-white border-[#8B4513]"
                     : "bg-white/90 text-[#8B4513] border-[#D4B08C] hover:bg-[#8B4513]/10"
-                }`}
+                } ${isRussian ? "russian-button" : ""}`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -483,7 +534,9 @@ export default function BirthdateForm() {
         >
           {isLoading ? (
             <>
-              <span className="mr-2">{t("loading")}</span>
+              <span className={`mr-2 ${isRussian ? "russian-button" : ""}`}>
+                {t("loading")}
+              </span>
               <svg
                 className="animate-spin -mr-1 ml-3 h-5 w-5 text-white inline-block"
                 xmlns="http://www.w3.org/2000/svg"
@@ -506,7 +559,9 @@ export default function BirthdateForm() {
               </svg>
             </>
           ) : (
-            t("submit")
+            <span className={isRussian ? "russian-button" : ""}>
+              {t("submit")}
+            </span>
           )}
         </motion.button>
       </div>

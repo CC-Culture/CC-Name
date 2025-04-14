@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "@types/react-datepicker": "^6.2.0",
+    "@vercel/speed-insights": "^1.2.0",
     "framer-motion": "^12.6.2",
     "lunisolar": "^2.5.2",
     "next": "15.2.4",

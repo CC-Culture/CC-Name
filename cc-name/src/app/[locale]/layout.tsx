@@ -7,6 +7,7 @@ import { getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { locales, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -227,6 +228,7 @@ export default async function RootLayout({
             <div id="date-picker-portal" className="relative z-50" />
           </NextIntlClientProvider>
         </SessionProvider>
+        <SpeedInsights />
       </body>
     </html>
   );

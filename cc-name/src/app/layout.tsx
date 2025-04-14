@@ -3,8 +3,29 @@ import "./globals.css";
 import "./backgrounds.css";
 
 export const metadata = {
-  title: "CC Name - 基于中国古代文化的姓名推荐系统",
-  description: "基于中国古代诗歌、四书五经以及五行八卦、梅花易数的姓名推荐系统",
+  title: "CC Name - Chinese Name Generator | Ancient Wisdom Meets Modern Life",
+  description:
+    "Discover your perfect Chinese name based on ancient Chinese culture, poetry, and the Five Elements theory. Our AI-powered name generator combines traditional wisdom with modern aesthetics to create meaningful names that resonate with your destiny.",
+  keywords:
+    "Chinese name generator, Chinese culture, Five Elements, Chinese poetry, name meaning, Chinese characters, traditional Chinese names, Chinese naming system, Chinese philosophy",
+  openGraph: {
+    title:
+      "CC Name - Chinese Name Generator | Ancient Wisdom Meets Modern Life",
+    description:
+      "Discover your perfect Chinese name based on ancient Chinese culture, poetry, and the Five Elements theory.",
+    type: "website",
+    locale: "en_US",
+    siteName: "CC Name",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CC Name - Chinese Name Generator",
+    description:
+      "Discover your perfect Chinese name based on ancient Chinese culture and wisdom.",
+  },
+  alternates: {
+    canonical: "https://ccname.com",
+  },
 };
 
 const geistSans = Geist({

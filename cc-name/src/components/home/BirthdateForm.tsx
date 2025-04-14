@@ -301,7 +301,7 @@ export default function BirthdateForm() {
 
   return (
     <motion.form
-      className="paper-background rounded-2xl p-8 md:p-10 w-full max-w-4xl shadow-xl xuan-paper-bg relative overflow-hidden backdrop-blur-sm"
+      className="paper-background rounded-2xl p-8 md:p-10 w-full shadow-xl xuan-paper-bg relative overflow-hidden backdrop-blur-sm"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}

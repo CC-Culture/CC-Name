@@ -27,19 +27,10 @@ export default function NameSection({
       <div className="space-y-6">
         <div className="border-l-4 border-black pl-4">
           <h4 className="text-lg font-semibold mb-2">
-            {name.elements
-              ? chineseName.firstName
-              : chineseName.lastName + chineseName.firstName}
+            {chineseName.firstName}
           </h4>
           <div className="text-gray-600">
-            {name.elements ? (
-              <span>{name.firstName}</span>
-            ) : (
-              <>
-                <span className="mr-2">{name.firstName}</span>
-                <span>{name.lastName}</span>
-              </>
-            )}
+            <span>{chineseName.pinyin}</span>
           </div>
         </div>
         <div className="border-l-4 border-black pl-4">

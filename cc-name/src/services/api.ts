@@ -1,12 +1,11 @@
 export interface NameGenerationResponse {
   name: {
     firstName: string;
-    lastName: string;
+    pinyin: string;
   };
   translation: {
     name: {
       firstName: string;
-      lastName: string;
       meaning: string;
       reasoning: string;
       style: string;

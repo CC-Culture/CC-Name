@@ -66,11 +66,9 @@ export default function BirthdateForm() {
     format(defaultDate, getDateFormat(locale))
   );
   const [birthdateError, setBirthdateError] = useState("");
-  const [surname, setSurname] = useState<string>("");
   const [gender, setGender] = useState<Gender>("male");
   const [timeRange, setTimeRange] = useState<string>("zi"); // Default to 子时 (Zi hour)
   const [error, setError] = useState("");
-  const [surnameError, setSurnameError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   // 进度条相关状态
@@ -167,12 +165,8 @@ export default function BirthdateForm() {
       setBirthdateError(t("birthdate_invalid"));
       return;
     }
-    if (surname && !/^[\u4e00-\u9fa5]{1,2}$/.test(surname)) {
-      setSurnameError(t("surname_error"));
-      return;
-    }
+
     setError("");
-    setSurnameError("");
     setIsLoading(true);
     setShowProgressBar(true);
     setProgress(0);
@@ -221,7 +215,7 @@ export default function BirthdateForm() {
       const response = await generateName(
         formattedDate,
         gender,
-        surname,
+        undefined, // 删除姓氏参数
         timeRange,
         locale,
         requestRef.current.signal
@@ -308,7 +302,8 @@ export default function BirthdateForm() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      {/* 重新布局表单为三个等宽的区域 */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         {/* 生日选择 */}
         <div className="space-y-2">
           <label
@@ -428,37 +423,6 @@ export default function BirthdateForm() {
             ))}
           </div>
         </div>
-
-        {/* 姓氏输入 */}
-        <div className="space-y-2">
-          <label
-            htmlFor="surname"
-            className="block text-lg font-medium chinese-font text-[#8B4513] mb-2"
-          >
-            {t("surname")}
-          </label>
-          <input
-            type="text"
-            id="surname"
-            value={surname}
-            onChange={(e) => {
-              setSurname(e.target.value);
-              if (
-                surnameError &&
-                /^[\u4e00-\u9fa5]{1,2}$/.test(e.target.value)
-              ) {
-                setSurnameError("");
-              }
-            }}
-            placeholder={t("surname_placeholder")}
-            className={`w-full px-4 py-3 border-2 border-[#D4B08C] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B4513] focus:border-transparent calligraphy-input bg-white/90 text-base transition-all duration-300 ${
-              isRtl ? "text-right" : ""
-            }`}
-          />
-          {surnameError && (
-            <p className="text-red-500 text-sm mt-1">{surnameError}</p>
-          )}
-        </div>
       </div>
 
       {error && (
@@ -496,8 +460,8 @@ export default function BirthdateForm() {
       <div className="text-center">
         <motion.button
           type="submit"
-          className="py-3 px-8 bg-gradient-to-r from-[var(--dunhuang-primary)] to-[var(--dunhuang-secondary)] text-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-          whileHover={{ scale: 1.02 }}
+          className="py-3 px-12 bg-gradient-to-r from-[var(--dunhuang-primary)] to-[var(--dunhuang-secondary)] text-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-lg font-semibold"
+          whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.98 }}
           disabled={isLoading}
         >

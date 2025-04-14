@@ -138,7 +138,7 @@ export async function translateText(
 
     // 空文本直接返回
     if (!text || text.trim() === "") {
-      return text;
+      return [];
     }
 
     // 转换语言代码（如果有特殊映射）
@@ -147,79 +147,9 @@ export async function translateText(
     const toLang =
       SUPPORTED_LANGUAGES[to as keyof typeof SUPPORTED_LANGUAGES] || to;
 
-    // 检查文本长度是否超过限制
-    if (text.length <= MAX_TEXT_LENGTH) {
-      // 文本长度在限制内，直接发送请求
-      return await sendTranslateRequest(text, fromLang, toLang);
-    } else {
-      // 文本过长，需要分段处理
-      console.log(
-        `文本长度(${text.length})超过最大限制(${MAX_TEXT_LENGTH})，将进行分段翻译`
-      );
-
-      // 先尝试按段落分割
-      const paragraphs = text.split(/\n+/);
-
-      // 合并段落，确保每个请求不超过最大长度
-      const batches: string[] = [];
-      let currentBatch = "";
-
-      for (const paragraph of paragraphs) {
-        // 如果单个段落就超过限制，需要进一步分割
-        if (paragraph.length > MAX_TEXT_LENGTH) {
-          // 如果当前批次不为空，先添加到结果中
-          if (currentBatch.length > 0) {
-            batches.push(currentBatch);
-            currentBatch = "";
-          }
-
-          // 按句子分割长段落
-          const sentences = paragraph.split(/[。.!?！？]/);
-          let sentenceBatch = "";
-
-          for (const sentence of sentences) {
-            if (sentenceBatch.length + sentence.length + 1 > MAX_TEXT_LENGTH) {
-              if (sentenceBatch.length > 0) {
-                batches.push(sentenceBatch);
-              }
-              sentenceBatch = sentence;
-            } else {
-              sentenceBatch +=
-                (sentenceBatch.length > 0 ? "。" : "") + sentence;
-            }
-          }
-
-          if (sentenceBatch.length > 0) {
-            batches.push(sentenceBatch);
-          }
-        } else if (
-          currentBatch.length + paragraph.length + 1 >
-          MAX_TEXT_LENGTH
-        ) {
-          // 当前段落会导致批次超过限制
-          batches.push(currentBatch);
-          currentBatch = paragraph;
-        } else {
-          // 添加到当前批次
-          currentBatch += (currentBatch.length > 0 ? "\n" : "") + paragraph;
-        }
-      }
-
-      // 添加最后一个批次
-      if (currentBatch.length > 0) {
-        batches.push(currentBatch);
-      }
-
-      // 并行翻译所有批次
-      const translatedBatches = await Promise.all(
-        batches.map((batch) => sendTranslateRequest(batch, fromLang, toLang))
-      );
-
-      // 合并结果
-      return translatedBatches.join("\n");
-    }
+    return await sendTranslateRequest(text, fromLang, toLang);
   } catch (error) {
     console.error("翻译过程中出错:", error);
-    return text; // 出错时返回原文
+    return []; // 出错时返回原文
   }
 }

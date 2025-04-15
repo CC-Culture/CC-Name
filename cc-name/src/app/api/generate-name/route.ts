@@ -18,8 +18,8 @@ const languageNameMap: Record<string, string> = {
   ar: "ara",
   ru: "ru",
   pt: "pt",
-  bn: "zh",
-  ur: "zh",
+  bn: "en",
+  ur: "en",
 };
 
 export async function POST(request: Request) {

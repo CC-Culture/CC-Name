@@ -31,99 +31,94 @@ export const metadata = {
     bn: "প্রাচীন চীনা সংস্কৃতি, কবিতা এবং পঞ্চ উপাদান তত্ত্বের উপর ভিত্তি করে আপনার নিখুঁত চীনা নাম আবিষ্কার করুন। আমাদের AI-চালিত নাম জেনারেটর ঐতিহ্যগত জ্ঞান এবং আধুনিক নান্দনিকতা একত্রিত করে অর্থপূর্ণ নাম তৈরি করে যা আপনার ভাগ্যের সাথে সংযুক্ত হয়।",
     ur: "قدیم چینی ثقافت، شاعری، اور پانچ عناصر کے نظریے پر مبنی اپنا مثالی چینی نام دریافت کریں۔ ہمارا AI سے چلنے والا نام جنریٹر روایتی حکمت اور جدید جمالیات کو یکجا کرتا ہے تاکہ معنی خیز نام تخلیق کیے جا سکیں جو آپ کی قسمت کے ساتھ ہم آہنگ ہوں۔",
   },
-  keywords: {
-    default: [
-      "Chinese Name",
-      "Chinese Culture",
-      "Ancient Chinese Wisdom",
-      "Poetry",
-      "Five Elements",
-      "Chinese Name Generator",
-    ],
-    zh: [
-      "中文名字",
-      "中国文化",
-      "古代智慧",
-      "诗经",
-      "五行",
-      "易经",
-      "姓名推荐",
-      "名字生成器",
-    ],
-    en: [
-      "Chinese Name",
-      "Chinese Culture",
-      "Ancient Chinese Wisdom",
-      "Poetry",
-      "Five Elements",
-      "Chinese Name Generator",
-      "Traditional Chinese Names",
-    ],
-    fr: [
-      "Nom Chinois",
-      "Culture Chinoise",
-      "Sagesse Chinoise Ancienne",
-      "Poésie",
-      "Cinq Éléments",
-      "Générateur de Noms Chinois",
-    ],
-    es: [
-      "Nombre Chino",
-      "Cultura China",
-      "Sabiduría China Antigua",
-      "Poesía",
-      "Cinco Elementos",
-      "Generador de Nombres Chinos",
-    ],
-    ja: [
-      "中国名",
-      "中国文化",
-      "古代中国の知恵",
-      "詩",
-      "五行",
-      "名前ジェネレーター",
-    ],
-    ar: [
-      "اسم صيني",
-      "الثقافة الصينية",
-      "الحكمة الصينية القديمة",
-      "الشعر",
-      "العناصر الخمسة",
-      "مولد الأسماء الصينية",
-    ],
-    ru: [
-      "Китайское Имя",
-      "Китайская Культура",
-      "Древняя Китайская Мудрость",
-      "Поэзия",
-      "Пять Элементов",
-      "Генератор Китайских Имен",
-    ],
-    pt: [
-      "Nome Chinês",
-      "Cultura Chinesa",
-      "Sabedoria Chinesa Antiga",
-      "Poesia",
-      "Cinco Elementos",
-      "Gerador de Nomes Chineses",
-    ],
-    bn: [
-      "চাইনিজ নাম",
-      "চীনা সংস্কৃতি",
-      "প্রাচীন চীনা জ্ঞান",
-      "কবিতা",
-      "পঞ্চ উপাদান",
-      "চাইনিজ নাম জেনারেটর",
-    ],
-    ur: [
-      "چینی نام",
-      "چینی ثقافت",
-      "قدیم چینی حکمت",
-      "شاعری",
-      "پانچ عناصر",
-      "چینی نام جنریٹر",
-    ],
-  },
+  keywords: [
+    "Chinese Name",
+    "中文名字",
+    "Nom Chinois",
+    "Nombre Chino",
+    "中国名",
+    "اسم صيني",
+    "Китайское Имя",
+    "Nome Chinês",
+    "চাইনিজ নাম",
+    "چینی نام",
+
+    // Default keywords
+    "Chinese Culture",
+    "Ancient Chinese Wisdom",
+    "Poetry",
+    "Five Elements",
+    "Chinese Name Generator",
+
+    // Chinese (zh) keywords
+
+    "中国文化",
+    "古代智慧",
+    "诗经",
+    "五行",
+    "易经",
+    "姓名推荐",
+    "名字生成器",
+
+    // English (en) keywords
+    "Traditional Chinese Names",
+
+    // French (fr) keywords
+    "Culture Chinoise",
+    "Sagesse Chinoise Ancienne",
+    "Poésie",
+    "Cinq Éléments",
+    "Générateur de Noms Chinois",
+
+    // Spanish (es) keywords
+    "Cultura China",
+    "Sabiduría China Antigua",
+    "Poesía",
+    "Cinco Elementos",
+    "Generador de Nombres Chinos",
+
+    // Japanese (ja) keywords
+    "中国文化",
+    "古代中国の知恵",
+    "詩",
+    "五行",
+    "名前ジェネレーター",
+
+    // Arabic (ar) keywords
+    "الثقافة الصينية",
+    "الحكمة الصينية القديمة",
+    "الشعر",
+    "العناصر الخمسة",
+    "مولد الأسماء الصينية",
+
+    // Russian (ru) keywords
+    "Китайская Культура",
+    "Древняя Китайская Мудрость",
+    "Поэзия",
+    "Пять Элементов",
+    "Генератор Китайских Имен",
+
+    // Portuguese (pt) keywords
+    "Cultura Chinesa",
+    "Sabedoria Chinesa Antiga",
+    "Poesia",
+    "Cinco Elementos",
+    "Gerador de Nomes Chineses",
+
+    // Bengali (bn) keywords
+    "চীনা সংস্কৃতি",
+    "প্রাচীন চীনা জ্ঞান",
+    "কবিতা",
+    "পঞ্চ উপাদান",
+    "চাইনিজ নাম জেনারেটর",
+
+    // Urdu (ur) keywords
+    "چینی ثقافت",
+    "قدیم چینی حکمت",
+    "شاعری",
+    "پانچ عناصر",
+    "چینی نام جنریٹر",
+  ],
   openGraph: {
     title: {
       default:

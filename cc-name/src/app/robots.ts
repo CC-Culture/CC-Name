@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/*"],
     },
-    sitemap: "https://name.cc-tech.cloud/sitemap.xml",
-    host: "https://name.cc-tech.cloud",
+    sitemap: "https://name.cc-tech.fun/sitemap.xml",
+    host: "https://name.cc-tech.fun",
   };
 }

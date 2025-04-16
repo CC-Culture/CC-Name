@@ -2,7 +2,7 @@ import "./globals.css";
 import "./backgrounds.css";
 
 export const metadata = {
-  metadataBase: new URL("https://name.cc-tech.cloud"),
+  metadataBase: new URL("https://name.cc-tech.fun"),
   title: {
     default:
       "CC Name - Chinese Name Generator | Ancient Wisdom Meets Modern Life",
@@ -163,7 +163,7 @@ export const metadata = {
       ur: "ur_PK",
     },
     siteName: "CC Name",
-    url: "https://name.cc-tech.cloud",
+    url: "https://name.cc-tech.fun",
   },
   twitter: {
     card: "summary_large_image",

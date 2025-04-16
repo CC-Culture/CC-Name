@@ -15,7 +15,7 @@ type SitemapEntry = {
 };
 
 export default async function sitemap() {
-  const baseUrl = "https://name.cc-tech.cloud";
+  const baseUrl = "https://name.cc-tech.fun";
 
   // 基础路由
   const routes = ["", "/about", "/surname-culture"];

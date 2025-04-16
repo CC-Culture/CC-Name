@@ -73,6 +73,8 @@
     "network_timeout_error": "Délai d'attente de la requête réseau dépassé, veuillez vérifier votre connexion et réessayer",
     "try_again": "Réessayer",
     "name_generating": "Nous travaillons dur pour générer des recommandations de noms personnalisées pour vous, veuillez patienter...",
+    "analyzing_results": "Analyse des résultats, préparation minutieuse de votre nom...",
+    "please_wait_processing": "Le système effectue le traitement final, veuillez patienter",
     "almost_done": "Presque terminé, encore un moment...",
     "timezones": {
       "zi": "Heure Zi (0:00-2:00)",

@@ -224,9 +224,11 @@ export default function BirthdateForm() {
     // 创建新的AbortController用于取消请求
     requestRef.current = new AbortController();
 
-    // 设置定时器更新进度条
+    // 设置定时器更新进度条 - 强制等待12秒
     const startTime = Date.now();
-    const duration = 30000; // 30秒
+    const forcedWaitDuration = 12000; // 12秒强制等待
+    const totalDuration = 30000; // 总超时时间保持30秒
+    let responseData: NameGenerationResponse | null = null;
 
     // 清除之前的定时器
     if (timeoutRef.current) {
@@ -236,11 +238,34 @@ export default function BirthdateForm() {
     // 设置进度条更新定时器
     timeoutRef.current = setInterval(() => {
       const elapsed = Date.now() - startTime;
-      const newProgress = Math.min(100, (elapsed / duration) * 100);
-      setProgress(newProgress);
+
+      // 如果已经有响应数据，进度条在12秒内平滑增长到100%
+      if (responseData) {
+        const forcedElapsed = Math.min(elapsed, forcedWaitDuration);
+        const newProgress = Math.min(
+          100,
+          (forcedElapsed / forcedWaitDuration) * 100
+        );
+        setProgress(newProgress);
+
+        // 当强制等待时间结束，跳转到结果页面
+        if (elapsed >= forcedWaitDuration && responseData) {
+          if (timeoutRef.current) {
+            clearInterval(timeoutRef.current);
+            timeoutRef.current = null;
+          }
+
+          const encodedData = encodeURIComponent(JSON.stringify(responseData));
+          router.push(`/${locale}/result?data=${encodedData}`);
+        }
+      } else {
+        // 如果还没有响应数据，进度条缓慢增长，最多到70%
+        const newProgress = Math.min(70, (elapsed / totalDuration) * 100);
+        setProgress(newProgress);
+      }
 
       // 如果到达30秒，显示超时错误
-      if (elapsed >= duration) {
+      if (elapsed >= totalDuration) {
         setIsTimeoutError(true);
         setIsLoading(false);
         setShowProgressBar(false);
@@ -270,25 +295,27 @@ export default function BirthdateForm() {
         requestRef.current.signal
       );
 
-      // 如果成功获取到响应，清除定时器
-      if (timeoutRef.current) {
-        clearInterval(timeoutRef.current);
-        timeoutRef.current = null;
-      }
+      // 保存响应数据，但不立即跳转
+      responseData = response;
 
-      const encodedData = encodeURIComponent(JSON.stringify(response));
-      router.push(`/${locale}/result?data=${encodedData}`);
+      // 不清除定时器，让强制等待计时器继续运行
+      // 进度条会在强制等待时间内平滑增长到100%
     } catch (err) {
       // 非中止错误才设置错误信息
       if (!(err instanceof DOMException && err.name === "AbortError")) {
         setError(err instanceof Error ? err.message : t("generation_error"));
       }
-    } finally {
-      if (!isTimeoutError) {
-        setIsLoading(false);
-        setShowProgressBar(false);
+
+      // 清除定时器
+      if (timeoutRef.current) {
+        clearInterval(timeoutRef.current);
+        timeoutRef.current = null;
       }
+
+      setIsLoading(false);
+      setShowProgressBar(false);
     }
+    // 注意：不再使用finally块，因为成功情况下需要等待强制等待时间结束
   };
 
   // Update date when date string changes manually
@@ -519,8 +546,17 @@ export default function BirthdateForm() {
             ></div>
           </div>
           <p className="text-sm text-gray-600 text-center">
-            {progress < 100 ? t("name_generating") : t("almost_done")}
+            {progress < 70
+              ? t("name_generating")
+              : progress < 100
+              ? t("analyzing_results")
+              : t("almost_done")}
           </p>
+          {progress >= 70 && progress < 100 && (
+            <p className="text-xs text-gray-500 text-center mt-1">
+              {t("please_wait_processing")}
+            </p>
+          )}
         </div>
       )}
 

@@ -68,6 +68,8 @@
     "network_timeout_error": "Tempo limite da solicitação de rede excedido, verifique sua conexão e tente novamente",
     "try_again": "Tentar novamente",
     "name_generating": "Estamos trabalhando intensamente para gerar recomendações de nomes personalizadas para você, por favor aguarde...",
+    "analyzing_results": "Analisando resultados, preparando cuidadosamente seu nome...",
+    "please_wait_processing": "O sistema está realizando o processamento final, por favor tenha paciência",
     "almost_done": "Quase pronto, só mais um momento...",
     "timezones": {
       "zi": "Zi Shi (0:00-2:00)",

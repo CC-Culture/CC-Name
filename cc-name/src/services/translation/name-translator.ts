@@ -157,6 +157,13 @@ async function batchTranslateAll(
         // 如果原文有单引号内容需要还原
         quoteContents.forEach((value, placeholder) => {
           translatedText = translatedText.replace(placeholder, `'${value}'`);
+          // placeholder2
+          const placeholder2 = insertSpaces(placeholder);
+
+          translatedText = translatedText.replace(placeholder2, `'${value}'`);
+          console.log(
+            `【引号还原】匹配: "${placeholder}", 提取内容: "${value}", CC: ${placeholder2}`
+          );
         });
 
         // 在原始文本和处理后的文本之间建立映射
@@ -180,6 +187,16 @@ async function batchTranslateAll(
       return map;
     }, {} as Record<string, string>);
   }
+}
+
+function insertSpaces(str: string) {
+  if (str.length < 2) return str; // 长度不足时直接返回
+
+  // 先在原字符串的倒数第二个位置插入空格
+  const temp = str.slice(0, -1) + " " + str.slice(-1);
+
+  // 再在第二个位置插入空格
+  return temp.slice(0, 1) + " " + temp.slice(1);
 }
 
 /**

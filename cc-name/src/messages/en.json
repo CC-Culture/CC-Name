@@ -73,6 +73,8 @@
     "network_timeout_error": "Network request timed out, please check your connection and try again",
     "try_again": "Try Again",
     "name_generating": "Working hard to generate your personalized name recommendations, please wait...",
+    "analyzing_results": "Analyzing results, carefully preparing your name...",
+    "please_wait_processing": "The system is performing final processing, please be patient",
     "almost_done": "Almost done, just a moment longer...",
     "timezones": {
       "zi": "Zi Hour (0:00-2:00)",

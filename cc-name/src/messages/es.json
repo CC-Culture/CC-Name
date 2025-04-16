@@ -73,6 +73,8 @@
     "network_timeout_error": "Tiempo de espera de solicitud de red agotado, verifique su conexión e intente nuevamente",
     "try_again": "Intentar de nuevo",
     "name_generating": "Estamos trabajando arduamente para generar recomendaciones de nombres personalizadas para usted, por favor espere...",
+    "analyzing_results": "Analizando resultados, preparando cuidadosamente su nombre...",
+    "please_wait_processing": "El sistema está realizando el procesamiento final, por favor tenga paciencia",
     "almost_done": "Casi terminado, un momento más...",
     "timezones": {
       "zi": "Hora Zi (0:00-2:00)",

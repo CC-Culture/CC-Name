@@ -10,6 +10,7 @@ import { notFound } from "next/navigation";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import AdComponent from "@/components/monetagAd/AdComponent";
 import AdComponent2 from "@/components/monetagAd/AdComponent2";
+import AdComponent3 from "@/components/monetagAd/AdComponent3";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -87,6 +88,7 @@ export default async function RootLayout({
 
         {/* <AdComponent /> */}
         <AdComponent2 />
+        <AdComponent3 />
 
         <meta name="monetag" content="a94f4808d0b60fdce3e8e92d9d3721b6" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

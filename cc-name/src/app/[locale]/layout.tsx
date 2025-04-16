@@ -8,6 +8,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { locales, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import AdComponent from "@/components/monetagAd/AdComponent";
+import AdComponent2 from "@/components/monetagAd/AdComponent2";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -82,6 +84,10 @@ export default async function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5349784820675227"
           crossOrigin="anonymous"
         ></script>
+
+        <AdComponent />
+        <AdComponent2 />
+
         <meta name="monetag" content="a94f4808d0b60fdce3e8e92d9d3721b6" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* 额外字体加载 */}
@@ -218,7 +224,6 @@ export default async function RootLayout({
         )}
       </head>
       <body
-        suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col relative kraft-background`}
       >
         <SessionProvider>

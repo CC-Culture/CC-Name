@@ -45,33 +45,33 @@ const Header = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto flex justify-between items-center">
-        <Link
-          href={`/${locale}`}
-          className={`flex items-center ${
-            isRtl ? "space-x-reverse" : "space-x-2"
-          }`}
-        >
-          <div className="relative w-10 h-10 overflow-hidden">
-            <Image
-              src="/yi-seal.svg"
-              alt="易字印章"
-              width={60}
-              height={60}
-              className={isRtl ? "ml-4" : "mr-4"}
-            />
-          </div>
-          <span className="text-xl font-bold tracking-wider">CC Name</span>
-        </Link>
-
         <div
           className={`flex items-center ${
             isRtl ? "space-x-reverse" : "space-x-4"
           }`}
         >
+          <Link
+            href={`/${locale}`}
+            className={`flex items-center ${
+              isRtl ? "space-x-reverse" : "space-x-2"
+            }`}
+          >
+            <div className="relative w-10 h-10 overflow-hidden">
+              <Image
+                src="/yi-seal.svg"
+                alt="易字印章"
+                width={60}
+                height={60}
+                className={isRtl ? "ml-4" : "mr-4"}
+              />
+            </div>
+            <span className="text-xl font-bold tracking-wider">CC Name</span>
+          </Link>
+
           <nav
             className={`hidden md:flex ${
-              isRtl ? "space-x-reverse" : "space-x-8"
-            }`}
+              isRtl ? "space-x-reverse space-x-12" : "space-x-12"
+            } ml-6`}
           >
             <Link
               href={`/${locale}`}
@@ -94,7 +94,7 @@ const Header = () => {
           </nav>
 
           {isResultPage ? (
-            <div className="text-gray-400 cursor-not-allowed px-3 py-2 flex items-center">
+            <div className="text-gray-400 cursor-not-allowed px-3 py-2 flex items-center ml-4">
               <span className="text-lg mr-1">
                 {locale === "zh"
                   ? "🇨🇳"
@@ -157,7 +157,9 @@ const Header = () => {
               </svg>
             </div>
           ) : (
-            <LanguageSwitcher />
+            <div className="ml-4">
+              <LanguageSwitcher />
+            </div>
           )}
         </div>
 

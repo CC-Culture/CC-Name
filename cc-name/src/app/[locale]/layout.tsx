@@ -85,7 +85,7 @@ export default async function RootLayout({
           crossOrigin="anonymous"
         ></script>
 
-        <AdComponent />
+        {/* <AdComponent /> */}
         <AdComponent2 />
 
         <meta name="monetag" content="a94f4808d0b60fdce3e8e92d9d3721b6" />

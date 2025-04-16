@@ -11,7 +11,9 @@
     "url_decode_error": "Échec du décodage URL: format de données invalide",
     "json_parse_error": "Échec de l'analyse JSON: format de données invalide",
     "data_processing_error": "Une erreur s'est produite lors du traitement des données",
-    "general_error": "Une erreur s'est produite. Veuillez réessayer plus tard."
+    "general_error": "Une erreur s'est produite. Veuillez réessayer plus tard.",
+    "data_source_description": "La méthode principale utilise une table de recherche pour la conversion, avec des données de",
+    "hko_calendar_conversion": "Observatoire de Hong Kong [Conversion entre le calendrier solaire et lunaire]"
   },
   "header": {
     "home": "Accueil",

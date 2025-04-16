@@ -6,7 +6,9 @@
     "not_found": "ページが見つかりません",
     "path_not_exists": "アクセスしようとしたパスは存在しません",
     "page_moved": "このページは移動または削除された可能性があります",
-    "back_home": "ホームに戻る"
+    "back_home": "ホームに戻る",
+    "data_source_description": "主要な方法は変換のためにルックアップテーブルを使用し、そのデータは以下から取得しています",
+    "hko_calendar_conversion": "香港天文台 [太陽暦と太陰暦の間の変換]"
   },
   "header": {
     "home": "ホーム",

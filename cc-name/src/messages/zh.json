@@ -11,7 +11,9 @@
     "url_decode_error": "URL解码失败：数据格式不正确",
     "json_parse_error": "JSON解析失败：数据格式不正确",
     "data_processing_error": "数据处理过程中发生错误",
-    "general_error": "发生错误，请稍后再试"
+    "general_error": "发生错误，请稍后再试",
+    "data_source_description": "核心采用查表法进行转换，其数据来自",
+    "hko_calendar_conversion": "香港天文台【公历与农历日期对照表】"
   },
   "header": {
     "home": "首页",

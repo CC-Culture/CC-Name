@@ -11,7 +11,9 @@
     "url_decode_error": "URL decoding failed: invalid data format",
     "json_parse_error": "JSON parsing failed: invalid data format",
     "data_processing_error": "Error occurred during data processing",
-    "general_error": "An error occurred. Please try again later."
+    "general_error": "An error occurred. Please try again later.",
+    "data_source_description": "The core uses a lookup method for conversion, with data from",
+    "hko_calendar_conversion": "Hong Kong Observatory [Conversion between Solar and Lunar Calendar]"
   },
   "header": {
     "home": "Home",

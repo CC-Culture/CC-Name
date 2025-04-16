@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Introduction from "@/components/home/Introduction";
 import BirthdateForm from "@/components/home/BirthdateForm";
+import DataSourceAttribution from "@/components/home/DataSourceAttribution";
 import Script from "next/script";
 
 // 结构化数据
@@ -47,6 +48,8 @@ export default function Home() {
           >
             <BirthdateForm />
           </section>
+
+          <DataSourceAttribution />
         </div>
       </main>
     </>

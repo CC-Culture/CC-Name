@@ -6,7 +6,9 @@
     "not_found": "Página não encontrada",
     "path_not_exists": "O caminho que você está tentando acessar não existe",
     "page_moved": "Esta página pode ter sido movida ou removida",
-    "back_home": "Voltar para a página inicial"
+    "back_home": "Voltar para a página inicial",
+    "data_source_description": "O método principal utiliza uma tabela de consulta para conversão, com dados de",
+    "hko_calendar_conversion": "Observatório de Hong Kong [Conversão entre Calendário Solar e Lunar]"
   },
   "header": {
     "home": "Início",

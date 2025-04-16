@@ -11,7 +11,6 @@ const localScript = `(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document
 const AdComponent2: React.FC<AdComponentProps> = ({ className = "" }) => {
   useEffect(() => {
     const script = document.createElement("script");
-    script.async = true;
     script.setHTMLUnsafe(localScript);
     document.body.appendChild(script);
 

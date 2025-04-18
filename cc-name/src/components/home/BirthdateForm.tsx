@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { motion } from "framer-motion";
-import { generateName, Gender } from "@/services/api";
+import { generateName, Gender, NameGenerationResponse } from "@/services/api";
 import { useTranslations, useLocale } from "next-intl";
 import { format, isValid, parse } from "date-fns";
 import { enUS, fr, es, ja, zhCN, ar } from "date-fns/locale";

@@ -3,4 +3,4 @@ Allow: /
 Disallow: /api/
 Disallow: /login/
 
-Sitemap: https://ccname.com/sitemap.xml 
+Sitemap: https://name.cc-tech.fun/sitemap.xml 

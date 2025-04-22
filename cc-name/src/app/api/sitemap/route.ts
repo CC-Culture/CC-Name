@@ -8,12 +8,9 @@ export async function GET() {
   // 基础路由
   const routes = ["", "/about", "/surname-culture"];
 
-  // 生成XML头部
+  // 生成XML头部，确保XML声明在文档的最开始，没有前置空白
   let xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">`;
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
   // 添加默认路由（无语言前缀）
   routes.forEach((route) => {
@@ -50,10 +47,10 @@ export async function GET() {
   xmlContent += `
 </urlset>`;
 
-  // 返回XML响应
+  // 返回XML响应，设置正确的Content-Type
   return new NextResponse(xmlContent, {
     headers: {
-      "Content-Type": "application/xml",
+      "Content-Type": "application/xml; charset=utf-8",
       "Cache-Control": "public, max-age=86400, s-maxage=86400",
     },
   });

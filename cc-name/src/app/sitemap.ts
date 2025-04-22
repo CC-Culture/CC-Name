@@ -1,6 +1,7 @@
 import { locales } from "@/i18n/config";
 import { MetadataRoute } from "next";
 
+// 创建Next.js标准格式的sitemap
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://name.cc-tech.fun";
   const currentDate = new Date().toISOString();

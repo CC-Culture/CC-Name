@@ -1,39 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ccname.com/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <loc>https://name.cc-tech.fun</loc>
+    <lastmod>2025-04-22T12:00:00.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ccname.com/en</loc>
-    <lastmod>2024-04-10</lastmod>
+    <loc>https://name.cc-tech.fun/about</loc>
+    <lastmod>2025-04-22T12:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://name.cc-tech.fun/surname-culture</loc>
+    <lastmod>2025-04-22T12:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://name.cc-tech.fun/zh</loc>
+    <lastmod>2025-04-22T12:00:00.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ccname.com/zh</loc>
-    <lastmod>2024-04-10</lastmod>
+    <loc>https://name.cc-tech.fun/en</loc>
+    <lastmod>2025-04-22T12:00:00.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ccname.com/fr</loc>
-    <lastmod>2024-04-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ccname.com/es</loc>
-    <lastmod>2024-04-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ccname.com/ja</loc>
-    <lastmod>2024-04-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
 </urlset> 

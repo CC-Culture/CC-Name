@@ -85,12 +85,6 @@ export default async function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5349784820675227"
           crossOrigin="anonymous"
         ></script>
-
-        {/* <AdComponent /> */}
-        <AdComponent2 />
-        <AdComponent3 />
-
-        <meta name="monetag" content="a94f4808d0b60fdce3e8e92d9d3721b6" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* 额外字体加载 */}
         {isBengali && (
